@@ -1,0 +1,19 @@
+ <div class="container">
+   <div class="show-single-tile col-md-10">
+	<div class="row">
+    <div class="main" *ngIf="_current">
+      <div class="show-photo col-md-6">
+        <img [src]=_current.image class='float-left' >
+      </div>
+      <div class="show-details col-md-6">
+      <div id='showNameId'>Show Name: <span>{{_current.name}}</span></div>
+      <div id='LangId$'> id='nameid$'Language: <span>{{_current.language}}</span></div>
+      <div id='genreId$'>Genre: <span>{{_current.genre}}</span></div>
+      <div id='RatingId$'>Rating: <span>{{_current.rating}}</span></div>
+      <div id='summerId$'>Summary: <span>{{_current.summary}}</span></div>
+    </div>
+  </div>
+  </div>
+</div>
+
+</div>
