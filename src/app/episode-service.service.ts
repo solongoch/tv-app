@@ -9,31 +9,24 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EpisodeServiceService {
-constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-getShowEpisodes(showId: number) {
-  return this.httpClient.get<IEpisodeData[]>(`${environment.baseurl}${environment.episodeEndpoint}${showId}/episodes`).pipe(map(data => {
+  /**
+   *
+   * @param episodeEndpoint  // http://api.tvmaze.com/seasons/263/episodes
+   */
+  getShowEpisodes(showId: number) {
+    return this.httpClient.get<IEpisodeData[]>(`${environment.baseurl}${environment.episodeEndpoint}${showId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.trasformToIEpisodeView(item))));
+     }
+
+
+  trasformToIEpisodeView(data: IEpisodeData): IEpisodeView {
     return {
-
-    episodeName: data.name,
-    seasonNumber: data.season,
-    episodeNumber: data.number,
-    airdate: data.airdate
+      episodeName: data.name,
+      seasonNumber: data.season,
+      episodeNumber: data.number,
+      airdate: new Date(data.airdate)
     }
-   } ));
-}
-
-  // trasformToIEpisodeView(data: IEpisodeData[]): IEpisodeView[]
-  //  {
-  //     return {
-
-  //   episodeName: data.name,
-  //   seasonNumber: data.season,
-  //   episodeNumber: data.number,
-  //   airdate: data.airdate
-  //   }
-
-  // }
-
+  }
 
 }

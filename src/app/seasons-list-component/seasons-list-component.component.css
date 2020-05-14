@@ -1,14 +1,3 @@
-/* #nav-list {
-  margin-top: 10px;
-}
-#nav-list a {
-  color: #951c49;
-  text-align: center;
-}
-#nav-list a:hover {
-  background: #e7e7e7;
-} */
-
 .container{
   margin-top: 30px;;
 }
@@ -21,4 +10,14 @@
   border-width: 2px;
   border-color: rgb(245, 96, 96);
 }
+
+#seasonnumber{
+
+  font-weight: bold;
+  font-size: 28px;
+   margin-top: 20px;
+   padding: 5px;
+}
+
+
 

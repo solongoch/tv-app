@@ -8,10 +8,13 @@
     <label for="navbar-checkbox" class="navbar-handle"></label>
   </div>
 </nav> -->
-<div class="container"><div>
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item" *ngFor="let current of _current" id="season-list" > <a [href]="'#S'+current.number" id="seasons-link"> S{{current.number | number:'2.0'}}
-    </a></li>
-     </ul>
-    </div></div>
-
+<div class="container">
+  <div>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item" *ngFor="let current of _current" id="season-list"> <a
+          [href]="'#S'+current.seasonNumber" id="seasons-link"> S{{current.seasonNumber | number:'2.0'}}
+        </a></li>
+    </ul>
+  </div>
+  <div><label for="Season" id='seasonnumber'>Season </label></div>
+</div>

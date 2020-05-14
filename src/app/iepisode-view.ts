@@ -2,5 +2,5 @@ export interface IEpisodeView {
   episodeName: String;
   seasonNumber: number;
   episodeNumber: number;
-  airdate: string;
+  airdate: Date;
 }

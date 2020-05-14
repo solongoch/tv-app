@@ -7,7 +7,7 @@ export const environment = {
   baseurl:'http://api.tvmaze.com/',
   singleSearchEndpoint :'singlesearch/shows?q=',
   seasonEndpoint:'shows/',
-  episodeEndpoint:'shows/',
+  episodeEndpoint:'seasons/',
   apiId:'ntsaZ7Et_9CkqLAF5BkJTekGJ0EIYWao'
 };
 

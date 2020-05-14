@@ -1,1 +1,21 @@
-<p>show-episodes-list works!</p>
+<div class="container">
+
+  <table class="table table-striped">
+        <thead>
+      <tr>
+        <th>Episode Number</th>
+        <th>AirDate</th>
+        <th>Episode Name</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let episode of _episodes">
+
+        <td>{{episode.episodeNumber}}</td>
+        <td>{{episode.airdate | date : 'mediumDate'}}</td>
+        <td>{{episode.episodeName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

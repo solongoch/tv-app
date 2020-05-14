@@ -9,13 +9,13 @@ import { IEpisodeView } from '../iepisode-view';
 })
 export class ShowEpisodesListComponent implements OnInit {
 
-  _current : IEpisodeView[];
+  _episodes : IEpisodeView[];
   constructor(private currServ : EpisodeServiceService) { }
 
 
   ngOnInit(): void {
 
-    this.currServ.getShowEpisodes(139).subscribe(data => this._current=data);
+    this.currServ.getShowEpisodes(264).subscribe(data => this._episodes=data);
   }
 
 }
