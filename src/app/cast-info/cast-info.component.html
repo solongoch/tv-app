@@ -1,0 +1,17 @@
+<h3>Cast info</h3>
+<div class="row">
+
+  <div *ngFor="let cast of listOfCast;" class="single-cast media col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="single-cast-img">
+      <img class="align-self-start mr-3" [src]="cast.castImg" alt="Cast Image">
+    </div>
+    <div class="names media-body">
+      <p>
+        <span class="cast-name">{{cast.castName}}</span><br>
+        as
+        <span class="character-name">{{cast.characterName}}</span>
+      </p>
+    </div>
+  </div>
+
+</div>
