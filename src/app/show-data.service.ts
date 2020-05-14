@@ -12,8 +12,9 @@ export class ShowDataService {
 
   constructor(private httpClient : HttpClient) { }
 
+
   getSingleShow(showName: string){
-    return this.httpClient.get<IShowSearchData>(`${environment.baseurl}${environment.endPoint}${showName}`).pipe(map(data =>this.transformToIShowView(data)));
+    return this.httpClient.get<IShowSearchData>(`${environment.baseurl}${environment.singleSearchEndpoint}${showName}`).pipe(map(data =>this.transformToIShowView(data)));
   }
   transformToIShowView( searchData : IShowSearchData) : IShowView{
 

@@ -1,0 +1,24 @@
+/* #nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  color: #951c49;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #e7e7e7;
+} */
+
+.container{
+  margin-top: 30px;;
+}
+#seasons-link{
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(71, 87, 236);
+}
+.list-group-item{
+  border-width: 2px;
+  border-color: rgb(245, 96, 96);
+}
+
