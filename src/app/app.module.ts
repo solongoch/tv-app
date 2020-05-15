@@ -3,21 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { ShowInfoComponent } from './show-info/show-info.component';
 import { TvshowService } from './tvshow.service';
-import { HttpClientModule } from '@angular/common/http'
+import { CastInfoComponent } from './cast-info/cast-info.component';
+import { CastService } from './cast/cast.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar'
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowInfoComponent
+    CastInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatToolbarModule
   ],
-  providers: [TvshowService],
+  providers: [CastService, TVshowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

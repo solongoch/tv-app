@@ -1,0 +1,16 @@
+<h3 class="mat-display-1">Cast Info</h3>
+
+<mat-grid-list cols="2" rowHeight="1.5:1">
+  <mat-grid-tile *ngFor="let cast of listOfCast;">
+    <div class="single-cast-img">
+      <img class="align-self-start mr-3" [src]="cast.castImg" alt="Cast Image">
+    </div>
+    <div class="names">
+      <p>
+        <span class="cast-name mat-title">{{cast.castName}}</span><br>
+        as
+        <span class="character-name mat-subheading-2">{{cast.characterName}}</span>
+      </p>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

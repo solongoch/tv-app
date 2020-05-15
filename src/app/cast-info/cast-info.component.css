@@ -1,0 +1,25 @@
+h3.mat-display-1 {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.single-cast {
+  padding: 0;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.names {
+  float: left;
+  width: 50%;
+  margin: 30px;
+  font-size: 1.2em;
+}
+
+.cast-name, .character-name {
+  font-style: italic;
+}
+.cast-name {
+  font-weight: 600;
+}
