@@ -14,7 +14,7 @@ export class ShowInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.tvshowService.getShowInfo(139)
+    this.tvshowService.getShowInfo(1)
     .subscribe(data => this.show = data)
   }
 

@@ -1,9 +1,35 @@
-<div>{{show.name}}</div>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="show-info.component.css">
+<title>Show Info</title>
 
-<div><img [src]='show.image' /></div>
+</head>
 
-<div>{{show.description}}</div>
+<h2>{{show.name}}</h2>
 
-<div><span>{{show.country}}<br></span>
-<span>{{show.genre}}<br></span>
-<span>{{show.runtime}}</span></div>
+<div>
+
+  <span>Main</span>
+  <span>Episodes</span>
+  <span>Cast</span>
+
+</div>
+
+<div class= "showlist">
+
+<div class = "col-lg-2 col-md-2 col-sm-2 row"><img [src]='show.image' class= "img-responsive" style="width: 80%" alt="Show Image" /></div>
+
+<div class = "col-lg-6 col-md-6 col-sm-6 row">{{show.description}}</div>
+
+<div class = "col-lg-4 col-md-4 col-sm-4 row showinfo">
+  <span class= "info">Genre: {{show.genre}}<br></span>
+  <span>Network: {{show.network}}<br></span>
+  <span>Country: {{show.country}}<br></span>
+  <span>Runtime: {{show.runtime}}<br></span>
+  <span>Language: {{show.language}}</span>
+</div>
+
+
+</div>

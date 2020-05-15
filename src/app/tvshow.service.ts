@@ -9,9 +9,13 @@ interface IShowInfoData {
     name: string,
     image: {medium: string},
     summary: string,
-    country: {name: string},
+    network: {
+      name: string
+      country:
+      {name: string}},
     genres: string[],
-    schedule: {time: number}
+    schedule: {time: number},
+    language: string
 }
 
 @Injectable({
@@ -33,9 +37,11 @@ export class TvshowService {
       name: data.name,
       image: data.image.medium,
       description: data.summary.replace(/(<([^>]+)>)/ig,""),
-      country: data.country.name,
+      country: data.network.country.name,
       genre: data.genres.join('|'),
-      runtime: data.schedule.time
+      runtime: data.schedule.time,
+      network: data.network.name,
+      language: data.language
 
     };
   }
