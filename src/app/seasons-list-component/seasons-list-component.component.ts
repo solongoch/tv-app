@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SeasonsListServiceService} from '../seasons-list-service.service';
+import { SeasonsListServiceService} from '../season-service/seasons-list-service.service';
 import { ISeasonListView } from '../iseason-list-view';
 
 @Component({
@@ -9,11 +9,11 @@ import { ISeasonListView } from '../iseason-list-view';
 })
 export class SeasonsListComponentComponent implements OnInit {
 
-  _current : ISeasonListView[];
-  constructor(private currServ :SeasonsListServiceService) { }
+  _seasonsView : ISeasonListView[];
+  constructor(private seasonService :SeasonsListServiceService) { }
 
   ngOnInit(): void {
-    this.currServ.getShowSeasons(73).subscribe(data => this._current=data);
+    this.seasonService.getShowSeasons(73).subscribe(seasonsView => this._seasonsView=seasonsView);
   }
 
 

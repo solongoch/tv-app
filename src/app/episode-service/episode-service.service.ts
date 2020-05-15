@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IEpisodeData } from './iepisode-data';
+import { IEpisodeData } from '../iepisode-data';
 import { environment } from 'src/environments/environment';
-import { IEpisodeView } from './iepisode-view';
+import { IEpisodeView } from '../iepisode-view';
 import { map } from 'rxjs/operators';
 
 @Injectable({

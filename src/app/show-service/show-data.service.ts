@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IShowSearchData} from './ishow-search-data';
-import { IShowView } from './ishow-view';
+import { IShowSearchData} from '../ishow-search-data';
+import { IShowView } from '../ishow-view';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 

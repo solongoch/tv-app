@@ -2,13 +2,14 @@
   margin-top: 30px;;
 }
 #seasons-link{
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
-  font-weight: bold;
-  color: rgb(71, 87, 236);
+  color: whitesmoke;
 }
 .list-group-item{
   border-width: 2px;
-  border-color: rgb(245, 96, 96);
+  border-color: #5f5f5f;
+  background-color: #5f5f5f;
 }
 
 #seasonnumber{

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IShowView } from '../ishow-view';
-import { ShowDataService} from '../show-data.service';
+import { ShowDataService} from '../show-service/show-data.service';
 
 
 @Component({

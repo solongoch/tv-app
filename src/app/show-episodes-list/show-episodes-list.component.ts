@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EpisodeServiceService } from '../episode-service.service';
+import { EpisodeServiceService } from '../episode-service/episode-service.service';
 import { IEpisodeView } from '../iepisode-view';
 
 @Component({
