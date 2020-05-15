@@ -10,11 +10,16 @@ import { IEpisodeView } from '../iepisode-view';
 export class ShowEpisodesListComponent implements OnInit {
 
   _episodes : IEpisodeView[];
+  episodeColumns  :  string[] = ['episodeNumber', 'airDate', 'episodeName'];
+
   constructor(private currServ : EpisodeServiceService) { }
 
 
   ngOnInit(): void {
 
-    this.currServ.getShowEpisodes(431).subscribe(data => this._episodes=data);
+    this.currServ.getShowEpisodes(73).subscribe((data : IEpisodeView[]) => {
+      this._episodes=data
+    });
+
   }
 }

@@ -2,21 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShowSingleSearchComponent } from './show-single-search/show-single-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeasonsListComponentComponent } from './seasons-list-component/seasons-list-component.component';
 import { ShowEpisodesListComponent } from './show-episodes-list/show-episodes-list.component';
-import { ShowDataService } from './show-service/show-data.service';
 import { SeasonsListServiceService } from './season-service/seasons-list-service.service';
 import { EpisodeServiceService } from './episode-service/episode-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider'
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from  '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowSingleSearchComponent,
     SeasonsListComponentComponent,
     ShowEpisodesListComponent
   ],
@@ -25,10 +22,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTableModule
   ],
-  providers: [ShowDataService,SeasonsListServiceService,EpisodeServiceService],
+  providers: [EpisodeServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
