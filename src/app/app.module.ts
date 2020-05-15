@@ -9,6 +9,9 @@ import { ShowEpisodesListComponent } from './show-episodes-list/show-episodes-li
 import { ShowDataService } from './show-service/show-data.service';
 import { SeasonsListServiceService } from './season-service/seasons-list-service.service';
 import { EpisodeServiceService } from './episode-service/episode-service.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider'
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { EpisodeServiceService } from './episode-service/episode-service.service
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatTabsModule
   ],
   providers: [ShowDataService,SeasonsListServiceService,EpisodeServiceService],
   bootstrap: [AppComponent]

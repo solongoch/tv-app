@@ -1,21 +1,27 @@
 <div class="container">
 
-  <table class="table table-striped">
-        <thead>
-      <tr>
-        <th>Episode Number</th>
-        <th>AirDate</th>
-        <th>Episode Name</th>
-      </tr>
-    </thead>
-    <tbody>
+    <mat-tab-group>
+        <mat-tab *ngFor="let seasonNumber of [].constructor(_episodes[_episodes.length - 1].seasonNumber); let i=index" label="{{i+1}}">
 
-      <tr *ngFor="let episode of _episodes">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Episode Number</th>
+                <th>AirDate</th>
+                <th>Episode Name</th>
+              </tr>
+            </thead>
+            <tbody>
 
-        <td>{{episode.episodeNumber}}</td>
-        <td>{{episode.airdate | date : 'mediumDate'}}</td>
-        <td>{{episode.episodeName}}</td>
-      </tr>
-    </tbody>
-  </table>
+              <tr *ngFor="let episode of _episodes">
+                  <td *ngIf="episode.seasonNumber === i+1">{{episode.episodeNumber}}</td>
+                  <td *ngIf="episode.seasonNumber === i+1">{{episode.airdate | date : 'mediumDate'}}</td>
+                  <td *ngIf="episode.seasonNumber === i+1">{{episode.episodeName}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </mat-tab>
+    </mat-tab-group>
+
 </div>

@@ -15,7 +15,6 @@ export class ShowEpisodesListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.currServ.getShowEpisodes(264).subscribe(data => this._episodes=data);
+    this.currServ.getShowEpisodes(431).subscribe(data => this._episodes=data);
   }
-
 }
