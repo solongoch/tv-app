@@ -1,0 +1,20 @@
+<!-- <nav class="page-subnav">
+  <ul id="#nav-list">
+    <li><a href="#">Main</a></li>
+    <li class="active" title="episodes"><a href="#">Episodes</a></li>
+    <li title="cast"><a href="#">Cast</a></li>
+  </ul>
+  <div>
+    <label for="navbar-checkbox" class="navbar-handle"></label>
+  </div>
+</nav> -->
+<div class="container">
+  <div>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item" *ngFor="let season of _seasonsView" id="season-list"> <a
+          [href]="'#S'+season.seasonNumber" id="seasons-link"> S{{season.seasonNumber | number:'2.0'}}
+        </a></li>
+    </ul>
+  </div>
+  <div><label for="Season" id='seasonnumber'>Season </label></div>
+</div>

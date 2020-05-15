@@ -1,0 +1,28 @@
+<div class="container">
+
+  <mat-tab-group dynamicHeight="true" animationDuration="1000ms">
+    <mat-tab *ngFor="let seasonNumber of [].constructor(_episodes[_episodes.length - 1].seasonNumber); index as i "
+      label="S{{i+1 | number:'2.0'}}">
+      <table class="table table-striped table-hover ">
+        <thead class="thead-light">
+          <tr>
+            <th>Episode Number</th>
+            <th>AirDate</th>
+            <th>Episode Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let episode of _episodes">
+            <td *ngIf="episode.seasonNumber === i+1">{{episode.episodeNumber}}</td>
+            <td *ngIf="episode.seasonNumber === i+1">{{episode.airdate | date : 'mediumDate'}}</td>
+            <td *ngIf="episode.seasonNumber === i+1">{{episode.episodeName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+
+</div>
