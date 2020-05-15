@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { ShowInfoComponent } from './show-info/show-info.component';
+import { TvshowService } from './tvshow.service';
 import { CastInfoComponent } from './cast-info/cast-info.component';
 import { CastService } from './cast/cast.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 @NgModule({
   declarations: [
     AppComponent,
+    ShowInfoComponent
     CastInfoComponent
   ],
   imports: [
@@ -23,7 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
     MatGridListModule,
     MatToolbarModule
   ],
-  providers: [CastService],
+  providers: [CastService, TVshowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
