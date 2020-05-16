@@ -2,17 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ShowEpisodesListComponent } from './show-episodes-list/show-episodes-list.component';
 import { EpisodeServiceService } from './episode-service/episode-service.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatTableModule } from  '@angular/material/table';
+import { ShowInfoComponent } from './show-info/show-info.component';
+import { TvshowService } from './tvshow.service';
+import { CastInfoComponent } from './cast-info/cast-info.component';
+import { CastService } from './cast/cast.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowEpisodesListComponent
+    ShowInfoComponent,
+    CastInfoComponent,
+     ShowEpisodesListComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +27,10 @@ import { MatTableModule } from  '@angular/material/table';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatTableModule
+    MatGridListModule,
+    MatToolbarModule
   ],
-  providers: [EpisodeServiceService],
+  providers: [CastService, TvshowService,EpisodeServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
