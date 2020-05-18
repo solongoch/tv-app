@@ -124,7 +124,7 @@
       }
     }
   },
-  "defaultProject": "test-weather-app",
+  "defaultProject": "tv-app",
   "cli": {
     "analytics": false
   }
