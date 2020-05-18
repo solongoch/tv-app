@@ -13,7 +13,7 @@ export class SeasonsListServiceService {
   constructor(private httpClient : HttpClient) { }
 
   getShowSeasons(showId : number){
-    return this.httpClient.get<ISeasonListData[]>(`${environment.baseurl}${environment.episodesEndpoint}${showId}/seasons`).pipe(map(( seasons:ISeasonListData[] )=>seasons.map(season => this.transformISeasonDataToView(season))));
+    return this.httpClient.get<ISeasonListData[]>(`${environment.url}${environment.episodesEndpoint}${showId}/seasons`).pipe(map(( seasons:ISeasonListData[] )=>seasons.map(season => this.transformISeasonDataToView(season))));
   }
 
 

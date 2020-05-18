@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowInfoComponent } from './show-info.component';
+import { TvshowService } from '../tvshow.service';
+import { TvshowServiceFake } from '../tvshow.service.fake';
 
 describe('ShowInfoComponent', () => {
   let component: ShowInfoComponent;
@@ -8,7 +10,11 @@ describe('ShowInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowInfoComponent ]
+      declarations: [ ShowInfoComponent ],
+
+      providers:[
+       {provide: TvshowService, useClass: TvshowServiceFake}
+      ]
     })
     .compileComponents();
   }));

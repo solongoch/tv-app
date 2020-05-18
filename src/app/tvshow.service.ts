@@ -4,6 +4,7 @@ import { Url } from 'url';
 import { environment } from 'src/environments/environment';
 import {map} from 'rxjs/operators';
 import { IShowinfo } from './ishowinfo';
+import { Itvshowservice } from './itvshowservice';
 
 interface IShowInfoData {
     name: string,
@@ -21,7 +22,7 @@ interface IShowInfoData {
 @Injectable({
   providedIn: 'root'
 })
-export class TvshowService {
+export class TvshowService implements Itvshowservice {
 
   constructor(private httpClient: HttpClient) { }
 
