@@ -1,28 +1,27 @@
 <div *ngIf='show'>
 
   <mat-card>
-  <h2>{{show.name}}</h2>
+    <mat-card-header>
+      <mat-card-title>
+        {{show.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{show.genre}}
+      </mat-card-subtitle>
+    </mat-card-header>
 
-  <div>
-
-  <span>Mains</span>
-  <span>Episodes</span>
-  <span>Cast</span>
-
-  </div>
 
     <div class= "showlist">
 
-    <div class = "col-lg-2 col-md-2 col-sm-2 row"><img [src]='show.image' class= "img-responsive" style="width: 100%" alt="Show Image" /></div>
+    <div class = "col-lg-3 col-md-3 col-sm-4 row"><img [src]='show.image' class= "img-responsive" style="width: 100%" alt="Show Image" /></div>
 
-    <div class = "description col-lg-6 col-md-6 col-sm-6 row">{{show.description}}</div>
+    <div class = "description col-lg-6 col-md-6 col-sm-8 row">{{show.description}}</div>
 
-    <div class = "col-lg-4 col-md-4 col-sm-4 row showinfo">
-      <span>Genre: {{show.genre}}<br></span>
-      <span>Network: {{show.network}}<br></span>
-      <span>Country: {{show.country}}<br></span>
-      <span>Runtime: {{show.runtime}}</span>
-      <span>Language: {{show.language}}</span>
+    <div class = "col-lg-3 col-md-3 col-sm-12 row showinfo">
+      <div><span>Network:</span> {{show.network}}</div>
+      <div><span>Country:</span> {{show.country}}</div>
+      <div><span>Runtime:</span> {{show.runtime}}</div>
+      <div><span>Language:</span> {{show.language}}</div>
     </div>
 
   </div>

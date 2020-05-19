@@ -39,7 +39,7 @@ export class TvshowService implements Itvshowservice {
       image: data.image.medium,
       description: data.summary.replace(/(<([^>]+)>)/ig,""),
       country: data.network.country.name,
-      genre: data.genres.join('|'),
+      genre: data.genres.join('/'),
       runtime: data.schedule.time,
       network: data.network.name,
       language: data.language
