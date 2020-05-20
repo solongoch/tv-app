@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EpisodeServiceService } from '../episode-service/episode-service.service';
-import { IEpisodeView } from '../iepisode-view';
+import { IEpisodeView } from '../interfaces/iepisode-view';
 import { Subscription } from 'rxjs' ;
 @Component({
   selector: 'app-show-episodes-list',

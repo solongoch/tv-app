@@ -20,6 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule} from '@angular/material/card';
 import  {MatButtonModule} from '@angular/material/button'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { SearchShowsComponent } from './search-shows/search-shows.component';
+import { SearchShowsService } from './searchshows-service/search-shows.service';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     ShowInfoComponent,
     CastInfoComponent,
      ShowEpisodesListComponent,
+     SearchShowsComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CastService, TvshowService,EpisodeServiceService],
+  providers: [CastService, TvshowService,EpisodeServiceService,SearchShowsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
