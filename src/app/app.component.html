@@ -1,23 +1,4 @@
-<header class="mat-elevation-z8" id="app-header">
-  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between stretch" class="mat-toolbar app-toolbar" color="primary">
-    <mat-toolbar-row id="header-row">
-      <mat-icon aria-hidden="false" aria-label="home icon" id="brand-icon" fxHide.xs>airplay</mat-icon>
-      <span id="brand-name" fxLayout="row" fxLayoutGap="20px" class="md-title" fxShow.gt-xs>My TV Show</span>
-      <div class="search-container">
-        <form>
-          <mat-form-field class="mat-headline">
-            <mat-icon matPrefix>search</mat-icon>
-            <input matInput type="search" placeholder="Search" [formControl]="searchField" name='searchField'>
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()"
-              *ngIf="searchField?.value">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
-        </form>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</header>
+<app-header-component></app-header-component>
 <br />
 
 <div class="container">
@@ -43,10 +24,4 @@
     <router-outlet></router-outlet>
   </div>
   <br />
-  <footer>
-    <mat-toolbar fxLayout="column" fxLayoutAlign="space-between stretch" color="primary">
-      <div class="copyright" fxFlexAlign="center">
-        <small> Copyright &copy; 2020 <span>TV Shows</span></small>
-      </div>
-    </mat-toolbar>
-  </footer>
+<app-footer-component></app-footer-component>

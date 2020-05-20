@@ -22,6 +22,8 @@ import  {MatButtonModule} from '@angular/material/button'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SearchShowsComponent } from './search-shows/search-shows.component';
 import { SearchShowsService } from './searchshows-service/search-shows.service';
+import { HeaderComponentComponent } from './header-component/header-component.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { SearchShowsService } from './searchshows-service/search-shows.service';
     CastInfoComponent,
      ShowEpisodesListComponent,
      SearchShowsComponent,
+     HeaderComponentComponent,
+     FooterComponentComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import {FormControl} from '@angular/forms';
 })
 export class AppComponent   implements OnInit{
   title = 'tv-show-app';
-  searchField = new FormControl('');
+
 
 
   constructor() { }
@@ -17,7 +17,4 @@ export class AppComponent   implements OnInit{
 
   ngOnInit(): void {}
 
-  clearSearchField() {
-    this.searchField.setValue('');
-  }
 }
