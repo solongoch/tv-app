@@ -1,20 +1,72 @@
+
+/* increased Header height */
+#header-row{
+  height: 70px !important;
+  display: flex;
+}
+
+  #brand-icon{
+
+    padding-top:3px;
+    width:4%;
+    margin-left: 20px;
+    padding-left: 20px;
+    font-size: 1.6rem;
+    vertical-align: middle;
+  }
+
 #brand-name{
-  /* Restaurant name */
-   color: #f3f7eb;
-  font-size: 1.9em;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 0.75;
-  text-align: center;
+  padding-top:5px;
+  font-size:1.6rem;
 }
 
-/* hide the blue outline */
-.form-control:focus {
-  outline: 0 !important;
-  border-color: initial;
-  box-shadow: none;
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+
+div.search-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+
+mat-form-field  {
+ font-size: 18px;
+ margin-top: 25px;
+ padding-top: 5px;
 
 }
+mat-form-field input {
+  padding-left: 5px;
+ }
+
+ .mat-button{
+  border-radius:0;
+ }
+
+ .mat-flat-button {
+  color: white !important;
+  text-decoration: none;
+  margin-left: 25px;
+  border: none;
+}
+/* mat-buttons a blue highlight frame appears */
+button:focus, button:active:focus, button.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+  }
+.main-footer{
+  flex-shrink: 0;
+  padding: 20px;
+}
+footer .copyright {
+  display:flex;
+  padding: 5px 0;
+  margin: 10px;
+  color: white;
+  font-size:1em;
+}
+
+
+
