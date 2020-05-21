@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Url } from 'url';
 import { environment } from 'src/environments/environment';
 import {map} from 'rxjs/operators';
-import { IShowinfo } from './ishowinfo';
-import { Itvshowservice } from './itvshowservice';
+import { IShowinfo } from 'src/app/interfaces/ishowinfo';
+import { Itvshowservice } from 'src/app/show-info-service/itvshowservice';
 
 interface IShowInfoData {
     name: string,
@@ -28,7 +28,7 @@ export class TvshowService implements Itvshowservice {
 
   getShowInfo(id: number) {
     return this.httpClient.get<IShowInfoData>(
-      `${environment.baseUrl}api.tvmaze.com/shows/${id}`).pipe(
+      `${environment.rootUrl}${environment.showendpoint}${id}`).pipe(
         map(data => this.transformToIShowInfo(data))
       )
   }

@@ -13,15 +13,21 @@
 
     <div class= "showlist">
 
-    <div class = "col-lg-3 col-md-3 col-sm-4 row"><img [src]='show.image' class= "img-responsive" style="width: 100%" alt="Show Image" /></div>
+    <div class = "col-lg-3 col-md-3 col-sm-4 row">
+        <img [src]='show.image' class= "img-responsive" style="width: 100%" alt="Show Image" />
+    </div>
 
-    <div class = "description col-lg-6 col-md-6 col-sm-8 row">{{show.description}}</div>
+    <div class = "description col-lg-6 col-md-6 col-sm-8 row">
+      <mat-card>
+        {{show.description}}
+      </mat-card>
+    </div>
 
     <div class = "col-lg-3 col-md-3 col-sm-12 row showinfo">
-      <div><span>Network:</span> {{show.network}}</div>
-      <div><span>Country:</span> {{show.country}}</div>
-      <div><span>Runtime:</span> {{show.runtime}}</div>
-      <div><span>Language:</span> {{show.language}}</div>
+        <div><span>Network:</span> {{show.network}}</div>
+        <div><span>Country:</span> {{show.country}}</div>
+        <div><span>Runtime:</span> {{show.runtime}}</div>
+        <div><span>Language:</span> {{show.language}}</div>
     </div>
 
   </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IShowinfo } from '../ishowinfo';
-import { TvshowService } from '../tvshow.service';
+import { IShowinfo } from '../interfaces/ishowinfo';
+import { TvshowService } from 'src/app/show-info-service/tvshow.service';
 
 @Component({
   selector: 'app-show-info',
