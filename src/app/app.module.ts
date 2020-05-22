@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ShowEpisodesListComponent } from './show-episodes-list/show-episodes-list.component';
+import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.component';
 import { EpisodeServiceService } from './episode-service/episode-service.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ShowInfoComponent } from './show-info/show-info.component';
@@ -13,14 +13,30 @@ import { CastService } from './cast/cast.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
+import { MatIconModule} from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule} from '@angular/material/card';
+import  {MatButtonModule} from '@angular/material/button'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { SearchShowsComponent } from './search-shows/search-shows.component';
+import { SearchShowsService } from './searchshows-service/search-shows.service';
+import { HeaderComponentComponent } from './header-component/header-component.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { MenuComponent } from './menu/menu.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowInfoComponent,
     CastInfoComponent,
-    ShowEpisodesListComponent
+    ShowEpisodesListComponent,
+    SearchShowsComponent,
+    HeaderComponentComponent,
+    FooterComponentComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +46,16 @@ import { MatCardModule } from '@angular/material/card';
     MatTabsModule,
     MatGridListModule,
     MatToolbarModule,
-    MatCardModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [CastService, TvshowService,EpisodeServiceService],
+  providers: [CastService, TvshowService,EpisodeServiceService,SearchShowsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

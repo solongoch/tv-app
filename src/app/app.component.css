@@ -1,20 +1,8 @@
-#brand-name{
-  /* Restaurant name */
-   color: #f3f7eb;
-  font-size: 1.9em;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 0.75;
-  text-align: center;
+
+.fill-remaining-space {
+  flex: 1 1 auto;
 }
 
-/* hide the blue outline */
-.form-control:focus {
-  outline: 0 !important;
-  border-color: initial;
-  box-shadow: none;
 
-}
+
+
