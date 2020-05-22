@@ -14,14 +14,20 @@ import { CastService } from './cast/cast.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatCardModule } from '@angular/material/card'
-import { FlexLayoutModule } from '@angular/flex-layout'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TvsearchComponent } from './tvsearch/tvsearch.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowInfoComponent,
     CastInfoComponent,
-    ShowEpisodesListComponent
+    ShowEpisodesListComponent,
+    TvsearchComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,12 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatGridListModule,
     MatToolbarModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CastService, TvshowService, EpisodeServiceService],
   bootstrap: [AppComponent]
