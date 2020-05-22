@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.component';
 import { EpisodeServiceService } from './episode-service/episode-service.service';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -9,7 +10,6 @@ import { ShowInfoComponent } from './show-info/show-info.component';
 import { TvshowService } from './tvshow.service';
 import { CastInfoComponent } from './cast-info/cast-info.component';
 import { CastService } from './cast/cast.service';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -32,11 +32,11 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
     ShowInfoComponent,
     CastInfoComponent,
-     ShowEpisodesListComponent,
-     SearchShowsComponent,
-     HeaderComponentComponent,
-     FooterComponentComponent,
-     MenuComponent,
+    ShowEpisodesListComponent,
+    SearchShowsComponent,
+    HeaderComponentComponent,
+    FooterComponentComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

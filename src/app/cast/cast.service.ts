@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ICastInfo } from '../interfaces/icast-info';
 import { map } from 'rxjs/operators';
+import { ICastService } from '../interfaces/i-cast-service';
 
 interface ICastDataType {
   person: {
@@ -20,7 +21,7 @@ interface ICastDataType {
   providedIn: 'root'
 })
 
-export class CastService {
+export class CastService implements ICastService{
   constructor(private httpClient: HttpClient) {}
 
   getCast(showId: number) {

@@ -1,25 +1,32 @@
-h3.mat-display-1 {
-  margin-top: 20px;
-  margin-bottom: -20px;
+.cast-cards {
+  clear: both;
 }
 
 .single-cast {
-  padding: 0;
-  height: 250px;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.names {
   float: left;
-  width: 50%;
-  margin: 30px;
-  font-size: 1.2em;
+  width: 100%;
 }
 
-.cast-name, .character-name {
-  font-style: italic;
+@media (min-width: 426px) and (max-width: 767px) {
+  .single-cast {
+    width: 50%;
+  }
 }
-.cast-name {
-  font-weight: 600;
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .single-cast {
+    width: 33%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .single-cast {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .single-cast {
+    width: 16.6%;
+  }
 }
