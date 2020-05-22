@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowEpisodesListComponent } from './show-episodes-list.component';
+import { HttpClientModule } from '@angular/common/http'
+import { from } from 'rxjs';
 
 describe('ShowEpisodesListComponent', () => {
   let component: ShowEpisodesListComponent;
@@ -8,7 +10,10 @@ describe('ShowEpisodesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowEpisodesListComponent ]
+      declarations: [ ShowEpisodesListComponent ],
+      imports: [
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));

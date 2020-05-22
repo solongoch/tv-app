@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICastInfo } from '../icast-info';
+import { ICastInfo } from '../interfaces/icast-info';
 import { CastService } from '../cast/cast.service';
 
 @Component({

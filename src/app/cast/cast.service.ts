@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ICastInfo } from '../icast-info';
+import { ICastInfo } from '../interfaces/icast-info';
 import { map } from 'rxjs/operators';
+import { ICastService } from '../interfaces/i-cast-service';
 
 interface ICastDataType {
   person: {
@@ -20,13 +21,13 @@ interface ICastDataType {
   providedIn: 'root'
 })
 
-export class CastService {
+export class CastService implements ICastService{
   constructor(private httpClient: HttpClient) {}
 
   getCast(showId: number) {
     return this.httpClient
       .get<ICastDataType[]>(
-        `${environment.baseUrl}//api.tvmaze.com/shows/${showId}/cast`
+        `${environment.rootUrl}${environment.showendpoint}${showId}/cast`
       )
       .pipe(map((people: ICastDataType[]) => people.map( person => this.transfortmToICast(person))));
   }
