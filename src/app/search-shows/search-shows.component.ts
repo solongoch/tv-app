@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SearchShowsService } from '../searchshows-service/search-shows.service';
 import { ISearchView } from '../interfaces/isearch-view';
 import { Subscription } from 'rxjs';
@@ -10,21 +10,25 @@ import { Subscription } from 'rxjs';
 })
 export class SearchShowsComponent implements OnInit {
 
-  _shows: ISearchView[];
-  subscription$$: Subscription;
+  @Input() _shows: ISearchView[];//getting data from header component
+  // selected_show_id: number;
+  // public childComponentLoaded: boolean = false;
 
+//  @Input() parentComponenet: boolean;
+
+  subscription$$: Subscription;
   constructor(private currServ: SearchShowsService) { }
 
   ngOnInit(): void {
+    // console.log(this. parentComponenet);
 
-    this.subscription$$ = this.currServ.getShows("Girls").subscribe( (data : ISearchView[]) => this._shows = data);
-
-
+    // this.subscription$$ = this.currServ.getShows("Girls").subscribe( (data : ISearchView[]) => this._shows = data);
   }
-  //Unscribe observables for memory leak
-  ngOnDestroy(): void {
-    if (this.subscription$$ != null) {
-      this.subscription$$.unsubscribe();
-    }
-  }
+  // public loadChildComponent(showId: number) {
+  //   this.childComponentLoaded=true;
+  //   this.selected_show_id=showId;
+  //  this. parentComponenet =false;
+  //  console.log("child loading :", this. parentComponenet);
+  // }
+
 }

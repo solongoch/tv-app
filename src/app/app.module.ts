@@ -24,6 +24,7 @@ import { SearchShowsComponent } from './search-shows/search-shows.component';
 import { SearchShowsService } from './searchshows-service/search-shows.service';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
      SearchShowsComponent,
      HeaderComponentComponent,
      FooterComponentComponent,
+     MenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,8 +8,7 @@
           <mat-form-field class="mat-headline">
             <mat-icon matPrefix>search</mat-icon>
             <input matInput type="search" placeholder="Search" [formControl]="searchField" name='searchField'>
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()"
-              *ngIf="searchField?.value">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()" *ngIf="searchField?.value">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
@@ -18,3 +17,12 @@
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
+
+
+  <div class="container">
+    <div fvFlex></div>
+<app-search-shows [_shows]="_shows"></app-search-shows>
+<div fvFlex></div>
+</div>
+
+

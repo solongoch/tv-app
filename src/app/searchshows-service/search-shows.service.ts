@@ -18,9 +18,9 @@ export class SearchShowsService {
 
   transformToISearchView(data: ISearchData): ISearchView {
     return {
-      id: data.show.id,
-      name: data.show.name,
-      image: data.show.image.medium
+      id: data.show?.id,
+      name: data.show?.name,
+      image: data.show.image?.medium
     }
   }
 }

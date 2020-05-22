@@ -25,7 +25,7 @@ export class EpisodeServiceService {
       episodeName: data.name,
       seasonNumber: data.season,
       episodeNumber: data.number,
-      airdate: new Date(data.airdate)
+      airdate: new Date(data.airstamp)
     }
   }
 

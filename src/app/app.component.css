@@ -5,16 +5,4 @@
 
 
 
- .mat-flat-button {
-  color: white !important;
-  text-decoration: none;
-  margin-left: 25px;
-  border: none;
-}
-/* mat-buttons a blue highlight frame appears */
-button:focus, button:active:focus, button.active:focus {
-  outline: none !important;
-  outline-style: none !important;
-  }
-
 

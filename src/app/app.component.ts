@@ -9,6 +9,8 @@ import { Component,OnInit } from '@angular/core';
 export class AppComponent   implements OnInit{
   title = 'tv-show-app';
 
+  showVar: boolean = true;
+
 
 
   constructor() { }
@@ -16,5 +18,11 @@ export class AppComponent   implements OnInit{
 
 
   ngOnInit(): void {}
+
+  toggleChild(){
+    this.showVar = !this.showVar;
+    console.log('showVar:', this.showVar)
+
+}
 
 }
