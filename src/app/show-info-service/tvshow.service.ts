@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import {map} from 'rxjs/operators';
-import { IShowinfo } from './interfaces/ishowinfo';
+import { map } from 'rxjs/operators';
+import { IShowinfo } from 'src/app/interfaces/ishowinfo';
+import { Itvshowservice } from 'src/app/show-info-service/itvshowservice';
 
 interface IShowInfoData {
     name: string,
@@ -20,7 +21,7 @@ interface IShowInfoData {
 @Injectable({
   providedIn: 'root'
 })
-export class TvshowService {
+export class TvshowService implements Itvshowservice {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -37,7 +38,7 @@ export class TvshowService {
       image: data.image.medium,
       description: data.summary.replace(/(<([^>]+)>)/ig,""),
       country: data.network.country.name,
-      genre: data.genres.join('|'),
+      genre: data.genres.join('/'),
       runtime: data.schedule.time,
       network: data.network.name,
       language: data.language

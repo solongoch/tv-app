@@ -7,7 +7,7 @@ import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.com
 import { EpisodeServiceService } from './episode-service/episode-service.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ShowInfoComponent } from './show-info/show-info.component';
-import { TvshowService } from './tvshow.service';
+import { TvshowService } from 'src/app/show-info-service/tvshow.service';
 import { CastInfoComponent } from './cast-info/cast-info.component';
 import { CastService } from './cast/cast.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -26,7 +26,6 @@ import { HeaderComponentComponent } from './header-component/header-component.co
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { MenuComponent } from './menu/menu.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +35,7 @@ import { MenuComponent } from './menu/menu.component';
     SearchShowsComponent,
     HeaderComponentComponent,
     FooterComponentComponent,
-    MenuComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

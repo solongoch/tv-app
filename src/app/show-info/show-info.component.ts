@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IShowinfo } from '../interfaces/ishowinfo';
-import { TvshowService } from '../tvshow.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { TvshowService } from 'src/app/show-info-service/tvshow.service';
 
 @Component({
   selector: 'app-show-info',
