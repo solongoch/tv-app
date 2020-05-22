@@ -1,0 +1,12 @@
+
+  .main-footer{
+    padding: 20px;
+  }
+footer .copyright {
+  display: flex;
+ padding: 5px 0;
+  margin: 10px;
+  color: white;
+  font-size:1em;
+}
+

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Url } from 'url';
 import { environment } from 'src/environments/environment';
 import {map} from 'rxjs/operators';
-import { IShowinfo } from './ishowinfo';
+import { IShowinfo } from './interfaces/ishowinfo';
 
 interface IShowInfoData {
     name: string,
@@ -27,7 +27,7 @@ export class TvshowService {
 
   getShowInfo(id: number) {
     return this.httpClient.get<IShowInfoData>(
-      `${environment.baseUrl}api.tvmaze.com/shows/${id}`).pipe(
+      `${environment.rootUrl}${environment.showendpoint}${id}`).pipe(
         map(data => this.transformToIShowInfo(data))
       )
   }

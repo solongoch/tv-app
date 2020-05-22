@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IEpisodeData } from '../iepisode-data';
+import { IEpisodeData } from '../interfaces/iepisode-data';
 import { environment } from 'src/environments/environment';
-import { IEpisodeView } from '../iepisode-view';
+import { IEpisodeView } from '../interfaces/iepisode-view';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -14,17 +14,18 @@ export class EpisodeServiceService {
   /**
    *
    * @param episodeEndpoint  // http://api.tvmaze.com/seasons/263/episodes
+   *  http://api.tvmaze.com/shows/1/episodes
    */
   getShowEpisodes(showId: number) {
-    return this.httpClient.get<IEpisodeData[]>(`${environment.baseurl}shows/${showId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.trasformToIEpisodeView(item))));
+    return this.httpClient.get<IEpisodeData[]>(`${environment.rootUrl}${environment. showendpoint}${showId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.transformToIEpisodeView(item))));
      }
 
-  trasformToIEpisodeView(data: IEpisodeData): IEpisodeView {
+  transformToIEpisodeView(data: IEpisodeData): IEpisodeView {
     return {
       episodeName: data.name,
       seasonNumber: data.season,
       episodeNumber: data.number,
-      airdate: new Date(data.airdate)
+      airdate: new Date(data.airstamp)
     }
   }
 

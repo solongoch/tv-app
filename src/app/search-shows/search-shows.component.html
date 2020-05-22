@@ -1,0 +1,27 @@
+
+
+
+<div fxFlex fxLayout="column" fxLayoutGap="10px">
+  <router-outlet></router-outlet>
+  <div fxLayout="row wrap" *ngIf="_shows?.length">
+    <!-- loop over the cardList and show the cards -->
+    <div *ngFor="let show of _shows" class="card-picture" fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100"
+      fxLayout="column">
+      <!-- cards here -->
+      <a [routerLink]="['/menu',show.id]"><mat-card class="mat-elevation-z8">
+        <img mat-card-image [src]="show.image" />
+        <mat-card-title> {{show.name}} </mat-card-title>
+      </mat-card></a>
+    </div>
+  </div>
+</div>
+ <!-- <div class="container" *ngIf="childComponentLoaded">
+  <app-menu [show_id]='selected_show_id'></app-menu>
+</div> -->
+<!-- <div class="container">
+  TEST
+<router-outlet></router-outlet>
+test end
+</div> -->
+
+
