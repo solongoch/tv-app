@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Url } from 'url';
 import { environment } from 'src/environments/environment';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { IShowinfo } from 'src/app/interfaces/ishowinfo';
 import { Itvshowservice } from 'src/app/show-info-service/itvshowservice';
 

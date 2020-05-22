@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICastInfo } from '../interfaces/icast-info';
 import { CastService } from '../cast/cast.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cast-info',
@@ -9,11 +10,15 @@ import { CastService } from '../cast/cast.service';
 })
 export class CastInfoComponent implements OnInit {
   listOfCast: ICastInfo[];
+  show_id: number;
 
-  constructor(private castService: CastService) {}
+  constructor(private castService: CastService, private actRoute: ActivatedRoute) {
+    //added by Priya for getting query params showid dynamically
+    this.show_id = this.actRoute.snapshot.params.id;
+  }
 
   ngOnInit(): void {
-    this.castService.getCast(431).subscribe(listOfCast => {
+    this.castService.getCast(this.show_id).subscribe(listOfCast => {
       this.listOfCast = listOfCast;
     });
   }
