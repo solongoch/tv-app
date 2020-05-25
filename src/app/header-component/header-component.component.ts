@@ -15,6 +15,8 @@ export class HeaderComponentComponent implements OnInit {
   subscription$$: Subscription;
   _shows: ISearchView[];
   parentComponenet : boolean;
+  //added for hiding the show search component when user clicks clear button
+  showSearchComponent : boolean  = true;
 
   constructor(private currServ: SearchShowsService) { }
 
@@ -26,10 +28,11 @@ export class HeaderComponentComponent implements OnInit {
 
   //Api call to get data for the given shows
   getShows(searchValue: string) {
-    this.parentComponenet=true;
-    if (searchValue && searchValue.length > 2) {
-      const userInput = searchValue.trim();
-      this.subscription$$ = this.currServ.getShows(userInput).
+    // this.parentComponenet=true;
+    //added for hiding the show search component when user clicks clear button
+    this.showSearchComponent = true;
+    if (searchValue.trim() && searchValue.length > 2) {
+      this.subscription$$ = this.currServ.getShows(searchValue.trim()).
         subscribe(data => {
           this._shows = data;
           console.log(data);
@@ -41,9 +44,12 @@ export class HeaderComponentComponent implements OnInit {
   //Clear search bar using cross icon
   clearSearchField() {
     this.searchField.setValue('');
+    //added for hiding the show search component when user clicks clear button
+    this.showSearchComponent = false;
+
   }
 
-  //Unscribe observables for memory leak
+ //Unscribe observables for memory leak
   ngOnDestroy(): void {
     if (this.subscription$$ != null) {
       this.subscription$$.unsubscribe();

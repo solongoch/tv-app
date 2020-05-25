@@ -1,41 +1,108 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* increased Header height */
-#header-row{
-  height: 70px !important;
+.main-header {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-  #brand-icon{
-    padding-top:3px;
-    width:4%;
-    margin-left: 20px;
-    padding-left: 20px;
-    font-size: 1.6rem;
-    vertical-align: middle;
-  }
-
-#brand-name{
-  padding-top:5px;
-  font-size:1.6rem;
+.menu-spacer {
+  flex: 1 1 auto;
 }
 
-
-div.search-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 70%;
+#brand-logo {
+  width: 39px;
+  height: 39px;
+  max-width: 39px;
+  max-height: 39px;
+  background-color: black;
+  outline: none;
+  vertical-align: middle;
+  margin-left: 15px;
 }
 
-mat-form-field  {
- font-size: 18px;
- margin-top: 25px;
- padding-top: 5px;
-
-}
-mat-form-field input {
+#brand-name {
+  padding-top: 5px;
   padding-left: 5px;
- }
+  font-size: 1.8rem;
+  vertical-align: middle;
+}
 
- .mat-button{
-  border-radius:0;
- }
+#brand-name a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.mat-button.mat-icon-button {
+  outline: none;
+}
+
+form {
+  height: 100px;
+  vertical-align: middle;
+  color: #ccc;
+}
+
+.mat-toolbar-row {
+  padding-left: 10px;
+}
+
+.mat-form-field {
+  font-size: 18px;
+  margin-top: 20px;
+  padding-bottom: 0px;
+  font-weight: 550;
+}
+
+.mat-form-field input {
+  padding-left: 5px;
+  display: inline;
+  color: #ccc;
+}
+
+.mat-button {
+  border-radius: 0;
+}
+
+/* @media (min-width: 960px) {
+	.main-header .container {
+		justify-content: space-between;
+	}
+} */
+
+@media (max-width: 320px) {
+  .mat-form-field  {
+    width: 140px;
+  }
+  #brand-name {
+    font-size: 1.2rem;
+    color: red;
+  }
+  #brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 479px) {
+  .mat-form-field  {
+    width: 180px;
+  }
+  #brand-name {
+    font-size: 1.2rem;
+    color: red;
+  }
+  #brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+}

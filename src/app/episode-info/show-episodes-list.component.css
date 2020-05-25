@@ -1,5 +1,26 @@
 .episode-container {
-  width:75%;
-  flex: 1 0 auto;
+  width:80%;
+  flex: 1 1 auto;
 }
 
+.mat-tab{
+  color: white !important;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+.mat-tab-label .mat-tab-label-content{
+  color: aliceblue;
+  font-weight: bold;
+}
+.mat-tab-label,.mat-tab-link{
+  color: aliceblue;
+}
+
+div.mat-tab-label-content{color: blueviolet !important;}
+
+mat-tab-group{
+  background-color: #bbb3b3 !important;
+  color: whitesmoke !important;
+
+}

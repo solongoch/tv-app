@@ -1,28 +1,24 @@
-<header class="mat-elevation-z8" id="app-header">
-  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between stretch" class="mat-toolbar app-toolbar" color="primary">
-    <mat-toolbar-row id="header-row">
-      <mat-icon aria-hidden="false" aria-label="home icon" id="brand-icon" fxHide.xs>airplay</mat-icon>
-      <span id="brand-name" fxLayout="row" fxLayoutGap="20px" class="md-title" fxShow.gt-xs>My TV Show</span>
-      <div class="search-container">
-        <form>
-          <mat-form-field class="mat-headline">
-            <mat-icon matPrefix>search</mat-icon>
-            <input matInput type="search" placeholder="Search" [formControl]="searchField" name='searchField'>
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()" *ngIf="searchField?.value">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
-        </form>
-      </div>
+<div class="main-header">
+  <mat-toolbar color="primary" class="mat-elevation-z16">
+    <mat-toolbar-row fxLayoutGap="10px">
+      <button mat-icon-button fxShow="true" >
+        <img id='brand-logo' src="../../assets/images/tvt_logo.png" class="mat-elevation-z16" tabindex="0" />
+      </button>
+      <span id="brand-name">
+        <a routerLink="" (click)="clearSearchField()">TV TIME</a>
+      </span>
+      <span class="menu-spacer"></span>
+      <form fxShow="true">
+        <mat-form-field class="mat-headline">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput type="search" placeholder="Search" [formControl]="searchField" name='searchField'>
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()"
+            *ngIf="searchField?.value">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
     </mat-toolbar-row>
   </mat-toolbar>
-</header>
-
-
-  <div class="container">
-    <div fvFlex></div>
-<app-search-shows [_shows]="_shows"></app-search-shows>
-<div fvFlex></div>
+  <app-search-shows [_shows]="_shows" *ngIf="showSearchComponent"></app-search-shows>
 </div>
-
-

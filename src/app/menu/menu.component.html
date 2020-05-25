@@ -1,18 +1,12 @@
-{{show_id}}
 <section>
   <div>
-   <mat-toolbar color='primary'>
-      <button mat-flat-button color="primary" [routerLink]="['/show-info/',show_id]">
-       Show Info
-       </button>
-     <button mat-flat-button color="primary" [routerLink]="['/episode-info/',show_id]">
-       Episodes
-     </button>
-     <button mat-flat-button color="primary" [routerLink]="['/cast-info/',show_id]">
-       Cast
-     </button>
-   </mat-toolbar>
- </div>
+    <mat-toolbar color='primary'>
+      <a  class="nav-a" [routerLink]="['/show-info/' ,show_id]">
+        <button mat-button color="primary">Show Info</button></a>
+      <a  class="nav-a" [routerLink]="['/episode-info/',show_id]">
+        <button mat-button color="primary">Episodes</button></a>
+       <a class="nav-a" [routerLink]="['/cast-info/',show_id]">
+        <button mat-button color="primary">Cast</button></a>
+    </mat-toolbar>
+  </div>
 </section>
-
-
