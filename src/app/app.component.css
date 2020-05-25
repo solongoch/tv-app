@@ -1,8 +1,9 @@
-
 .fill-remaining-space {
   flex: 1 1 auto;
 }
 
-
-
-
+app-footer-component {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
