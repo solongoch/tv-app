@@ -27,6 +27,7 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HeaderNosearchComponent } from './header-nosearch/header-nosearch.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HeaderComponentComponent,
     FooterComponentComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HeaderNosearchComponent
   ],
   imports: [
     BrowserModule,
