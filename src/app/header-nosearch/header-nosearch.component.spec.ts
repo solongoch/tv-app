@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TvsearchComponent } from './tvsearch.component';
+import { HeaderNosearchComponent } from './header-nosearch.component';
 
-describe('TvsearchComponent', () => {
-  let component: TvsearchComponent;
-  let fixture: ComponentFixture<TvsearchComponent>;
+describe('HeaderNosearchComponent', () => {
+  let component: HeaderNosearchComponent;
+  let fixture: ComponentFixture<HeaderNosearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TvsearchComponent ]
+      declarations: [ HeaderNosearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TvsearchComponent);
+    fixture = TestBed.createComponent(HeaderNosearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

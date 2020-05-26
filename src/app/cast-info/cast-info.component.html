@@ -1,4 +1,4 @@
-<router-outlet></router-outlet>
+<app-menu></app-menu>
 <div *ngIf="listOfCast" class="cast-cards">
   <div fxFlex fxLayout="column" fxLayoutGap="10px">
     <div fxLayout="row wrap">
@@ -6,10 +6,10 @@
       <div
         *ngFor="let cast of listOfCast"
         class="single-cast"
-        fxFlex="25"
-        fxFlex.md="33"
-        fxFlex.sm="50"
-        fxFlex.xs="100"
+        fxFlex="20"
+        fxFlex.md="25"
+        fxFlex.sm="25"
+        fxFlex.xs="50"
         fxLayout="column"
         style="padding: 5px;"
       >

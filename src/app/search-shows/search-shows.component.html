@@ -1,27 +1,23 @@
+<div class="container">
 
+  <!-- <div *ngIf="_shows" class="search-cards"> -->
+    <div *ngIf="toggle()" class="search-cards">
+    <div fxFlex fxLayout="column" fxLayoutGap="10px">
 
-
-<div fxFlex fxLayout="column" fxLayoutGap="10px">
-  <router-outlet></router-outlet>
-  <div fxLayout="row wrap" *ngIf="_shows?.length">
-    <!-- loop over the cardList and show the cards -->
-    <div *ngFor="let show of _shows" class="card-picture" fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100"
-      fxLayout="column">
-      <!-- cards here -->
-      <a [routerLink]="['/menu',show.id]"><mat-card class="mat-elevation-z8">
-        <img mat-card-image [src]="show.image" />
-        <mat-card-title> {{show.name}} </mat-card-title>
-      </mat-card></a>
+      <div fxLayout="row wrap">
+        <!-- loop over the cardList and show the cards -->
+        <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20" fxFlex.sm="25" fxFlex.xs="50"
+          fxLayout="column">
+          <!-- cards here -->
+          <a (click)="getShowInfo(show.id)">
+            <mat-card class="mat-elevation-z8">
+              <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" />
+              <img mat-card-image src="../../assets/images/no-img.png" *ngIf="!show.image" class="mat-elevation-z16" />
+              <!-- <mat-card-title> {{show.name}} </mat-card-title> -->
+            </mat-card>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
- <!-- <div class="container" *ngIf="childComponentLoaded">
-  <app-menu [show_id]='selected_show_id'></app-menu>
-</div> -->
-<!-- <div class="container">
-  TEST
-<router-outlet></router-outlet>
-test end
-</div> -->
-
-

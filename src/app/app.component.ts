@@ -1,4 +1,5 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -6,23 +7,14 @@ import { Component,OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent   implements OnInit{
+export class AppComponent implements OnInit {
   title = 'tv-show-app';
 
-  showVar: boolean = true;
+  constructor(private _router: Router) { }
 
+  ngOnInit( ): void {
+    this._router.navigate(['/search']);
+  }
 
-
-  constructor() { }
-
-
-
-  ngOnInit(): void {}
-
-  toggleChild(){
-    this.showVar = !this.showVar;
-    console.log('showVar:', this.showVar)
-
-}
 
 }

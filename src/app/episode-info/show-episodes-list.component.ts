@@ -3,6 +3,7 @@ import { EpisodeServiceService } from '../episode-service/episode-service.servic
 import { IEpisodeView } from '../interfaces/iepisode-view';
 import { Subscription } from 'rxjs' ;
 import { ActivatedRoute } from '@angular/router';
+import { ISeasonsView } from '../interfaces/iseasons-view';
 @Component({
   selector: 'app-show-episodes-list',
   templateUrl: './show-episodes-list.component.html',
@@ -12,7 +13,9 @@ export class ShowEpisodesListComponent implements OnInit {
 
   _episodes: IEpisodeView[];
    subscription$$: Subscription;
+   subscription1$$: Subscription;
    show_id: number;
+   _seasons: ISeasonsView[];
 
 
 
@@ -20,8 +23,15 @@ export class ShowEpisodesListComponent implements OnInit {
     this.show_id = this.actRoute.snapshot.params.id;
    }
 
+  // ngOnInit(): void {
+  //   this.subscription$$ = this.currServ.getShowEpisodes(this.show_id).subscribe( (data : IEpisodeView[])=>  this._episodes = data );
+  // }
+
+
+
   ngOnInit(): void {
-    this.subscription$$ = this.currServ.getShowEpisodes(this.show_id).subscribe( (data : IEpisodeView[])=>  this._episodes = data );
+    this.subscription$$ = this.currServ.getShowSeasons(this.show_id).subscribe( (data : ISeasonsView[]) => this._seasons = data); 
+     this.subscription1$$ = this.currServ.getShowEpisodes(this.show_id).subscribe( (data : IEpisodeView[])=>  this._episodes = data );
   }
 
   //Unscribe observables for memory leak
@@ -29,5 +39,8 @@ export class ShowEpisodesListComponent implements OnInit {
     if (this.subscription$$ != null) {
     this.subscription$$.unsubscribe();
     }
+    if (this.subscription1$$ != null) {
+      this.subscription1$$.unsubscribe();
+      }
   }
 }

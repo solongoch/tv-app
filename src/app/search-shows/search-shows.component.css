@@ -1,4 +1,19 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
  .card-picture {
-  padding: 12px;
-  }
-
+   padding: 10px 10px;
+ }
+ .mat-card {
+   background-color: #343a40;
+   padding:16px 16px 0px 16px;
+ }
+.mat-card-image{
+  border-radius:4px;
+}
+a:hover{
+  outline-style:  ridge!important;
+  outline: #ccc;
+  cursor: pointer;
+}

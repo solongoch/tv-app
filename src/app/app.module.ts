@@ -25,6 +25,9 @@ import { SearchShowsService } from './searchshows-service/search-shows.service';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { MenuComponent } from './menu/menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HeaderNosearchComponent } from './header-nosearch/header-nosearch.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { MenuComponent } from './menu/menu.component';
     SearchShowsComponent,
     HeaderComponentComponent,
     FooterComponentComponent,
-    MenuComponent
+    MenuComponent,
+    PageNotFoundComponent,
+    HeaderNosearchComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { MenuComponent } from './menu/menu.component';
     MatCardModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SlickCarouselModule
   ],
   providers: [CastService, TvshowService,EpisodeServiceService,SearchShowsService],
   bootstrap: [AppComponent]
