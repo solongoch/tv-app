@@ -35,7 +35,7 @@ export class EpisodeServiceService {
       seasonNumber: data.season,
       episodeNumber: data.number,
       airdate: new Date(data.airstamp),
-      summary: data.summary.replace(/(<([^>]+)>)/ig, ""),
+      summary: data.summary?.replace(/(<([^>]+)>)/ig, ""),
       image: data.image?.medium
     }
   }

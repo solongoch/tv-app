@@ -5,14 +5,14 @@ import { CastInfoComponent } from './cast-info/cast-info.component';
 import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SearchShowsComponent } from './search-shows/search-shows.component';
+import { HeaderComponentComponent } from './header-component/header-component.component';
 
 
 const routes: Routes = [
 
 
     //empty path should route to HeaderComponent
-  { path: '', component: SearchShowsComponent },
+  { path: 'search', component: HeaderComponentComponent },
    //Given path should route to MenuComponent
   { path: 'menu/:id', component: MenuComponent },
    //Given path should route to ShowInfoComponent

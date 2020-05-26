@@ -1,12 +1,14 @@
 <section>
   <div>
     <mat-toolbar color='primary'>
-      <a  class="nav-a" [routerLink]="['/show-info/' ,show_id]">
+      <a class="nav-a" (click)="callShowInfo()">
         <button mat-button color="primary">Show Info</button></a>
-      <a  class="nav-a" [routerLink]="['/episode-info/',show_id]">
+      <a class="nav-a" (click)="callEpisodeInfo()">
         <button mat-button color="primary">Episodes</button></a>
-       <a class="nav-a" [routerLink]="['/cast-info/',show_id]">
+      <a class="nav-a" (click)="callCastInfo()">
         <button mat-button color="primary">Cast</button></a>
+      <a class="nav-a" routerLink="/search" queryParamsHandling="preserve">
+        <button mat-button color="primary">Back</button></a>
     </mat-toolbar>
   </div>
 </section>

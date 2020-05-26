@@ -11,15 +11,19 @@ import { TvshowService } from 'src/app/show-info-service/tvshow.service';
 export class ShowInfoComponent implements OnInit {
   show: IShowinfo;
   show_id: number;
+  searchTerm:string;
 
   constructor(private tvshowService: TvshowService,private actRoute: ActivatedRoute) {
      //added by Priya for getting query params showid dynamically
     this.show_id = this.actRoute.snapshot.params.id;
 
+
+
   }
 
   ngOnInit(): void {
-    this.tvshowService.getShowInfo(this.show_id)
+
+      this.tvshowService.getShowInfo(this.show_id)
     .subscribe(data => this.show = data)
   }
 

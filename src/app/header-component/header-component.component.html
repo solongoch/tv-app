@@ -1,11 +1,11 @@
 <div class="main-header">
   <mat-toolbar color="primary" class="mat-elevation-z16">
     <mat-toolbar-row fxLayoutGap="10px">
-      <button mat-icon-button fxShow="true" >
+      <button mat-icon-button fxShow="true">
         <img id='brand-logo' src="../../assets/images/tvt_logo.png" class="mat-elevation-z16" tabindex="0" />
       </button>
       <span id="brand-name">
-        <a routerLink="" (click)="clearSearchField()">TV TIME</a>
+        <a routerLink="/search" (click)="clearSearchField()">TV TIME</a>
       </span>
       <span class="menu-spacer"></span>
       <form fxShow="true">
@@ -20,5 +20,5 @@
       </form>
     </mat-toolbar-row>
   </mat-toolbar>
-  <app-search-shows [_shows]="_shows" *ngIf="showSearchComponent"></app-search-shows>
+  <app-search-shows [_shows]="_shows" [_searchTerm]="searchField" *ngIf="showSearchComponent"></app-search-shows>
 </div>

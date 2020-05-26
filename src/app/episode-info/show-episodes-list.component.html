@@ -3,8 +3,7 @@
 
   <br />
   <mat-tab-group>
-    <!--animationDuration="2000ms"-->
-    <div *ngIf="_seasons?.length">
+     <div *ngIf="_seasons?.length">
       <!-- To check _episodes has data-->
       <mat-tab class="season-tabs" *ngFor="let season of _seasons" label="S{{season.seasonNumber}}" mat-ripple>
         <ng-template matTabContent>
@@ -39,9 +38,9 @@
 
 </div>
 
-
+<!--
 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
   <div ngxSlickItem *ngFor="let episode of _episodes" class="slide">
     <div id='myIcon' ]><img [src]='episode.image' alt="" width="100%"></div>
   </div>
-</ngx-slick-carousel>
+</ngx-slick-carousel> -->

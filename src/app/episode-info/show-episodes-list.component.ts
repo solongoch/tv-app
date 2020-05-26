@@ -34,22 +34,6 @@ export class ShowEpisodesListComponent implements OnInit {
      this.subscription1$$ = this.currServ.getShowEpisodes(this.show_id).subscribe( (data : IEpisodeView[])=>  this._episodes = data );
   }
 
-
-
-
-
-
-
-
-  slideConfig = {
-    "slidesToShow": 4,
-    "slidesToScroll": 1,
-    "nextArrow": "<div class='nav-btn next-slide'></div>",
-    "prevArrow": "<div class='nav-btn prev-slide'></div>",
-    "dots": true,
-    "infinite": false
-  };
-
   //Unscribe observables for memory leak
   ngOnDestroy(): void {
     if (this.subscription$$ != null) {
