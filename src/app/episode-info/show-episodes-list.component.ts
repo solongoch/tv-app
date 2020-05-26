@@ -30,7 +30,7 @@ export class ShowEpisodesListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.subscription$$ = this.currServ.getShowSeasons(this.show_id).subscribe( (data : ISeasonsView[]) => this._seasons = data);
+    this.subscription$$ = this.currServ.getShowSeasons(this.show_id).subscribe( (data : ISeasonsView[]) => this._seasons = data); 
      this.subscription1$$ = this.currServ.getShowEpisodes(this.show_id).subscribe( (data : IEpisodeView[])=>  this._episodes = data );
   }
 

@@ -12,3 +12,8 @@
 .mat-card-image{
   border-radius:4px;
 }
+a:hover{
+  outline-style:  ridge!important;
+  outline: #ccc;
+  cursor: pointer;
+}
