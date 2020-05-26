@@ -6,7 +6,9 @@ export const environment = {
   production: false,
   rootUrl: 'http://api.tvmaze.com/',
   showendpoint:'shows/',
-  searchendpoint:'search/shows?q='
+  searchendpoint:'search/shows?q=',
+  seasonendpoint: '/seasons',
+  episodeEndpoint: '/episodes'
 };
 
 /*

@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute) {
     this.show_id = this.actRoute.snapshot.params.id;
-    console.log(this.show_id);
+ 
    }
 
   ngOnInit(): void {

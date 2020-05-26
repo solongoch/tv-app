@@ -35,12 +35,12 @@ export class TvshowService implements Itvshowservice {
   transformToIShowInfo(data: IShowInfoData) : IShowinfo {
     return {
       name: data.name,
-      image: data.image.medium,
-      description: data.summary.replace(/(<([^>]+)>)/ig,""),
-      country: data.network.country.name,
+      image: data.image?.medium,
+      description: data.summary?.replace(/(<([^>]+)>)/ig,""),
+      country: data.network?.country?.name,
       genre: data.genres.join('/'),
-      runtime: data.schedule.time,
-      network: data.network.name,
+      runtime: data.schedule?.time,
+      network: data.network?.name,
       language: data.language
 
     };

@@ -85,7 +85,6 @@ form {
   }
   #brand-name {
     font-size: 1.2rem;
-    color: red;
   }
   #brand-logo {
     width: 32px;
@@ -99,8 +98,7 @@ form {
   }
   #brand-name {
     font-size: 1.2rem;
-    color: red;
-  }
+    }
   #brand-logo {
     width: 32px;
     height: 32px;
