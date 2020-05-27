@@ -12,15 +12,17 @@
     </mat-card-header>
 
 
-    <div class= "showlist">
+    <div class = "showlist">
 
     <div class = "col-lg-3 col-md-3 col-sm-4 row">
-        <img [src]='show.image' class= "img-responsive" style="width: 100%" alt="Show Image" />
-    </div>
+        <img [src]='show.image' class= "img-responsive" style="width: 100%" />
+        <img src="../../assets/images/no-img.png" *ngIf="!show.image" />
+      </div>
 
     <div class = "description col-lg-6 col-md-6 col-sm-8 row">
       <mat-card>
-        {{show.description}}
+        {{show.description | slice:0:500 }}
+        <p *ngIF="!show.description">We don't have a summary for {{show.name}} yet. Hang in there, or go ahead and contribute one.</p>
       </mat-card>
     </div>
 

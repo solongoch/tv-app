@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CastInfoComponent } from './cast-info.component';
 import { CastService } from '../cast/cast.service';
 import { CastServiceFake } from '../cast/cast.service.fake';
+import { RouterModule } from '@angular/router'
 
 describe('CastInfoComponent', () => {
   let component: CastInfoComponent;
@@ -11,6 +12,9 @@ describe('CastInfoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CastInfoComponent ],
+      imports: [
+        RouterModule.forRoot([])
+      ],
       providers: [
         {provide: CastService, useClass: CastServiceFake}
       ]
