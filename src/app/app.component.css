@@ -2,8 +2,19 @@
   flex: 1 1 auto;
 }
 
-app-footer-component {
-  position: absolute;
+#container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 4.5rem;
+}
+
+footer {
+  position: fixed;
   bottom: 0;
   width: 100%;
+  height: 4rem;
+}
+
+.mat-toolbar.mat-primary{
+  background-color:#232f3e
 }
