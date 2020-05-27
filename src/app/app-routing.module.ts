@@ -6,6 +6,7 @@ import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.com
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,9 @@ const routes: Routes = [
 
     //empty path should route to HeaderComponent
   { path: 'search', component: HeaderComponentComponent },
+
+    //empty path should route to MainPageComponent
+  { path: "mainpage", component: MainPageComponent },
    //Given path should route to MenuComponent
   { path: 'menu/:id', component: MenuComponent },
    //Given path should route to ShowInfoComponent

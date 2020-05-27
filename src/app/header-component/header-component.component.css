@@ -3,6 +3,10 @@ img {
   height: auto;
 }
 
+mat-toolbar{
+
+  height: 80px;
+}
 .main-header {
   display: flex;
   align-items: center;
@@ -104,3 +108,9 @@ form {
     height: 32px;
   }
 }
+
+
+
+.mat-error{
+  color: white;
+  }

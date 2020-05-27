@@ -12,9 +12,13 @@ export class AppComponent implements OnInit {
 
   constructor(private _router: Router) { }
 
-  ngOnInit( ): void {
-    this._router.navigate(['/search']);
+  ngOnInit(): void {
+     this._router.navigate(['/mainpage']);
+
   }
+
+
+
 
 
 }

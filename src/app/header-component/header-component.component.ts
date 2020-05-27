@@ -12,7 +12,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class HeaderComponentComponent implements OnInit {
-  searchField = new FormControl('', Validators.minLength(3));
+
+
+  searchField = new FormControl('');
+
+
+
   subscription$$: Subscription;
   _shows: ISearchView[];
   //added for hiding the show search component when user clicks clear button
@@ -24,6 +29,7 @@ export class HeaderComponentComponent implements OnInit {
   ngOnInit(): void {
     this.searchField.valueChanges
       .subscribe((searchValue: string) => this.getShows(searchValue));
+
       this.searchTerm = this.actRoute.snapshot.queryParamMap.get('searchTerm');
 
     if (this.searchTerm) {
@@ -31,8 +37,6 @@ export class HeaderComponentComponent implements OnInit {
       this.currServ.getShows(this.searchTerm.trim()).
         subscribe(data => {
           this._shows = data;
-          // console.log(data);
-
         });
 
     }
@@ -42,7 +46,7 @@ export class HeaderComponentComponent implements OnInit {
   getShows(searchValue: string) {
     //added for hiding the show search component when user clicks clear button
     this.showSearchComponent = true;
-    if (searchValue.trim() && searchValue.length > 2) {
+    if (searchValue.trim()) {
       this.showSearchPage();
       this.subscription$$ = this.currServ.getShows(searchValue.trim()).
         subscribe(data => {
@@ -52,7 +56,7 @@ export class HeaderComponentComponent implements OnInit {
   }
   // to resolve issue with same component not loading with different show id's.
   showSearchPage() {
-    this._router.navigate(['/search']);
+    this._router.navigate(['/mainpage']);
   }
 
   //Clear search bar using cross icon

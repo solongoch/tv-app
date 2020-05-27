@@ -2,7 +2,6 @@
   color: white !important;
   text-decoration: none;
   margin-left: 25px;
-  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
 }
 
 /* mat-buttons a blue highlight frame appears */
@@ -12,7 +11,7 @@ button:focus, button:active:focus, button.active:focus {
   outline-style:  ridge!important;
   }
 .mat-toolbar.mat-primary {
-  background-color: #000000;
+
   background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
   font-size: 1em;
   line-height: 1em;
