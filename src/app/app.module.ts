@@ -23,7 +23,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SearchShowsComponent } from './search-shows/search-shows.component';
 import { SearchShowsService } from './searchshows-service/search-shows.service';
 import { HeaderComponentComponent } from './header-component/header-component.component';
-import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -37,7 +36,6 @@ import { HeaderNosearchComponent } from './header-nosearch/header-nosearch.compo
     ShowEpisodesListComponent,
     SearchShowsComponent,
     HeaderComponentComponent,
-    FooterComponentComponent,
     MenuComponent,
     PageNotFoundComponent,
     HeaderNosearchComponent
