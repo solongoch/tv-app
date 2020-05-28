@@ -1,14 +1,18 @@
 .episode-container {
-  width: 85%;
+  width: 98%;
   flex: 1 1 auto;
   margin-left: 15px;
 }
 
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #f44336!important;
+  height:3px!important;
+}
+
 mat-tab-group {
   /* to change the mat tab content and mat tab header */
-  color: #0c0c0c!important;
+  background: #0c0c0c!important;
   font-weight: 500 !important;
-  background-image: linear-gradient(315deg, #000000 0%, #414141 74%)!important;
   outline-style: ridge!important;
   outline: #ccc!important;
 }
@@ -21,8 +25,7 @@ mat-tab-group {
 
 
 .show-Name {
-  color: white;
-  font-size: 20px;
-  margin-bottom:10px;
-  margin-left: 20px;
+  color: rgba(0,0,0,.87);
+  font-size:30px;
+  margin-bottom:5px;
 }

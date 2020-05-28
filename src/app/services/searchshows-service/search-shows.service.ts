@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { ISearchData } from '../../interfaces/isearch-data';
+import { ISearchData } from 'src/app/interfaces/isearch-data';
 import { ISearchView } from '../../interfaces/isearch-view';
 import { IShowView } from '../../interfaces/ishow-view';
 
 
 interface IShowData {
   id: number,
+  name:string,
   image: {
     medium: string
   },
@@ -50,7 +51,8 @@ export class SearchShowsService {
 //Transorming into IShow View
   transformToIShowView(data: IShowData) : IShowView {
     return {
-     id: data.id,
+     showId: data.id,
+     showName: data.name,
      image: data.image?data.image.medium: '',
      rating: data.rating?data.rating.average : null,
      genres: data.genres,

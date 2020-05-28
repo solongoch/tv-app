@@ -11,43 +11,38 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search-shows.component.css']
 })
 export class SearchShowsComponent implements OnInit {
- _shows: ISearchView[];//getting data from API
-  // @Input() _searchTerm : FormControl;
+  _shows: ISearchView[];//getting data from API for the searchedTerm
 
-  searchTerm: string;
-
-  showThisComponent: boolean = true;////used to hide show Search when user selects the show
+  searchTerm: string;//for storing searched string from router params.
 
   subscription$$: Subscription;
-  childComponentLoaded: boolean;
-  selected_show_id: number;
-  parentComponenet: boolean;
-
 
   constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) {
-    console.log("in");
+
   }
 
   ngOnInit(): void {
 
     this.actRoute.params.subscribe(routeParams => this.getSearchedShows(routeParams['searchTerm']));
-    // console.log("search term: " + routeParams['searchTerm'] + " End")
-
   }
 
   getSearchedShows(searchValue: string) {
 
     this.searchTerm = searchValue;
-    console.log("search term111" + this.searchTerm);
-    this.currServ.getShows(searchValue.trim()).subscribe(data => {this._shows = data;
-      });
+    if (this.searchTerm) {
+     this.subscription$$= this.currServ.getShows(this.searchTerm).subscribe(data => this._shows = data);
+    }
+  }
 
+  getShowInfo(showId: number,showName :string) {
+    this._router.navigate(['/show-info', showId],{ queryParams: {'name':showName}});
   }
 
 
-  getShowInfo(showId: number) {
-    // this.showThisComponent = false;//Hide show Search when user selects the show
-    this._router.navigate(['/show-info', showId]);
+  ngOnDestroy(){
+    if (this.subscription$$) {
+      this.subscription$$.unsubscribe();
+      }
   }
 
 

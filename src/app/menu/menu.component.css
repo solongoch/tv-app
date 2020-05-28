@@ -1,7 +1,15 @@
+.mat-toolbar{
+  height:54px!important;
+  border-radius: 2px!important;
+}
+
  .mat-button {
    color: white !important;
    text-decoration: none;
-   margin-left: 25px;
+   /* margin-left: 5px!important; */
+ }
+ #show_info{
+  margin-left:20px;
  }
 
  .mat-button:hover {
@@ -14,7 +22,4 @@
  .mat-toolbar.mat-primary {
    background-color: black;
    font-size: 1em;
-   /* line-height: 1em; */
-   padding: 1px 1px 1px 1px;
-   margin: 1px 1px 1px 1px;
  }

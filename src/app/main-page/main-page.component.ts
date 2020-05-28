@@ -16,11 +16,7 @@ export class MainPageComponent implements OnInit {
   _showDrama: IShowView[];
   subscription$$: Subscription;
 
-
-
-
-
-  constructor(private currServ: SearchShowsService) { }
+constructor(private currServ: SearchShowsService) { }
 
   slideConfig = {
     "slidesToShow": 7,
@@ -30,21 +26,15 @@ export class MainPageComponent implements OnInit {
     'lazyLoad': 'ondemand',
     "useCSS": true,
     "autoplay": true,
-    'edgeFriction': 0.15,
     "initialSlide": 0
   };
 
   ngOnInit(): void {
-
     this.getShows();
   }
 
-
-
   getShows() {
     this.subscription$$ = this.currServ.getAllShows().subscribe((data: IShowView[]) => this.getMainPageShows(data));
-
-
   }
 
   getMainPageShows(show: IShowView[]) {
@@ -54,9 +44,9 @@ export class MainPageComponent implements OnInit {
     this._showDrama = this.currServ.getShowsByGenre(show, 'Drama');
   }
 
-  //Unscribe observables from memory
+   //Unscribe observables from memory
   ngOnDestroy(): void {
-    if (this.subscription$$ != null) {
+    if (this.subscription$$) {
       this.subscription$$.unsubscribe();
     }
   }

@@ -1,11 +1,5 @@
-
-
-
-
-
-
 <div class="container">
-  <!-- <div *ngIf="_shows" class="search-cards"> -->
+  <div *ngIf="_shows" class="search-cards">
  <div class="search-cards">
  <div fxFlex fxLayout="column" fxLayoutGap="10px">
 
@@ -14,7 +8,7 @@
      <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20" fxFlex.sm="25" fxFlex.xs="50"
        fxLayout="column">
        <!-- cards here -->
-       <a (click)="getShowInfo(show.id)">
+       <a (click)="getShowInfo(show.id,show.name)">
          <mat-card class="mat-elevation-z8">
            <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" />
            <img mat-card-image src="../../assets/images/no-img.png" *ngIf="!show.image" class="mat-elevation-z16" />

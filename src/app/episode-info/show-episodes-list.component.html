@@ -1,44 +1,51 @@
 <app-menu></app-menu>
-<div class='episode-container' >
 
-  <div class="show-Name">Drama</div>
-  <mat-tab-group>
-    <div *ngIf="_seasons?.length">
-      <!-- To check _episodes has data-->
-      <mat-tab class="season-tabs" *ngFor="let season of _seasons" label="S{{season.seasonNumber}}" mat-ripple>
-        <div class="table-responsive">
-          <table class="table table-striped table-hover table-light">
-            <thead class="thead-light">
-              <tr>
-                <th class="text-center">Episode Number</th>
-                <th>Air Date</th>
-                <th>Episode Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let episode of _episodes">
-                <!-- <ng-template *ngIf="_episodes?.length; else noEpisode"> -->
-                <td *ngIf="episode.seasonNumber === season.seasonNumber" class="text-center">{{episode.episodeNumber}}
-                </td>
-                <td *ngIf="episode.seasonNumber === season.seasonNumber">{{episode.airdate | date : 'mediumDate'}}
-                </td>
-                <td *ngIf="episode.seasonNumber === season.seasonNumber">{{episode.episodeName}}
-                 </td>
-                 <!-- </ng-template> -->
-              </tr>
-            </tbody>
-          </table>
-          <div>
-            <ng-template #noEpisode>
-              Sorry! We don't have the Episode list for this show yet.
-            </ng-template>
-          </div>
-        </div>
-      </mat-tab>
-    </div>
-  </mat-tab-group>
-
-
-
+<div class='episode-container'>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <div class="show-Name">{{showName}}</div>
+      </mat-card-title>
+    </mat-card-header>
+    <br />
+    <mat-tab-group>
+      <div *ngIf="_seasons?.length">
+        <!-- To check _episodes has data-->
+        <mat-tab class="season-tabs" *ngFor="let season of _seasons" label="S{{season.seasonNumber}}">
+          <ng-template matTabContent>
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-light">
+                <thead class="thead-light">
+                  <tr>
+                    <th class="text-center">Episode Number</th>
+                    <th>Air Date</th>
+                    <th>Episode Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let episode of _episodes">
+                    <!-- <ng-template *ngIf="_episodes?.length; else noEpisode"> -->
+                    <td *ngIf="episode.seasonNumber === season.seasonNumber" class="text-center">
+                      {{episode.episodeNumber}}
+                    </td>
+                    <td *ngIf="episode.seasonNumber === season.seasonNumber">
+                      {{episode.airdate | date : 'mediumDate'}}
+                    </td>
+                    <td *ngIf="episode.seasonNumber === season.seasonNumber">{{episode.episodeName}}
+                    </td>
+                    <!-- </ng-template> -->
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <ng-template #noEpisode>
+                  Sorry! We don't have the Episode list for this show yet.
+                </ng-template>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+      </div>
+    </mat-tab-group>
+  </mat-card>
 </div>
-

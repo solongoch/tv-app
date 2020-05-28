@@ -19,12 +19,11 @@ export class HeaderComponent implements OnInit {
   constructor(private _router : Router) { }
 
   ngOnInit(): void {
-
     this.searchField.valueChanges
       .subscribe((searchTerm: string) => this.getShows(searchTerm.trim()));
-
   }
 
+  //navigating to search-shows component with SearchTerm
   getShows(searchTerm: string) {
     if (searchTerm) {
       this._router.navigate(['/searchshows', searchTerm]);

@@ -1,5 +1,6 @@
 export interface IShowView {
-    id: number;
+    showId: number;
+    showName:string;
     image: string;
     rating: number;
     genres: string[];
