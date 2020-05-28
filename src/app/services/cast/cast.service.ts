@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ICastInfo } from '../interfaces/icast-info';
+import { ICastInfo } from '../../interfaces/icast-info';
 import { map } from 'rxjs/operators';
-import { ICastService } from '../interfaces/i-cast-service';
+import { ICastService } from '../../interfaces/i-cast-service';
 
 interface ICastDataType {
   person: {

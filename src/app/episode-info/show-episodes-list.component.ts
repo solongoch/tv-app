@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EpisodeServiceService } from '../episode-service/episode-service.service';
+import { EpisodeServiceService } from '../services/episode-info-service/episode-service.service';
 import { IEpisodeView } from '../interfaces/iepisode-view';
 import { Subscription } from 'rxjs' ;
 import { ActivatedRoute } from '@angular/router';
@@ -22,11 +22,6 @@ export class ShowEpisodesListComponent implements OnInit {
   constructor(private currServ: EpisodeServiceService, private actRoute: ActivatedRoute) {
     this.show_id = this.actRoute.snapshot.params.id;
    }
-
-  // ngOnInit(): void {
-  //   this.subscription$$ = this.currServ.getShowEpisodes(this.show_id).subscribe( (data : IEpisodeView[])=>  this._episodes = data );
-  // }
-
 
 
   ngOnInit(): void {

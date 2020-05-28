@@ -1,23 +1,28 @@
+
+
+
+
+
+
 <div class="container">
-
   <!-- <div *ngIf="_shows" class="search-cards"> -->
-    <div *ngIf="toggle()" class="search-cards">
-    <div fxFlex fxLayout="column" fxLayoutGap="10px">
+ <div class="search-cards">
+ <div fxFlex fxLayout="column" fxLayoutGap="10px">
 
-      <div fxLayout="row wrap">
-        <!-- loop over the cardList and show the cards -->
-        <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20" fxFlex.sm="25" fxFlex.xs="50"
-          fxLayout="column">
-          <!-- cards here -->
-          <a (click)="getShowInfo(show.id)">
-            <mat-card class="mat-elevation-z8">
-              <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" />
-              <img mat-card-image src="../../assets/images/no-img.png" *ngIf="!show.image" class="mat-elevation-z16" />
-              <!-- <mat-card-title> {{show.name}} </mat-card-title> -->
-            </mat-card>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+   <div fxLayout="row wrap">
+     <!-- loop over the cardList and show the cards -->
+     <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20" fxFlex.sm="25" fxFlex.xs="50"
+       fxLayout="column">
+       <!-- cards here -->
+       <a (click)="getShowInfo(show.id)">
+         <mat-card class="mat-elevation-z8">
+           <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" />
+           <img mat-card-image src="../../assets/images/no-img.png" *ngIf="!show.image" class="mat-elevation-z16" />
+           <!-- <mat-card-title> {{show.name}} </mat-card-title> -->
+         </mat-card>
+       </a>
+     </div>
+   </div>
+ </div>
+</div>
 </div>

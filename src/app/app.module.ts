@@ -4,12 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.component';
-import { EpisodeServiceService } from './episode-service/episode-service.service';
+import { EpisodeServiceService } from './services/episode-info-service/episode-service.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ShowInfoComponent } from './show-info/show-info.component';
-import { TvshowService } from 'src/app/show-info-service/tvshow.service';
+import { TvshowService } from 'src/app/services/show-info-service/tvshow.service';
 import { CastInfoComponent } from './cast-info/cast-info.component';
-import { CastService } from './cast/cast.service';
+import { CastService } from './services/cast/cast.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,14 +21,13 @@ import { MatCardModule} from '@angular/material/card';
 import  {MatButtonModule} from '@angular/material/button'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SearchShowsComponent } from './search-shows/search-shows.component';
-import { SearchShowsService } from './searchshows-service/search-shows.service';
-import { HeaderComponentComponent } from './header-component/header-component.component';
-import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { SearchShowsService } from './services/searchshows-service/search-shows.service';
+import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { HeaderNosearchComponent } from './header-nosearch/header-nosearch.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { StaticPageComponent } from './static-page/static-page.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +36,12 @@ import { MainPageComponent } from './main-page/main-page.component';
     CastInfoComponent,
     ShowEpisodesListComponent,
     SearchShowsComponent,
-    HeaderComponentComponent,
-    FooterComponentComponent,
+    HeaderComponent,
     MenuComponent,
     PageNotFoundComponent,
-    HeaderNosearchComponent,
-    MainPageComponent
+    MainPageComponent,
+    StaticPageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -62,7 +61,7 @@ import { MainPageComponent } from './main-page/main-page.component';
     ReactiveFormsModule,
     SlickCarouselModule
   ],
-  providers: [CastService, TvshowService,EpisodeServiceService,SearchShowsService],
+  providers: [CastService,TvshowService,EpisodeServiceService,SearchShowsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

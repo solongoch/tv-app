@@ -11,21 +11,22 @@ export class MenuComponent implements OnInit {
   searchTerm : string;
 
   constructor(private actRoute: ActivatedRoute, private _router: Router) {
+    
     this.show_id = this.actRoute.snapshot.params.id;
 
   }
 
   ngOnInit(): void {
-    this.searchTerm=this.actRoute.snapshot.queryParamMap.get('searchTerm');
+
   }
   callShowInfo() {
-    this._router.navigate(['/show-info', this.show_id],{queryParams:{'searchTerm':this.searchTerm}} );
+    this._router.navigate(['/show-info', this.show_id] );
   }
   callEpisodeInfo() {
-    this._router.navigate(['/episode-info', this.show_id],{queryParams:{'searchTerm':this.searchTerm}} );
+    this._router.navigate(['/episode-info', this.show_id] );
   }
   callCastInfo() {
-    this._router.navigate(['/cast-info', this.show_id],{queryParams:{'searchTerm':this.searchTerm}} );
+    this._router.navigate(['/cast-info', this.show_id]);
   }
 
 }

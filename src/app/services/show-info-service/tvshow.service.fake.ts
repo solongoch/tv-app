@@ -1,5 +1,5 @@
 import { Itvshowservice } from './itvshowservice';
-import { IShowinfo } from '../interfaces/ishowinfo';
+import { IShowinfo } from '../../interfaces/ishowinfo';
 import { Observable, of } from 'rxjs';
 
 export class TvshowServiceFake implements Itvshowservice {

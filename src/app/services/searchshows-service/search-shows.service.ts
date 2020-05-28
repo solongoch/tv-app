@@ -2,12 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { ISearchData } from '../interfaces/isearch-data';
-import { ISearchView } from '../interfaces/isearch-view';
-import { IShowView } from '../interfaces/ishow-view';
-
-
-
+import { ISearchData } from '../../interfaces/isearch-data';
+import { ISearchView } from '../../interfaces/isearch-view';
+import { IShowView } from '../../interfaces/ishow-view';
 
 
 interface IShowData {
@@ -25,6 +22,7 @@ interface IShowData {
   providedIn: 'root'
 })
 export class SearchShowsService {
+
 
   constructor(private http: HttpClient) { }
 

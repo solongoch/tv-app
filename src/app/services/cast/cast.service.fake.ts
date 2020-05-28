@@ -1,5 +1,5 @@
-import { ICastService } from '../interfaces/i-cast-service';
-import { ICastInfo } from '../interfaces/icast-info';
+import { ICastService } from '../../interfaces/i-cast-service';
+import { ICastInfo } from '../../interfaces/icast-info';
 import { Observable, of } from 'rxjs';
 
 export class CastServiceFake implements ICastService {
