@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { CastService } from './cast.service';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'
 
 describe('CastService', () => {
   let service: CastService;
@@ -8,6 +9,7 @@ describe('CastService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[
+        HttpClientModule,
         RouterModule.forRoot([])
       ]
     });
