@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'tv-show-app';
+  title = 'tv-app';
 
   constructor(private _router: Router) { }
 

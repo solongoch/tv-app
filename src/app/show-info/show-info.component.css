@@ -7,8 +7,6 @@
   color: rgba(0,0,0,.87);
   font-size:30px;
   margin-bottom:5px;
-
-  /* margin-left: 20px; */
 }
 
 .mat-card-subtitle{
@@ -16,13 +14,12 @@
   font-size:20px;
 }
 
-
 .showlist {
-  height: 300px;
+  height: 350px;
 }
 
 .showinfo {
-  font-size: .9em;
+  font-size: 1em;
   background-color: #D3D3D3;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -31,6 +28,7 @@
 .description {
   padding-bottom: 10px;
   padding-left: 0px;
+  font-size: 1.2em;
 }
 
 span {

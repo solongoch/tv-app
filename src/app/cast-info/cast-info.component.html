@@ -1,25 +1,37 @@
 <app-menu></app-menu>
-<div *ngIf="listOfCast" class="cast-cards">
-  <div fxFlex fxLayout="column" fxLayoutGap="10px">
-    <div fxLayout="row wrap">
-      <!-- loop over the cardList and show the cards -->
-      <div
-        *ngFor="let cast of listOfCast"
-        class="single-cast"
-        fxFlex="20"
-        fxFlex.md="25"
-        fxFlex.sm="25"
-        fxFlex.xs="50"
-        fxLayout="column"
-        style="padding: 5px;"
-      >
-        <!-- cards here -->
-        <mat-card>
-          <img mat-card-image [src]="cast.castImg" alt="Photo of a cast" />
-          <mat-card-title>{{ cast.castName }}</mat-card-title>
-          <mat-card-subtitle>as {{ cast.characterName }}</mat-card-subtitle>
-        </mat-card>
+<div *ngIf="!isLoading; else loadingSpinner">
+  <div
+    *ngIf="listOfCast && listOfCast.length > 0; else noCastInfo"
+    class="cast-cards">
+    <div fxFlex fxLayout="column" fxLayoutGap="10px">
+      <div fxLayout="row wrap">
+        <!-- loop over the cardList and show the cards -->
+        <div
+          *ngFor="let cast of listOfCast"
+          fxFlex="20"
+          fxFlex.md="25"
+          fxFlex.sm="25"
+          fxFlex.xs="50"
+          fxLayout="column"
+          style="padding: 5px;"
+        >
+          <!-- cards here -->
+          <mat-card>
+            <img mat-card-image [src]="cast.castImg" alt="Photo of a cast" />
+            <mat-card-title>{{ cast.castName }}</mat-card-title>
+            <mat-card-subtitle>as {{ cast.characterName }}</mat-card-subtitle>
+          </mat-card>
+        </div>
       </div>
     </div>
   </div>
+
+  <ng-template #noCastInfo>
+    <mat-card>
+      <mat-card-subtitle>There's no cast info to show</mat-card-subtitle>
+    </mat-card>
+  </ng-template>
 </div>
+<ng-template #loadingSpinner>
+  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+</ng-template>
