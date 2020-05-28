@@ -21,8 +21,8 @@
 
     <div class = "description col-lg-6 col-md-6 col-sm-8 row">
       <mat-card>
-        {{show.description | slice:0:500 }}
-        <p *ngIF="!show.description">We don't have a summary for {{show.name}} yet. Hang in there, or go ahead and contribute one.</p>
+        <p>{{show.description | slice:0:500}}</p>
+        <p *ngIf="!show.description">We don't have a summary for {{show.name}} yet. Hang in there, or go ahead and contribute one. </p>
       </mat-card>
     </div>
 

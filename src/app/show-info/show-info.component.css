@@ -8,7 +8,7 @@
 }
 
 .showinfo {
-  font-size: .9em;
+  font-size: 1em;
   background-color: #D3D3D3;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -17,6 +17,7 @@
 .description {
   padding-bottom: 10px;
   padding-left: 0px;
+  font-size: 1.2em;
 }
 
 span {
