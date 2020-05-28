@@ -5,23 +5,33 @@ import { CastInfoComponent } from './cast-info/cast-info.component';
 import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HeaderComponentComponent } from './header-component/header-component.component';
-
+import { MainPageComponent } from './main-page/main-page.component';
+import { SearchShowsComponent } from './search-shows/search-shows.component';
+import { StaticPageComponent } from './static-page/static-page.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
 
+  //empty path should route to MainPageComponent
+  { path: "", component: AppComponent },
 
-    //empty path should route to HeaderComponent
-  { path: 'search', component: HeaderComponentComponent },
-   //Given path should route to MenuComponent
+  //empty path should route to MainPageComponent
+  { path: "mainpage", component: MainPageComponent },
+
+  //empty path should route to StaticPageComponent
+  { path: "index", component: StaticPageComponent },
+
+  //Given path should route to MenuComponent called in app
+  { path: 'searchshows/:searchTerm', component: SearchShowsComponent },
+
   { path: 'menu/:id', component: MenuComponent },
-   //Given path should route to ShowInfoComponent
+  //Given path should route to ShowInfoComponent
   { path: 'show-info/:id', component: ShowInfoComponent },
-   //Given path should route to ShowEpisodesListComponent
+  //Given path should route to ShowEpisodesListComponent
   { path: 'episode-info/:id', component: ShowEpisodesListComponent },
-   //Given path should route to CastInfoComponent
-   { path: 'cast-info/:id', component: CastInfoComponent },
-   //Given path should route to PageNotFoundComponent Wildcard route should be at atlast
+  //Given path should route to CastInfoComponent
+  { path: 'cast-info/:id', component: CastInfoComponent },
+  //Given path should route to PageNotFoundComponent Wildcard route should be at atlast
   { path: "**", component: PageNotFoundComponent },
 ];
 

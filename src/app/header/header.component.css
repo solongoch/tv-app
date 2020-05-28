@@ -3,6 +3,10 @@ img {
   height: auto;
 }
 
+mat-toolbar {
+  margin-top: 10px!important;
+}
+
 .main-header {
   display: flex;
   align-items: center;
@@ -27,19 +31,18 @@ img {
 
 #brand-name {
   padding-top: 5px;
-  padding-left: 5px;
+  padding-left: 10px;
   font-size: 1.8rem;
   vertical-align: middle;
 }
 
 #brand-name a {
   text-decoration: none;
-  color: #ccc;
+  color: #f3f7eb;
 }
 
 .mat-toolbar.mat-primary {
-  background-color: #485461;
-  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+  background-color: black;
 }
 
 .mat-button.mat-icon-button {
@@ -49,7 +52,7 @@ img {
 form {
   height: 100px;
   vertical-align: middle;
-  color: #ccc;
+  color: #f3f7eb;
 }
 
 .mat-toolbar-row {
@@ -66,21 +69,15 @@ form {
 .mat-form-field input {
   padding-left: 5px;
   display: inline;
-  color: #ccc;
+  color: #f3f7eb;
 }
 
 .mat-button {
   border-radius: 0;
 }
 
-/* @media (min-width: 960px) {
-	.main-header .container {
-		justify-content: space-between;
-	}
-} */
-
 @media (max-width: 320px) {
-  .mat-form-field  {
+  .mat-form-field {
     width: 140px;
   }
   #brand-name {
@@ -93,12 +90,12 @@ form {
 }
 
 @media (min-width: 321px) and (max-width: 479px) {
-  .mat-form-field  {
+  .mat-form-field {
     width: 180px;
   }
   #brand-name {
     font-size: 1.2rem;
-    }
+  }
   #brand-logo {
     width: 32px;
     height: 32px;

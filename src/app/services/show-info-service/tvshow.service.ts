@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { IShowinfo } from 'src/app/interfaces/ishowinfo';
-import { Itvshowservice } from 'src/app/show-info-service/itvshowservice';
+import { Itvshowservice } from 'src/app/services/show-info-service/itvshowservice';
 
 interface IShowInfoData {
     name: string,

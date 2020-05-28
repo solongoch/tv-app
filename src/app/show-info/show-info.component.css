@@ -3,6 +3,17 @@
   box-sizing: border-box;
 }
 
+.mat-card-title {
+  color: rgba(0,0,0,.87);
+  font-size:30px;
+  margin-bottom:5px;
+}
+
+.mat-card-subtitle{
+  padding-top: 5px;
+  font-size:20px;
+}
+
 .showlist {
   height: 350px;
 }

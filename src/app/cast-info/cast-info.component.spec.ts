@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CastInfoComponent } from './cast-info.component';
-import { CastService } from '../cast/cast.service';
-import { CastServiceFake } from '../cast/cast.service.fake';
+import { CastService } from '../services/cast/cast.service';
+import { CastServiceFake } from '../services/cast/cast.service.fake';
 import { RouterModule } from '@angular/router'
 
 describe('CastInfoComponent', () => {

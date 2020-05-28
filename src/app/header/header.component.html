@@ -5,20 +5,18 @@
         <a href="../header-component/header-component.component.html"><img id='brand-logo' src="../../assets/images/tvt_logo.png" class="mat-elevation-z16" tabindex="0" /></a>
       </button>
       <span id="brand-name">
-        <a href="../header-component/header-component.component.html" routerLink="/search" (click)="clearSearchField()">TV TIME</a>
+        <a routerLink="" (click)="clearSearchField()">TV TIME</a>
       </span>
       <span class="menu-spacer"></span>
       <form fxShow="true">
         <mat-form-field class="mat-headline">
           <mat-icon matPrefix>search</mat-icon>
           <input matInput type="search" placeholder="Search" [formControl]="searchField" name='searchField'>
-          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()"
-            *ngIf="searchField?.value">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearchField()" *ngIf="searchField?.value">
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
       </form>
     </mat-toolbar-row>
   </mat-toolbar>
-  <app-search-shows [_shows]="_shows" [_searchTerm]="searchField" *ngIf="showSearchComponent"></app-search-shows>
 </div>

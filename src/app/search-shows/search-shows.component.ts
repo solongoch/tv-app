@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchShowsService } from '../searchshows-service/search-shows.service';
+import { SearchShowsService } from '../services/searchshows-service/search-shows.service';
 import { ISearchView } from '../interfaces/isearch-view';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,32 +11,39 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search-shows.component.css']
 })
 export class SearchShowsComponent implements OnInit {
+  _shows: ISearchView[];//getting data from API for the searchedTerm
 
-  @Input() _shows: ISearchView[];//getting data from header component
-  @Input() _searchTerm : FormControl;
-
-
-  showThisComponent: boolean = true;////used to hide show Search when user selects the show
+  searchTerm: string;//for storing searched string from router params.
 
   subscription$$: Subscription;
-  childComponentLoaded: boolean;
-  selected_show_id: number;
-  parentComponenet: boolean;
+
   constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) {
+
   }
 
   ngOnInit(): void {
+
+    this.actRoute.params.subscribe(routeParams => this.getSearchedShows(routeParams['searchTerm']));
   }
 
-  getShowInfo(showId: number) {
-    this.showThisComponent = false;//Hide show Search when user selects the show
-    this._router.navigate(['/show-info', showId],{queryParams:{'searchTerm':this._searchTerm.value}});
-  }
+  getSearchedShows(searchValue: string) {
 
-  toggle() {
-    if (this._shows && this.showThisComponent) {
-      return true;
+    this.searchTerm = searchValue;
+    if (this.searchTerm) {
+     this.subscription$$= this.currServ.getShows(this.searchTerm).subscribe(data => this._shows = data);
     }
   }
+
+  getShowInfo(showId: number,showName :string) {
+    this._router.navigate(['/show-info', showId],{ queryParams: {'name':showName}});
+  }
+
+
+  ngOnDestroy(){
+    if (this.subscription$$) {
+      this.subscription$$.unsubscribe();
+      }
+  }
+
 
 }

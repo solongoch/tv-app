@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICastInfo } from '../interfaces/icast-info';
-import { CastService } from '../cast/cast.service';
+import { CastService } from '../services/cast/cast.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -8,7 +8,8 @@ export const environment = {
   showendpoint:'shows/',
   searchendpoint:'search/shows?q=',
   seasonendpoint: '/seasons',
-  episodeEndpoint: '/episodes'
+  episodeEndpoint: '/episodes',
+  mainPage: 'http://api.tvmaze.com/shows'
 };
 
 /*

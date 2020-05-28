@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IEpisodeData } from '../interfaces/iepisode-data';
+import { IEpisodeData } from 'src/app/interfaces/iepisode-data';
 import { environment } from 'src/environments/environment';
-import { IEpisodeView } from '../interfaces/iepisode-view';
+import { IEpisodeView } from 'src/app/interfaces/iepisode-view';
 import { map } from 'rxjs/operators';
-import { ISeasonsView } from '../interfaces/iseasons-view';
+import { ISeasonsView } from 'src/app/interfaces/iseasons-view';
 
 interface ISeasonsData {
   id: number;

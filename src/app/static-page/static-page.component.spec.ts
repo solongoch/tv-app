@@ -1,16 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderComponentComponent } from './header-component.component';
+import { StaticPageComponent } from './static-page.component';
 import { RouterModule } from '@angular/router'
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('HeaderComponentComponent', () => {
-  let component: HeaderComponentComponent;
-  let fixture: ComponentFixture<HeaderComponentComponent>;
+
+describe('StaticPageComponent', () => {
+  let component: StaticPageComponent;
+  let fixture: ComponentFixture<StaticPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponentComponent ],
+      declarations: [ StaticPageComponent ],
       imports: [
         RouterModule.forRoot([]),
         HttpClientTestingModule
@@ -20,7 +21,7 @@ describe('HeaderComponentComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponentComponent);
+    fixture = TestBed.createComponent(StaticPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
