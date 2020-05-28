@@ -34,9 +34,9 @@ export class CastService implements ICastService{
 
   transfortmToICast(data: ICastDataType): ICastInfo {
     return {
-      castImg: data.person.image.medium,
+      castImg: data.person.image ? data.person.image.medium : "../../assets/images/no-img.png",
       castName: data.person.name,
-      characterName: data.character.name
+      characterName: data.character.name,
     };
   }
 }
