@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CastInfoComponent implements OnInit {
   listOfCast: ICastInfo[];
   show_id: number;
+  isLoading: boolean;
 
   constructor(private castService: CastService, private actRoute: ActivatedRoute) {
     //added by Priya for getting query params showid dynamically
@@ -18,8 +19,10 @@ export class CastInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.castService.getCast(this.show_id).subscribe(listOfCast => {
       this.listOfCast = listOfCast;
+      this.isLoading = false;
     });
   }
 }
