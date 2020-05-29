@@ -24,7 +24,6 @@ export class MenuComponent implements OnInit {
   }
 
   // <-- go back to previous location on Back
-  @HostListener('click')
   goBack(){
     this._location.back();
   }
