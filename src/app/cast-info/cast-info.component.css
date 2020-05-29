@@ -1,3 +1,14 @@
+
 .cast-info-container {
   padding: 0 20px;
+}
+#nocasts {
+  color: rgba(0,0,0,.87);
+  font-size:25px;
+  margin-bottom:5px;
+}  
+.cast-container {
+  width: 89%;
+  flex: 1 1 auto;
+  margin-left: 25px;
 }

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { ISearchData } from 'src/app/interfaces/isearch-data';
 import { ISearchView } from '../../interfaces/isearch-view';
 import { IShowView } from '../../interfaces/ishow-view';
+import { ISearchShowService } from 'src/app/interfaces/isearch-show-service';
 
 
 interface IShowData {
@@ -22,7 +23,7 @@ interface IShowData {
 @Injectable({
   providedIn: 'root'
 })
-export class SearchShowsService {
+export class SearchShowsService implements ISearchShowService {
 
 
   constructor(private http: HttpClient) { }
@@ -42,7 +43,7 @@ export class SearchShowsService {
   // Used to display shows in home page based on Genres and Rating API:http://api.tvmaze.com/shows
 
 
-  getAllShows() {
+  getAllShows()  {
     return this.http.get<IShowData[]>(`${environment.mainPage}`)
     .pipe(map(data => data.map(show => this.transformToIShowView(show))))
   }

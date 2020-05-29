@@ -35,7 +35,7 @@ export class SearchShowsComponent implements OnInit {
   }
 
   getShowInfo(showId: number,showName :string) {
-    this._router.navigate(['/show-info', showId],{ queryParams: {'name':showName}});
+    this._router.navigate(['/show-info', showId],{ queryParams: {'showName':showName}});
   }
 
 

@@ -2,22 +2,12 @@
 <div class="container mainPage">
   <br />
   <div>
-    <div class="section-title">High Rated</div>
+   <div class="section-title">High Rated</div>
     <div class="content">
-      <ngx-slick-carousel
-        class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-      >
-        <div
-          ngxSlickItem
-          *ngFor="let shows of _showRating"
-          class="slide">
-          <a
-            [routerLink]="['/show-info', shows.showId]"
-            [queryParams]="{ name: shows.showName }"
-          >
-            <img [src]="shows.image" alt="" width="100%" />
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let shows of _showRating" class="slide">
+          <a (click)="callShowInfo(shows.showId, shows.showName)">
+            <img [src]="shows.image" alt="" width="100%">
           </a>
         </div>
       </ngx-slick-carousel>
@@ -27,44 +17,26 @@
   <div>
     <div class="section-title">Comedy</div>
     <div class="content">
-      <ngx-slick-carousel
-        class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-      >
-        <div
-        ngxSlickItem
-        *ngFor="let shows of _showComedy"
-        class="slide">
-          <a
-            [routerLink]="['/show-info', shows.showId]"
-            [queryParams]="{ name: shows.showName }"
-          >
-            <img [src]="shows.image" alt="" width="100%" />
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let shows of _showComedy" class="slide">
+          <a (click)="callShowInfo(shows.showId, shows.showName)">
+            <div class="showImage"><img [src]="shows.image" alt="" width="100%"></div>
           </a>
         </div>
       </ngx-slick-carousel>
+
     </div>
+
   </div>
-  <br />
+  <br/>
+
   <div>
     <div class="section-title">Science Fiction</div>
     <div class="content">
-      <ngx-slick-carousel
-        class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-      >
-        <div
-          ngxSlickItem
-          *ngFor="let shows of _showScienceFiction"
-          class="slide"
-        >
-          <a
-            [routerLink]="['/show-info', shows.showId]"
-            [queryParams]="{ name: shows.showName }"
-          >
-            <img [src]="shows.image" alt="" width="100%" />
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let shows of _showScienceFiction" class="slide">
+          <a (click)="callShowInfo(shows.showId, shows.showName)">
+            <img [src]="shows.image" alt="" width="100%">
           </a>
         </div>
       </ngx-slick-carousel>
@@ -72,22 +44,12 @@
   </div>
   <br />
   <div>
-    <div class="section-title">Drama</div>
+   <div class="section-title">Drama</div>
     <div class="content">
-      <ngx-slick-carousel
-        class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-      >
-        <div
-          ngxSlickItem
-          *ngFor="let shows of _showDrama"
-          class="slide">
-          <a
-            [routerLink]="['/show-info', shows.showId]"
-            [queryParams]="{ name: shows.showName }"
-          >
-            <img [src]="shows.image" alt="" width="100%"/>
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let shows of _showDrama" class="slide">
+          <a (click)="callShowInfo(shows.showId, shows.showName)">
+             <img [src]="shows.image" alt="" width="100%">
           </a>
         </div>
       </ngx-slick-carousel>

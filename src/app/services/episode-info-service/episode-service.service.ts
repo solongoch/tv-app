@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { IEpisodeView } from 'src/app/interfaces/iepisode-view';
 import { map } from 'rxjs/operators';
 import { ISeasonsView } from 'src/app/interfaces/iseasons-view';
+import { IEpisodeInfoService } from 'src/app/interfaces/iepisode-info-service';
 
 interface ISeasonsData {
   id: number;
@@ -17,26 +18,24 @@ interface ISeasonsData {
 @Injectable({
   providedIn: 'root'
 })
-export class EpisodeServiceService {
+export class EpisodeServiceService implements IEpisodeInfoService {
   constructor(private httpClient: HttpClient) { }
 
   /**
    *
    * @param episodeEndpoint  // http://api.tvmaze.com/seasons/263/episodes
-   *  http://api.tvmaze.com/shows/1/episodes
+   *Get Episode Information
+   *Input season id.
    */
-  getShowEpisodes(showId: number) {
-    return this.httpClient.get<IEpisodeData[]>(`${environment.rootUrl}${environment.showendpoint}${showId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.transformToIEpisodeView(item))));
+  getShowEpisodes(seasonId: number) {
+    return this.httpClient.get<IEpisodeData[]>(`${environment.rootUrl}${environment.episodeEndpoint}${seasonId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.transformToIEpisodeView(item))));
   }
 
   transformToIEpisodeView(data: IEpisodeData): IEpisodeView {
     return {
       episodeName: data.name,
-      seasonNumber: data.season,
       episodeNumber: data.number,
       airdate: new Date(data.airstamp),
-      summary: data.summary?.replace(/(<([^>]+)>)/ig, ""),
-      image: data.image?.medium
     }
   }
 

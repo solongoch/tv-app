@@ -1,19 +1,17 @@
 <app-menu></app-menu>
 
 <div class='episode-container'>
-  <mat-card>
-    <!-- <mat-card-header>
-      <mat-card-title>
-        <div class="show-Name">{{showName}}</div>
-      </mat-card-title>
-    </mat-card-header>
-    <br /> -->
-    <mat-tab-group>
+  <mat-card class="episodecard">
+    <mat-tab-group (selectedTabChange)="getSelectedSeasonId($event)">
       <div *ngIf="_seasons?.length">
         <!-- To check _episodes has data-->
-        <mat-tab class="season-tabs" *ngFor="let season of _seasons" label="S{{season.seasonNumber}}">
+        <mat-tab class="season-tabs" *ngFor="let season of _seasons; let tabIndex = index">
+          <ng-template mat-tab-label>
+                  S{{season.seasonNumber}}
+          </ng-template>
           <ng-template matTabContent>
-            <div class="table-responsive">
+            <span *ngIf="!isLoading; else loadingSpinner"></span>
+            <div class="table-responsive" *ngIf="_episodes && _episodes.length>0; else noEpisode">
               <table class="table table-striped table-hover table-light">
                 <thead class="thead-light">
                   <tr>
@@ -25,27 +23,31 @@
                 <tbody>
                   <tr *ngFor="let episode of _episodes">
                     <!-- <ng-template *ngIf="_episodes?.length; else noEpisode"> -->
-                    <td *ngIf="episode.seasonNumber === season.seasonNumber" class="text-center">
-                      {{episode.episodeNumber}}
-                    </td>
-                    <td *ngIf="episode.seasonNumber === season.seasonNumber">
-                      {{episode.airdate | date : 'mediumDate'}}
-                    </td>
-                    <td *ngIf="episode.seasonNumber === season.seasonNumber">{{episode.episodeName}}
-                    </td>
+                    <td class="text-center"> {{episode.episodeNumber}} </td>
+                    <td> {{episode.airdate | date : 'mediumDate'}} </td>
+                    <td>{{episode.episodeName}}</td>
                     <!-- </ng-template> -->
                   </tr>
                 </tbody>
               </table>
-              <div>
-                <ng-template #noEpisode>
-                  Sorry! We don't have the Episode list for this show yet.
-                </ng-template>
-              </div>
             </div>
           </ng-template>
         </mat-tab>
       </div>
     </mat-tab-group>
   </mat-card>
+  <div id="noepisodes">
+    <ng-template #noEpisode>
+      <mat-card class="noepisodes">
+        <mat-card-header>
+          <mat-card-title>
+            Sorry! We don't have the Episode list for this show yet.
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </ng-template>
+  </div>
 </div>
+<ng-template #loadingSpinner>
+  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+</ng-template>
