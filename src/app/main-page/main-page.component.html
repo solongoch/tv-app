@@ -51,7 +51,7 @@
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let shows of _showDrama" class="slide">
           <a  [routerLink]="['/show-info', shows.showId]" [queryParams]="{'name': shows.showName}" >
-            <div><img [src]="shows.image" alt=""></div>
+            <img [src]="shows.image" alt="" width="100%">
 
           </a>
         </div>
