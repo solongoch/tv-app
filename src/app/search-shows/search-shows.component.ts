@@ -17,12 +17,9 @@ export class SearchShowsComponent implements OnInit {
 
   subscription$$: Subscription;
 
-  constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) {
-
-  }
+  constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) {  }
 
   ngOnInit(): void {
-
     this.actRoute.params.subscribe(routeParams => this.getSearchedShows(routeParams['searchTerm']));
   }
 
@@ -35,7 +32,7 @@ export class SearchShowsComponent implements OnInit {
   }
 
   getShowInfo(showId: number,showName :string) {
-    this._router.navigate(['/show-info', showId],{ queryParams: {'showName':showName}});
+    this._router.navigate(['/show-info', showId],{ queryParams: {'showName' :showName}});
   }
 
 

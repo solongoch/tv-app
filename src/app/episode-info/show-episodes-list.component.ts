@@ -31,10 +31,8 @@ export class ShowEpisodesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    //getting  show name from queryparams
-    this.actRoute.queryParams.subscribe(params => { this.showName = params.showName; });
     this.subscription$$ = this.currServ.getShowSeasons(this.showId).subscribe((data: ISeasonsView[]) => {
-    this._seasons = data;
+      this._seasons = data;
       this.isLoading = false;
     });
 

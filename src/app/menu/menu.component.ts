@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.actRoute.queryParams.subscribe(params => {
-      this.showName = params.name;
+      this.showName = params.showName;
     });
   }
 

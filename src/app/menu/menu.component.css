@@ -1,12 +1,20 @@
-section .show-title {
+.show-title {
   color: #ffffff;
   margin-top: 10px;
-  margin-left: 26px;
+  padding-top: 10px;;
+  margin-left: 30px;
   font-weight: 700;
   font-size: 2em;
 }
 
+.show-name {
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+
 .mat-toolbar{
+  margin-top: 10px;
   height:54px!important;
   border-radius: 2px!important;
 }
