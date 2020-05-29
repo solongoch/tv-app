@@ -1,3 +1,11 @@
+section .show-title {
+  color: #ffffff;
+  margin-top: 10px;
+  margin-left: 26px;
+  font-weight: 700;
+  font-size: 2em;
+}
+
 .mat-toolbar{
   height:54px!important;
   border-radius: 2px!important;
@@ -9,7 +17,7 @@
    /* margin-left: 5px!important; */
  }
  #show_info{
-  margin-left:20px;
+  margin-left:15px;
  }
 
  .mat-button:hover,  .mat-button:active {

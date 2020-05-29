@@ -1,13 +1,7 @@
 <app-menu></app-menu>
 
 <div class='episode-container'>
-  <mat-card class="episodecard" >
-    <mat-card-header>
-      <mat-card-title>
-        <div class="show-Name">{{showName}}</div>
-      </mat-card-title>
-    </mat-card-header>
-    <br />
+  <mat-card class="episodecard">
     <mat-tab-group (selectedTabChange)="getSelectedSeasonId($event)">
       <div *ngIf="_seasons?.length">
         <!-- To check _episodes has data-->
