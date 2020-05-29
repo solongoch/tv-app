@@ -1,8 +1,8 @@
 <!-- <app-header-component></app-header-component> -->
 <div class="container mainPage">
+  <br />
   <div>
-    <br>
-    <div class="section-title">High Rated</div>
+   <div class="section-title">High Rated</div>
     <div class="content">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let shows of _showRating" class="slide">
@@ -12,9 +12,8 @@
         </div>
       </ngx-slick-carousel>
     </div>
-
   </div>
-  <br>
+  <br />
   <div>
     <div class="section-title">Comedy</div>
     <div class="content">
@@ -29,9 +28,10 @@
     </div>
 
   </div>
-  <br>
+  <br/>
+
   <div>
-    <div class="section-title">ScienceFiction</div>
+    <div class="section-title">Science Fiction</div>
     <div class="content">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let shows of _showScienceFiction" class="slide">
@@ -41,11 +41,10 @@
         </div>
       </ngx-slick-carousel>
     </div>
-
   </div>
-  <br>
+  <br />
   <div>
-    <div class="section-title">Drama</div>
+   <div class="section-title">Drama</div>
     <div class="content">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let shows of _showDrama" class="slide">
@@ -54,8 +53,6 @@
           </a>
         </div>
       </ngx-slick-carousel>
-
     </div>
-
   </div>
 </div>

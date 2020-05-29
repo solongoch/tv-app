@@ -31,6 +31,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
 
-    // expect(compiled.querySelector('').textContent).toContain('');
+    expect(compiled.querySelector('.copyright').textContent).toContain('Copyright');
   });
 });

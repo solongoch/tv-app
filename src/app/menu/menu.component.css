@@ -25,9 +25,9 @@ section .show-title {
    outline-style: ridge!important;
  }
 
- /* mat-buttons a blue highlight frame appears */
+/* mat-buttons a blue highlight frame appears */
 
- .mat-toolbar.mat-primary {
-   background-color: black;
-   font-size: 1em;
- }
+.mat-toolbar.mat-primary {
+  background-color: black;
+  font-size: 1em;
+}
