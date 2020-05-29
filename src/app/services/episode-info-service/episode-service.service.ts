@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { IEpisodeView } from 'src/app/interfaces/iepisode-view';
 import { map } from 'rxjs/operators';
 import { ISeasonsView } from 'src/app/interfaces/iseasons-view';
+import { IEpisodeInfoService } from 'src/app/interfaces/iepisode-info-service';
 
 interface ISeasonsData {
   id: number;
@@ -17,7 +18,7 @@ interface ISeasonsData {
 @Injectable({
   providedIn: 'root'
 })
-export class EpisodeServiceService {
+export class EpisodeServiceService implements IEpisodeInfoService {
   constructor(private httpClient: HttpClient) { }
 
   /**
@@ -33,11 +34,8 @@ export class EpisodeServiceService {
   transformToIEpisodeView(data: IEpisodeData): IEpisodeView {
     return {
       episodeName: data.name,
-      seasonNumber: data.season,
       episodeNumber: data.number,
       airdate: new Date(data.airstamp),
-      summary: data.summary?.replace(/(<([^>]+)>)/ig, ""),
-      image: data.image?.medium
     }
   }
 

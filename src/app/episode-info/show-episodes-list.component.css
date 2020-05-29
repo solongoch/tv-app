@@ -36,8 +36,15 @@ mat-tab-group {
 }
 
 
-noepisodes {
+#noepisodes {
   color: rgba(0,0,0,.87);
   font-size:30px;
   margin-bottom:5px;
+  height:10px;
 }
+mat-card.noepisodes{
+  padding-top:10px;
+  border-radius: 2px;
+  padding-bottom: 10px!important;
+}
+
