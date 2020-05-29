@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
   }
   callShowInfo() {
     this._router.navigate(['/show-info', this.show_id] );
-     this._router.navigate(['/show-info', this.show_id],{queryParams: {'showName':this.showName}});
+    this._router.navigate(['/show-info', this.show_id],{queryParams: {'showName':this.showName}, queryParamsHandling: 'preserve'} );
 
   }
   callEpisodeInfo() {
