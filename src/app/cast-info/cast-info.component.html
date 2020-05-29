@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-<div *ngIf="!isLoading; else loadingSpinner">
+<div *ngIf="!isLoading; else loadingSpinner" class="cast-info-container">
   <div
     *ngIf="listOfCast && listOfCast.length > 0; else noCastInfo"
     class="cast-cards">
@@ -27,8 +27,8 @@
   </div>
 
   <ng-template #noCastInfo>
-    <mat-card>
-      <mat-card-subtitle>There's no cast info to show</mat-card-subtitle>
+    <mat-card >
+      <mat-card-subtitle id="nocasts">There's no cast info to show</mat-card-subtitle>
     </mat-card>
   </ng-template>
 </div>

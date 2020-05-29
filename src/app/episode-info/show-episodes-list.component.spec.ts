@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ShowEpisodesListComponent } from './show-episodes-list.component';
-import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
+import { EpisodeServiceService } from '../services/episode-info-service/episode-service.service';
+import { EpisodeServiceFake } from '../services/episode-info-service/episode-service-fake';
 
 describe('ShowEpisodesListComponent', () => {
   let component: ShowEpisodesListComponent;
@@ -12,8 +12,10 @@ describe('ShowEpisodesListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ShowEpisodesListComponent ],
       imports: [
-        HttpClientModule,
         RouterModule.forRoot([])
+      ],
+      providers: [
+        { provide: EpisodeServiceService, useClass: EpisodeServiceFake }
       ]
     })
     .compileComponents();

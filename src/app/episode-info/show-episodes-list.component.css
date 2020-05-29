@@ -1,7 +1,12 @@
 .episode-container {
-  width: 98%;
+  width: 89%;
   flex: 1 1 auto;
+  margin-left: 25px;
+
+}
+.mat-card{
   margin-left: 15px;
+
 }
 
 ::ng-deep.mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep.mat-tab-nav-bar.mat-primary .mat-ink-bar {
@@ -24,8 +29,16 @@ mat-tab-group {
 }
 
 
-.show-Name {
+
+#noepisodes {
   color: rgba(0,0,0,.87);
   font-size:30px;
   margin-bottom:5px;
+  height:10px;
 }
+mat-card.noepisodes{
+  padding-top:10px;
+  border-radius: 2px;
+  padding-bottom: 10px!important;
+}
+

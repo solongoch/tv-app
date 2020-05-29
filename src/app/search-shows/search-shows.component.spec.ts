@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SearchShowsComponent } from './search-shows.component';
-import { RouterModule } from '@angular/router'
-import { HttpClientModule } from '@angular/common/http/';
+import { RouterModule } from '@angular/router';
+import { SearchShowsService } from '../services/searchshows-service/search-shows.service';
+import { SearchShowsServiceFake } from '../services/searchshows-service/search-shows-service-fake';
 
 describe('SearchShowsComponent', () => {
   let component: SearchShowsComponent;
@@ -12,8 +12,10 @@ describe('SearchShowsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SearchShowsComponent ],
       imports: [
-        RouterModule.forRoot([]),
-        HttpClientModule
+        RouterModule.forRoot([])
+      ],
+      providers: [
+        { provide: SearchShowsService, useClass: SearchShowsServiceFake }
       ]
     })
     .compileComponents();

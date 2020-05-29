@@ -10,9 +10,10 @@
        <!-- cards here -->
        <a (click)="getShowInfo(show.id,show.name)">
          <mat-card class="mat-elevation-z8">
-           <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" />
-           <img mat-card-image src="../../assets/images/no-img.png" *ngIf="!show.image" class="mat-elevation-z16" />
-           <!-- <mat-card-title> {{show.name}} </mat-card-title> -->
+           <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" [alt]="show.name"/>
+
+           <img mat-card-image [matTooltip]="show.name" src="../../assets/images/no-img.png" *ngIf="!show.image" class="mat-elevation-z16" matTooltipPosition= "above" matTooltipClass="tooltip-black" [alt]="show.name" />
+           <!-- <mat-card-content> {{show.name}} </mat-card-content> -->
          </mat-card>
        </a>
      </div>

@@ -1,4 +1,5 @@
 <section>
+  <div class="show-title"><span class="show-name">{{showName}}</span></div>
   <div>
     <mat-toolbar color='primary'>
       <a class="nav-a" (click)="callShowInfo()">
@@ -7,6 +8,8 @@
         <button mat-button color="primary">Episodes</button></a>
       <a class="nav-a" (click)="callCastInfo()">
         <button mat-button color="primary">Cast</button></a>
+      <a class="nav-a" (click)="goBack()">
+          <button mat-button color="primary">Back</button></a>
      </mat-toolbar>
   </div>
 </section>

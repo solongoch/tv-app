@@ -1,4 +1,20 @@
+.show-title {
+  color: #ffffff;
+  margin-top: 10px;
+  padding-top: 10px;;
+  margin-left: 30px;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.show-name {
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+
 .mat-toolbar{
+  margin-top: 10px;
   height:54px!important;
   border-radius: 2px!important;
 }
@@ -9,17 +25,17 @@
    /* margin-left: 5px!important; */
  }
  #show_info{
-  margin-left:20px;
+  margin-left:15px;
  }
 
- .mat-button:hover {
+ .mat-button:hover,  .mat-button:active {
    outline: white !important;
    outline-style: ridge!important;
  }
 
- /* mat-buttons a blue highlight frame appears */
+/* mat-buttons a blue highlight frame appears */
 
- .mat-toolbar.mat-primary {
-   background-color: black;
-   font-size: 1em;
- }
+.mat-toolbar.mat-primary {
+  background-color: black;
+  font-size: 1em;
+}

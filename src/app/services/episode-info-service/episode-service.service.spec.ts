@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { EpisodeServiceService } from './episode-service.service';
-import { HttpClientModule } from '@angular/common/http'
-import { from } from 'rxjs';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 describe('EpisodeServiceService', () => {
   let service: EpisodeServiceService;
@@ -10,7 +10,8 @@ describe('EpisodeServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[
-        HttpClientModule
+        HttpClientTestingModule,
+        RouterModule.forRoot([])
       ]
     });
     service = TestBed.inject(EpisodeServiceService);
