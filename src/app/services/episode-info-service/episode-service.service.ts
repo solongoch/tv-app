@@ -23,10 +23,11 @@ export class EpisodeServiceService {
   /**
    *
    * @param episodeEndpoint  // http://api.tvmaze.com/seasons/263/episodes
-   *  http://api.tvmaze.com/shows/1/episodes
+   *Get Episode Information
+   *Input season id.
    */
-  getShowEpisodes(showId: number) {
-    return this.httpClient.get<IEpisodeData[]>(`${environment.rootUrl}${environment.showendpoint}${showId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.transformToIEpisodeView(item))));
+  getShowEpisodes(seasonId: number) {
+    return this.httpClient.get<IEpisodeData[]>(`${environment.rootUrl}${environment.episodeEndpoint}${seasonId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.transformToIEpisodeView(item))));
   }
 
   transformToIEpisodeView(data: IEpisodeData): IEpisodeView {

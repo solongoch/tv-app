@@ -6,7 +6,7 @@
    padding: 10px 10px;
  }
  .mat-card {
-   background-color: #343a40;
+   background-color: white;
    padding:16px 16px 0px 16px;
  }
 .mat-card-image{
@@ -16,4 +16,12 @@ a:hover{
   outline-style:  ridge!important;
   outline: #ccc;
   cursor: pointer;
+  box-shadow: 0 0 3px 0 #ddd;
+}
+::ng-deep.tooltip-black {
+  background: black;
+  margin: 0;
+  font-weight: 500;
+  padding:0;
+ color: white;
 }

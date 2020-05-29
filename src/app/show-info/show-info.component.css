@@ -1,12 +1,15 @@
-/********** Base styles **********/
-* {
-  box-sizing: border-box;
+.container {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-left: 25px;
+     display: flex;
+  flex-wrap: wrap;
 }
-
 .mat-card-title {
   color: rgba(0,0,0,.87);
-  font-size:30px;
-  margin-bottom:5px;
+  font-size:25px;
+  margin-bottom:15px;
+  padding-bottom:10px;
 }
 
 .mat-card-subtitle{

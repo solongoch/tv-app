@@ -1,0 +1,11 @@
+#nocasts {
+  color: rgba(0,0,0,.87);
+  font-size:25px;
+  margin-bottom:5px;
+}
+.episode-container {
+  width: 89%;
+  flex: 1 1 auto;
+  margin-left: 25px;
+
+}
