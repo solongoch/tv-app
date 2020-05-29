@@ -1,25 +1,32 @@
-.mat-toolbar{
-  height:54px!important;
-  border-radius: 2px!important;
+section .show-title {
+  color: #ffffff;
+  margin-top: 10px;
+  margin-left: 26px;
+  font-weight: 700;
+  font-size: 2em;
+}
+.mat-toolbar {
+  height: 54px !important;
+  border-radius: 2px !important;
 }
 
- .mat-button {
-   color: white !important;
-   text-decoration: none;
-   /* margin-left: 5px!important; */
- }
- #show_info{
-  margin-left:20px;
- }
+.mat-button {
+  color: white !important;
+  text-decoration: none;
+  /* margin-left: 5px!important; */
+}
+#show_info {
+  margin-left: 15px;
+}
 
- .mat-button:hover {
-   outline: white !important;
-   outline-style: ridge!important;
- }
+.mat-button:hover {
+  outline: white !important;
+  outline-style: ridge !important;
+}
 
- /* mat-buttons a blue highlight frame appears */
+/* mat-buttons a blue highlight frame appears */
 
- .mat-toolbar.mat-primary {
-   background-color: black;
-   font-size: 1em;
- }
+.mat-toolbar.mat-primary {
+  background-color: black;
+  font-size: 1em;
+}
