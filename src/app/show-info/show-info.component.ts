@@ -11,10 +11,11 @@ import { TvshowService } from 'src/app/services/show-info-service/tvshow.service
 export class ShowInfoComponent implements OnInit {
   show: IShowinfo;
   show_id: number;
-  searchTerm:string;
+
+  isLoading: boolean;//display pregress bar if there is any network problemadded by Priya
 
   constructor(private tvshowService: TvshowService,private actRoute: ActivatedRoute) {
-     //added by Priya for getting query params showid dynamically
+    //added by Priya for getting query params showid dynamically
     this.show_id = this.actRoute.snapshot.params.id;
 
 
@@ -23,8 +24,12 @@ export class ShowInfoComponent implements OnInit {
 
   ngOnInit(): void {
 
-      this.tvshowService.getShowInfo(this.show_id)
-    .subscribe(data => this.show = data)
+    this.isLoading = true;
+    this.tvshowService.getShowInfo(this.show_id)
+      .subscribe(data => {
+        this.show = data;
+        this.isLoading = false;
+      })
   }
 
 }
