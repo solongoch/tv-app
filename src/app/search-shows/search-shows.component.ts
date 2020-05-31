@@ -1,9 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchShowsService } from '../services/searchshows-service/search-shows.service';
 import { ISearchView } from '../interfaces/isearch-view';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-shows',
@@ -12,10 +11,9 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchShowsComponent implements OnInit {
   _shows: ISearchView[];//getting data from API for the searchedTerm
-
   searchTerm: string;//for storing searched string from router params.
-
   subscription$$: Subscription;
+  isLoading: boolean;
 
   constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) {  }
 
@@ -24,10 +22,19 @@ export class SearchShowsComponent implements OnInit {
   }
 
   getSearchedShows(searchValue: string) {
-
     this.searchTerm = searchValue;
     if (this.searchTerm) {
-     this.subscription$$= this.currServ.getShows(this.searchTerm).subscribe(data => this._shows = data);
+      this.isLoading = true;
+      this.subscription$$ = this.currServ.getShows(this.searchTerm).subscribe((data : ISearchView[]) =>  {
+        this._shows = data;
+        this.isLoading = false;
+      },
+      (error) =>
+      {
+        this._router.navigate(['/error']);
+      }
+
+      );
     }
   }
 
@@ -39,7 +46,7 @@ export class SearchShowsComponent implements OnInit {
   ngOnDestroy(){
     if (this.subscription$$) {
       this.subscription$$.unsubscribe();
-      }
+    }
   }
 
 

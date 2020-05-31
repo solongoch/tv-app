@@ -7,7 +7,6 @@ import { ISearchView } from '../../interfaces/isearch-view';
 import { IShowView } from '../../interfaces/ishow-view';
 import { ISearchShowService } from 'src/app/interfaces/isearch-show-service';
 
-
 interface IShowData {
   id: number,
   name:string,
@@ -18,7 +17,7 @@ interface IShowData {
   rating: {
     average: number
   }
- }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +28,8 @@ export class SearchShowsService implements ISearchShowService {
   constructor(private http: HttpClient) { }
 
   getShows(showName: string) {
-    return this.http.get<ISearchData[]>(`${environment.rootUrl}${environment.searchendpoint}${showName}`).pipe(map((data: ISearchData[]) => data.map(item => this.transformToISearchView(item))));
+    return this.http.get<ISearchData[]>(`${environment.rootUrl}${environment.searchendpoint}${showName}`).pipe(
+      map((data: ISearchData[]) => data.map(item => this.transformToISearchView(item))));
   }
 
   transformToISearchView(data: ISearchData): ISearchView {
@@ -41,29 +41,24 @@ export class SearchShowsService implements ISearchShowService {
   }
 
   // Used to display shows in home page based on Genres and Rating API:http://api.tvmaze.com/shows
-
-
-  getAllShows()  {
+  getAllShows() {
     return this.http.get<IShowData[]>(`${environment.mainPage}`)
-    .pipe(map(data => data.map(show => this.transformToIShowView(show))))
+      .pipe(map(data => data.map(show => this.transformToIShowView(show))));
   }
 
-
-//Transorming into IShow View
-  transformToIShowView(data: IShowData) : IShowView {
+  //Transorming into IShow View
+  transformToIShowView(data: IShowData): IShowView {
     return {
-     showId: data.id,
-     showName: data.name,
-     image: data.image?data.image.medium: '',
-     rating: data.rating?data.rating.average : null,
-     genres: data.genres,
+      showId: data.id,
+      showName: data.name,
+      image: data.image ? data.image.medium : '',
+      rating: data.rating ? data.rating.average : null,
+      genres: data.genres,
     }
-   }
+  }
 
-
-//Filtering the IShowView[] based on given Genre
-
-   getShowsByGenre(showList: IShowView[],genre: string) {
+  //Filtering the IShowView[] based on given Genre
+  getShowsByGenre(showList: IShowView[], genre: string) {
     return showList.filter(show => show.genres.indexOf(genre) !== -1);
   }
 

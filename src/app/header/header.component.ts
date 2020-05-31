@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { SearchShowsService } from '../services/searchshows-service/search-shows.service';
-import { ISearchView } from '../interfaces/isearch-view';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +11,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
 
-  searchField = new FormControl('');
-
+  searchField = new FormControl('',Validators.minLength(2));
 
   constructor(private _router : Router) { }
 
   ngOnInit(): void {
-    this.searchField.valueChanges
+    this.searchField.valueChanges.pipe(debounceTime(1000))
       .subscribe((searchTerm: string) => this.getShows(searchTerm.trim()));
   }
 
@@ -33,6 +30,7 @@ export class HeaderComponent implements OnInit {
 //Clear search bar using cross icon
 clearSearchField() {
   this.searchField.setValue('');
+  this._router.navigate(['/mainpage']);
 }
 
 }

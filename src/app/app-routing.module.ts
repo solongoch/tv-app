@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShowInfoComponent } from './show-info/show-info.component';
 import { CastInfoComponent } from './cast-info/cast-info.component';
 import { ShowEpisodesListComponent } from './episode-info/show-episodes-list.component';
-import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { SearchShowsComponent } from './search-shows/search-shows.component';
@@ -21,18 +20,18 @@ const routes: Routes = [
   //empty path should route to StaticPageComponent
   { path: "index", component: StaticPageComponent },
 
-  //Given path should route to MenuComponent called in app
+  //Given path should route to SearchShowsComponent called in app
   { path: 'searchshows/:searchTerm', component: SearchShowsComponent },
 
-  { path: 'menu/:id', component: MenuComponent },
-  //Given path should route to ShowInfoComponent
+//Given path should route to ShowInfoComponent
   { path: 'show-info/:id', component: ShowInfoComponent },
   //Given path should route to ShowEpisodesListComponent
   { path: 'episode-info/:id', component: ShowEpisodesListComponent },
   //Given path should route to CastInfoComponent
   { path: 'cast-info/:id', component: CastInfoComponent },
+  { path: 'error', component: PageNotFoundComponent },
   //Given path should route to PageNotFoundComponent Wildcard route should be at atlast
-  { path: "**", component: PageNotFoundComponent },
+  { path: "**", redirectTo:'/error', pathMatch:'full'},
 ];
 
 @NgModule({
