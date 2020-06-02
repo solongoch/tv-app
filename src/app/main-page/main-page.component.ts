@@ -16,8 +16,9 @@ export class MainPageComponent implements OnInit {
   _showScienceFiction: IShowView[];;
   _showDrama: IShowView[];
   subscription$$: Subscription;
+  isLoading: boolean;
 
-  constructor(private currServ: SearchShowsService,private _router: Router) { }
+  constructor(private currServ: SearchShowsService, private _router: Router) { }
 
   slideConfig = {
     "slidesToShow": 6,
@@ -50,7 +51,7 @@ export class MainPageComponent implements OnInit {
         breakpoint: 768,
         settings: {
           slidesToShow: 4,
-          slidesToScroll:2
+          slidesToScroll: 2
         }
       },
       {
@@ -68,17 +69,20 @@ export class MainPageComponent implements OnInit {
         }
       }
       // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   };
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.getShows();
+    this.isLoading = false;
   }
 
   getShows() {
-    this.subscription$$ = this.currServ.getAllShows().subscribe((data: IShowView[]) => this.getMainPageShows(data));
+    this.subscription$$ = this.currServ.getAllShows().subscribe((data: IShowView[]) => this.getMainPageShows(data),
+      (error) => {
+        this._router.navigate(['/error']);
+      });
   }
 
   getMainPageShows(show: IShowView[]) {
@@ -89,9 +93,9 @@ export class MainPageComponent implements OnInit {
   }
 
 
-  callShowInfo(showId:number, showName: string) {
-    this._router.navigate(['/show-info', showId],{queryParams: {'showName':showName}});//QueryParam for setting show name
- }
+  callShowInfo(showId: number, showName: string) {
+    this._router.navigate(['/show-info', showId], { queryParams: { 'showName': showName } });//QueryParam for setting show name
+  }
 
   //Unscribe observables from memory
   ngOnDestroy(): void {

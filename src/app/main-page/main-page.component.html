@@ -1,7 +1,7 @@
 <!-- <app-header-component></app-header-component> -->
 <div class="container mainPage">
   <br />
-  <div>
+  <div class="search-cards" *ngIf="!isLoading; else loadingSpinner">
    <div class="section-title">High Rated</div>
     <div class="content">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
@@ -56,3 +56,6 @@
     </div>
   </div>
 </div>
+<ng-template #loadingSpinner>
+  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+</ng-template>
