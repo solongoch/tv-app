@@ -22,6 +22,7 @@ export class ShowInfoComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
 
     this.isLoading = true;

@@ -22,9 +22,12 @@
 
     <div class = "description col-lg-6 col-md-6 col-sm-8 col-xs-12 row">
       <mat-card>
-        <p>{{show.description | slice:0:250}}{{ show.description?.length > 250 ? '...' : ''}}</p>
+      <mat-card-content style="height: 150px; overflow-y: auto" >
+        <p>{{show.description}}</p>
+        <!-- <p>{{show.description | slice:0:500}}{{ show.description?.length > 250 ? '...' : ''}}</p> -->
         <p *ngIf="!show.description">We don't have a summary for {{show.name}} yet. Hang in there, or go ahead and contribute one. </p>
-      </mat-card>
+      </mat-card-content>
+    </mat-card>
     </div>
 
     <div class = "col-lg-3 col-md-3 col-sm-12 row col-xs-12 showinfo">
@@ -38,6 +41,7 @@
 </mat-card>
 
 </div>
+
 
 <ng-template #loadingSpinner>
   <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
