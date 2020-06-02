@@ -3,16 +3,14 @@
   margin-top: 10px;
   padding-top: 10px;;
   margin-left:50px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2em;
   margin-right: -5px;
 }
 
 .show-name {
-  /* margin-left: 20px; */
   padding-bottom: 10px;
 }
-
 
 .mat-toolbar{
   margin-top: 10px;

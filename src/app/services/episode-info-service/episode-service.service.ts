@@ -36,6 +36,10 @@ export class EpisodeServiceService implements IEpisodeInfoService {
       episodeName: data.name,
       episodeNumber: data.number,
       airdate: new Date(data.airstamp),
+      airtime:data.airtime,
+      image: data.image?.medium,
+      summary:data.summary? data.summary.replace(/(<([^>]+)>)/ig,"") : ` We don't have a episode summary ` ,
+      runtime: data.runtime
     }
   }
 
