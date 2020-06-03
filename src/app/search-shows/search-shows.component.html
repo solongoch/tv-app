@@ -4,8 +4,8 @@
       <div fxLayout="row wrap">
         <div *ngIf="_shows && _shows.length > 0; then thenBlock else noShows"></div>
         <ng-template #thenBlock>
-          <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20"
-          fxFlex.sm="25" fxFlex.xs="50" fxLayout="column">
+          <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20" fxFlex.sm="25" fxFlex.xs="50"
+            fxLayout="column">
             <a (click)="getShowInfo(show.id,show.name)">
               <mat-card class="mat-elevation-z8">
                 <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" [alt]="show.name" />
@@ -21,11 +21,11 @@
   </div>
   <ng-template #noShows>
     <div id="noShows">
-      <br/>
-        <p>Your search for "{{searchTerm}}" did not have any matches.
-         <br>
-       Try different keywords </p>
-     </div>
+      <br />
+      <p>Your search for "{{searchTerm}}" did not have any matches.
+        <br>
+        Try different keywords </p>
+    </div>
   </ng-template>
 </div>
 

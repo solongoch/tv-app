@@ -6,10 +6,12 @@
   position: relative;
   min-height: 100vh;
 }
+
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
 }
 
+/* Footer styles and position */
 footer {
   position: absolute;
   bottom: 0;
@@ -18,10 +20,12 @@ footer {
   height: 2rem; /* Footer height */
 }
 
+/* Footer Toolbar color */
 .mat-toolbar.mat-primary{
   background-color:#000;
 }
 
+/* Footer Toolbat height */
 .mat-toolbar{
   height:44px!important;
   border-radius: 2px!important;
