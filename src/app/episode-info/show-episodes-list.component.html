@@ -37,11 +37,11 @@
                     Runtime: {{ episode.runtime }} minutes
                   </mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image [src]="episode.image" />
+                <img mat-card-image *ngIf="episode.image" [src]="episode.image" />
                 <img
                   mat-card-image
-                  src="../../assets/images/no-img-landscape-text.png"
                   *ngIf="!episode.image"
+                  src="../../assets/images/no-img-landscape-text.png"
                   class="noImg"
                 />
                 <mat-card-content id="summary">{{
