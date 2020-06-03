@@ -2,32 +2,60 @@
 <div *ngIf="!isLoading; else loadingSpinner">
   <div class="episode-container">
     <mat-tab-group (selectedTabChange)="getSelectedSeasonId($event)">
-      <mat-tab class="season-tabs" *ngFor="let season of _seasons; let tabIndex = index">
-        <ng-template mat-tab-label> S{{season.seasonNumber}}</ng-template>
-        <ng-template matTabContent>
-          <div fxFlex fxLayout="column" fxLayoutGap="10px">
-            <div fxLayout="row wrap">
-              <div *ngIf="_episodes && _episodes.length > 0; else noEpisode"></div>
-              <div class="card-picture" *ngFor="let episode of _episodes" fxFlex="50" fxFlex.md="50" fxFlex.sm="50"
-                fxFlex.xs="100" fxLayout="column" style="padding: 5px;">
-                <mat-card>
-                  <mat-card-header>
-                    <mat-card-title id="cardTitle">
-                      <span class="card-title">{{episode.episodeNumber}}. {{episode.episodeName}}</span>
-                    </mat-card-title>
-                    <mat-card-subtitle id="airDate">AirDate: {{episode.airdate | date : 'mediumDate'}} at
-                      {{episode.airtime}} </mat-card-subtitle>
-                    <mat-card-subtitle id="airDate"> Runtime: {{episode.runtime}} minutes
-                    </mat-card-subtitle>
-                  </mat-card-header>
-                  <img mat-card-image [src]="episode.image">
-                  <img mat-card-image src="../../assets/images/no-img-landscape-text.png" *ngIf="!episode.image" class="noImg">
-                  <mat-card-content id="summary">{{episode.summary | slice:0:250}}</mat-card-content>
-                </mat-card>
-              </div>
+      <mat-tab
+        class="season-tabs"
+        *ngFor="let season of _seasons; let tabIndex = index"
+      >
+        <ng-template mat-tab-label>S{{ season.seasonNumber }}</ng-template>
+        <!-- <ng-template matTabContent> -->
+        <div fxFlex fxLayout="column" fxLayoutGap="10px">
+          <div fxLayout="row wrap">
+            <div
+              *ngIf="_episodes && _episodes.length > 0; else noEpisode"
+            ></div>
+            <div
+              class="card-picture"
+              *ngFor="let episode of _episodes"
+              fxFlex="50"
+              fxFlex.md="50"
+              fxFlex.sm="50"
+              fxFlex.xs="100"
+              fxLayout="column"
+            >
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title id="cardTitle">
+                    <span class="card-title"
+                      >{{ episode.episodeNumber }}.
+                      {{ episode.episodeName }}</span
+                    >
+                  </mat-card-title>
+                  <mat-card-subtitle id="airDate"
+                    >AirDate: {{ episode.airdate | date: "mediumDate" }} at
+                    {{ episode.airtime }}
+                  </mat-card-subtitle>
+                  <mat-card-subtitle id="airDate">
+                    Runtime: {{ episode.runtime }} minutes
+                  </mat-card-subtitle>
+                </mat-card-header>
+                <img
+                  mat-card-image
+                  *ngIf="episode.image"
+                  [src]="episode.image"
+                />
+                <img
+                  mat-card-image
+                  *ngIf="!episode.image"
+                  src="../../assets/images/no-img-landscape-text.png"
+                  class="noImg"
+                />
+                <mat-card-content id="summary">{{
+                  episode.summary | slice: 0:250
+                }}</mat-card-content>
+              </mat-card>
             </div>
           </div>
-        </ng-template>
+        </div>
       </mat-tab>
     </mat-tab-group>
     <ng-template #noEpisode>
@@ -49,7 +77,10 @@
 
 <!-- show progress bar if the page is in "loading" state -->
 <div class="progress-bar-container">
-    <ng-template #loadingSpinner>
-      <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
-    </ng-template>
-  </div>
+  <ng-template #loadingSpinner>
+    <mat-progress-bar
+      mode="indeterminate"
+      aria-label="The page is loading"
+    ></mat-progress-bar>
+  </ng-template>
+</div>

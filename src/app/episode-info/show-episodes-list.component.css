@@ -92,16 +92,15 @@ mat-tab-group {
 /* specified Margins for image card */
 .mat-card-image {
   width: 100%;
+  height: 320px;
   margin: auto;
   margin-bottom: 10px;
 }
 
-
-/* specified Margins for No image card */
-.noImg {
+/* .noImg {
   margin-left: -16px;
   margin-right: 1px;
-}
+} */
 
 .card-picture {
   padding: 15px;
