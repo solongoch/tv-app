@@ -11,17 +11,35 @@ import { ISeasonsView } from '../interfaces/iseasons-view';
 })
 export class ShowEpisodesListComponent implements OnInit {
 
-  _episodes: IEpisodeView[];
-  subscription$$: Subscription;
-  subscription1$$: Subscription;
-  showId: number;
-  _seasons: ISeasonsView[];
-  seasonId: number;
-  isLoading: boolean;
+  _episodes: IEpisodeView[];//Episode array
+  subscription$$: Subscription;//to unsubscribe
+  subscription1$$: Subscription;//to unsubscribe
+  showId: number; //to get seasons for the selected show using show Id
+  _seasons: ISeasonsView[]; //season view array object
+  seasonId: number; //to get episodes for the seleced season based on seadon id
+  isLoading: boolean;//for progress barloading
+
+
+
+
+  /**
+   * Creates an instance of show episodes list component.
+   * @param currServ EpisodeServiceService
+   * @param actRoute ActivatedRoute
+   * @param _router Router
+   * getting showid from queryparam
+   */
 
   constructor(private currServ: EpisodeServiceService, private actRoute: ActivatedRoute, private _router: Router) {
     this.showId = this.actRoute.snapshot.params.id;
   }
+
+
+
+  /**
+   * on init getting seasons information using show id
+   */
+
 
   ngOnInit(): void {
     this.subscription$$ = this.currServ.getShowSeasons(this.showId).subscribe((data: ISeasonsView[]) => {
@@ -49,9 +67,17 @@ export class ShowEpisodesListComponent implements OnInit {
     });
   }
 
+
+
+  /**
+   * Filters episodes which should not have null episode number
+   * @param episodeList
+   */
+
   filterEpisodeList(episodeList: IEpisodeView[]) {
     this._episodes = episodeList.filter(episode => episode.episodeNumber !== null);
   }
+
   //Unscribe observables from memory
   ngOnDestroy(): void {
     if (this.subscription$$) {

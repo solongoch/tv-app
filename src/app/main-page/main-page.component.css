@@ -1,8 +1,12 @@
+/* Width of Slick */
+
 .content {
   margin: auto;
   padding: 2px;
   width: 99%;
 }
+
+/* style of anchor tag for each image in click*/
 
 a {
   text-decoration: none;
@@ -10,35 +14,37 @@ a {
   outline: #ccc;
 }
 
+/* cursor type pointer on hover of image anchors */
 a:hover {
   cursor: pointer;
-  transition: color .3s ease-in-out;
-
 }
 
-img:hover{
-  opacity:.75;
+/* specified Image styles on hover */
+img:hover {
+  opacity: .75;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
-     transition: transform 0.5s;
-    -webkit-transition: transform 0.5s;
-    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-  }
-
-
-img{
-  border-radius:4px;
-  vertical-align: top;
-
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 }
+
+/* image radius */
+img {
+  border-radius: 4px;
+  vertical-align: top;
+}
+
+/* Genre and Rating title styles */
 .section-title {
   color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
-  margin-bottom:10px;
-  margin-left: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-left: 15px;
 }
 
-.showImage{
-  box-shadow:20px 20px 10px grey;
+/* image Shadow */
+.showImage {
+  box-shadow: 20px 20px 10px black;
 }

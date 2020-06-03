@@ -23,15 +23,20 @@ const routes: Routes = [
   //Given path should route to SearchShowsComponent called in app
   { path: 'searchshows/:searchTerm', component: SearchShowsComponent },
 
-//Given path should route to ShowInfoComponent
+  //Given path should route to ShowInfoComponent
   { path: 'show-info/:id', component: ShowInfoComponent },
+
   //Given path should route to ShowEpisodesListComponent
   { path: 'episode-info/:id', component: ShowEpisodesListComponent },
+
   //Given path should route to CastInfoComponent
   { path: 'cast-info/:id', component: CastInfoComponent },
+
+  ////Given path should route to PageNotFoundComponent
   { path: 'error', component: PageNotFoundComponent },
+
   //Given path should route to PageNotFoundComponent Wildcard route should be at atlast
-  { path: "**", redirectTo:'/error', pathMatch:'full'},
+  { path: "**", redirectTo: '/error', pathMatch: 'full' },
 ];
 
 @NgModule({

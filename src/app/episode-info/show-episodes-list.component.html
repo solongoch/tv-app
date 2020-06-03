@@ -6,7 +6,7 @@
     <mat-tab-group (selectedTabChange)="getSelectedSeasonId($event)">
       <mat-tab class="season-tabs" *ngFor="let season of _seasons; let tabIndex = index">
         <ng-template mat-tab-label> S{{season.seasonNumber}}</ng-template>
-        <!-- <ng-template matTabContent> -->
+        <ng-template matTabContent>
           <div fxFlex fxLayout="column" fxLayoutGap="10px">
             <div fxLayout="row wrap">
               <div *ngIf="_episodes && _episodes.length > 0; else noEpisode"></div>
@@ -29,7 +29,7 @@
               </div>
             </div>
           </div>
-        <!-- </ng-template> -->
+        </ng-template>
       </mat-tab>
     </mat-tab-group>
     <ng-template #noEpisode>
