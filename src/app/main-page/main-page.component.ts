@@ -11,15 +11,18 @@ import { Router } from '@angular/router';
 })
 
 export class MainPageComponent implements OnInit {
-  _showRating: IShowView[];
-  _showComedy: IShowView[];
-  _showScienceFiction: IShowView[];
-  _showDrama: IShowView[];
-  subscription$$: Subscription;
-  isLoading: boolean;
+  _showRating: IShowView[];//for Rating
+  _showComedy: IShowView[]; //for Comedy genre
+  _showScienceFiction: IShowView[];//for science fiction genre
+  _showDrama: IShowView[]; //for drama genre
+  subscription$$: Subscription; //for subscribe and unsbscribe
+  isLoading: boolean;//for progress bar
 
   constructor(private currServ: SearchShowsService, private _router: Router) {}
 
+  /**
+   * Slide config of main page component slick carosel Styles
+   */
   slideConfig = {
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -68,16 +71,22 @@ export class MainPageComponent implements OnInit {
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
     ]
   };
 
+  /**
+   * on init for loading progress bar and calling allShows for mainpage
+   */
   ngOnInit(): void {
     this.isLoading = true;
     this.getShows();
     this.isLoading = false;
   }
 
+  /**
+   * Gets shows
+   * Calling getAllShows Service
+   */
   getShows() {
     this.subscription$$ = this.currServ.getAllShows().subscribe(
       (data: IShowView[]) => this.getMainPageShows(data),
@@ -87,6 +96,11 @@ export class MainPageComponent implements OnInit {
     );
   }
 
+  /**
+   * Gets main page shows
+   * @param show
+   * getting all Genre shows
+   */
   getMainPageShows(show: IShowView[]) {
     this._showRating = this.currServ.getShowsByRating(show, 8.5);
     this._showComedy = this.currServ.getShowsByGenre(show, 'Comedy');
@@ -96,6 +110,14 @@ export class MainPageComponent implements OnInit {
     );
     this._showDrama = this.currServ.getShowsByGenre(show, 'Drama');
   }
+
+  /**
+   * Calls show info
+   * called showInfo Api when user clicks the show image
+   * based on selected show id
+   * @param showId
+   * @param showName
+   */
 
   callShowInfo(showId: number, showName: string) {
     this._router.navigate(['/show-info', showId], {

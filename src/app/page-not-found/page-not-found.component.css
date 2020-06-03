@@ -1,3 +1,4 @@
+/* Outer Div style */
 #page-err {
   display: flex;
   align-items: center;
@@ -8,13 +9,7 @@
   line-height: 50px;
 }
 
-h1 {
-  color: #ccc !important;
-  padding-top: 15px;
-  padding-left: 5px;
-  font-size: 1.5rem;
-}
-
+/* Error info styles */
 p {
   color: #ccc !important;
   padding-top: 15px;
@@ -22,6 +17,7 @@ p {
   font-size: 2rem;
 }
 
+/* a tag styles */
 a {
   color: #ccc !important;
   margin-top: 5px;
@@ -31,6 +27,7 @@ a {
   text-decoration: none;
 }
 
+/* on hover style of anchor tag */
 a:hover {
   outline: ridge;
   padding-bottom: 10px;

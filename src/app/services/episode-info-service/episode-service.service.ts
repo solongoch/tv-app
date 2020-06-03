@@ -19,7 +19,8 @@ export class EpisodeServiceService implements IEpisodeInfoService {
   constructor(private httpClient: HttpClient) {}
 
   /**
-   * @param episodeEndpoint  // http://api.tvmaze.com/seasons/263/episodes
+   *
+   *episodeEndpoint  // http://api.tvmaze.com/seasons/263/episodes
    *Get Episode Information
    *Input season id.
    */
@@ -35,6 +36,11 @@ export class EpisodeServiceService implements IEpisodeInfoService {
       );
   }
 
+  /**
+   * Transforms to IEpisodeData to IEpisodeView mapping done here
+   * @param data IEpisodeData
+   * @returns to iepisode view
+   */
   transformToIEpisodeView(data: IEpisodeData): IEpisodeView {
     return {
       episodeName: data.name,
@@ -42,13 +48,17 @@ export class EpisodeServiceService implements IEpisodeInfoService {
       airdate: new Date(data.airstamp),
       airtime: data.airtime,
       image: data.image?.original,
-      summary: data.summary
-        ? data.summary.replace(/(<([^>]+)>)/gi, '')
-        : ` We don't have a episode summary `,
+      summary: data.summary ? data.summary.replace(/(<([^>]+)>)/ig, "") : ` We don't have a episode summary `,
       runtime: data.runtime
     };
   }
 
+  /**
+   * api:  http://api.tvmaze.com/shows/1/seasons
+   * Gets show seasons
+   * @param showId
+   * @returns ISeasonsView
+   */
   getShowSeasons(showId: number) {
     return this.httpClient
       .get<ISeasonsData[]>(
@@ -61,6 +71,11 @@ export class EpisodeServiceService implements IEpisodeInfoService {
       );
   }
 
+  /**
+   * Transforms to ISeasonsData to ISeasonsView UI mapping done here
+   * @param data
+   * @returns to iseason view
+   */
   transformToISeasonView(data: ISeasonsData): ISeasonsView {
     return {
       seasonId: data.id,

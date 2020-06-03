@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div *ngIf="!isLoading; else loadingSpinner"></div>
-<div *ngIf="show" class="container">
+<div *ngIf="show" class="info-container">
   <mat-card id="card-info">
     <mat-card-header>
       <mat-card-subtitle>
@@ -9,25 +9,23 @@
     </mat-card-header>
 
     <div class="showlist">
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 row">
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 row">
         <img [src]="show.image" class="img-responsive" style="width: 100%" />
         <img src="../../assets/images/no-img.png" *ngIf="!show.image" />
       </div>
 
-      <div class="description col-lg-6 col-md-6 col-sm-8 col-xs-12 row">
+      <div class="description col-lg-7 col-md-7 col-sm-7 col-xs-12 row">
         <mat-card>
-          <mat-card-content style="height: 150px; overflow-y: auto">
+          <mat-card-content style="height: 100px; overflow-y: auto">
             <p>{{ show.description }}</p>
-            <!-- <p>{{show.description | slice:0:500}}{{ show.description?.length > 250 ? '...' : ''}}</p> -->
             <p *ngIf="!show.description">
-              We don't have a summary for {{ show.name }} yet. Hang in there, or
-              go ahead and contribute one.
+              We don't have a summary for {{ show.name }} at this time.
             </p>
           </mat-card-content>
         </mat-card>
       </div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12 row col-xs-12 showinfo">
+      <div class="col-lg-7 col-md-7 col-sm-7 row col-xs-12 showinfo">
         <div><span>Network:</span> {{ show.network }}</div>
         <div><span>Country:</span> {{ show.country }}</div>
         <div><span>Runtime:</span> {{ show.runtime }}</div>

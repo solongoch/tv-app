@@ -20,12 +20,12 @@
 }
 
 .showlist {
-  height: 350px;
+  height: 300px;
 }
 
 .showinfo {
-  font-size: 0.9em;
-  background-color: #d3d3d3;
+  font-size: 1em;
+  background-color: #D3D3D3;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -33,13 +33,13 @@
 .description {
   padding-bottom: 10px;
   padding-left: 0px;
-  font-size: 1.2em;
   text-align: justify;
   text-justify: inter-word;
 }
 
 span {
   margin-left: 5px;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
@@ -206,13 +206,18 @@ span {
   .col-xs-12 {
     width: 98%;
   }
+}
+
+@media (max-width: 375px) {
   .container {
     margin: 0 20px;
     max-width: calc(100% - 40px);
   }
+
   #card-info {
     padding: 0;
   }
+
   .mat-card-subtitle {
     font-size: 0.8em;
     font-weight: 600;

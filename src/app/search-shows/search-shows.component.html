@@ -2,7 +2,9 @@
   <div class="search-cards" *ngIf="!isLoading; else loadingSpinner">
     <div fxFlex fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap">
-        <div *ngIf="_shows && _shows.length > 0; then thenBlock; else noShows"></div>
+        <div
+          *ngIf="_shows && _shows.length > 0; then thenBlock; else noShows"
+        ></div>
         <ng-template #thenBlock>
           <div
             *ngFor="let show of _shows"
@@ -11,7 +13,8 @@
             fxFlex.md="20"
             fxFlex.sm="25"
             fxFlex.xs="50"
-            fxLayout="column">
+            fxLayout="column"
+          >
             <a (click)="getShowInfo(show.id, show.name)">
               <mat-card class="mat-elevation-z8">
                 <img
@@ -19,7 +22,8 @@
                   [src]="show.image"
                   *ngIf="show.image"
                   class="mat-elevation-z24"
-                  [alt]="show.name"/>
+                  [alt]="show.name"
+                />
                 <img
                   mat-card-image
                   [matTooltip]="show.name"
@@ -28,7 +32,8 @@
                   class="mat-elevation-z16"
                   matTooltipPosition="above"
                   matTooltipClass="tooltip-black"
-                  [alt]="show.name"/>
+                  [alt]="show.name"
+                />
               </mat-card>
             </a>
           </div>
@@ -36,7 +41,7 @@
       </div>
     </div>
   </div>
-  
+
   <ng-template #noShows>
     <div id="noShows">
       <br />

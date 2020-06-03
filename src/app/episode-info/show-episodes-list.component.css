@@ -1,3 +1,4 @@
+/* specified container width and style */
 .episode-container {
   width: calc(100% - 90px);
   flex: 1 0 auto;
@@ -54,21 +55,25 @@ mat-tab-group {
   -webkit-transition: transform 0.5s;
 }
 
+/* specified the Font size of EpisodeName as card title */
 #cardTitle {
   margin-bottom: 12px;
   font-size: 20px;
 }
 
+/* specified to text color for Airdate information of episode */
 #airDate {
   color: #ccc;
   margin-bottom: 12px;
 }
 
+/* specified text styles for episode summary */
 #summary {
   text-align: justify;
   text-justify: inter-word;
 }
 
+/* specified styles for no episode information template */
 #noepisodes {
   color: white;
   font-size: 24px;
@@ -77,12 +82,14 @@ mat-tab-group {
   height: 55px;
 }
 
+/* specified Margins and width of Progress bar*/
 .progress-style {
   width: 98%;
   margin-left: 15px;
   margin-right: 10px;
 }
 
+/* specified Margins for image card */
 .mat-card-image {
   width: 100%;
   height: 320px;

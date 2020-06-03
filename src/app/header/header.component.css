@@ -1,3 +1,4 @@
+/* flexlayout styles for header  */
 .main-header {
   width: 100%;
   display: flex;
@@ -6,6 +7,33 @@
   flex-wrap: wrap;
 }
 
+/* ToolBar color */
+.mat-toolbar.mat-primary {
+  background-color: black;
+}
+
+/* tool bar margin */
+mat-toolbar {
+  margin-top: 10px!important;
+}
+
+/* Toolbar Padding */
+.mat-toolbar-row {
+  padding-left: 10px;
+}
+
+/* Logo width and height */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* spacing for header elements */
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+/* Logo image styles */
 #brand-logo {
   width: 39px;
   height: 39px;
@@ -17,6 +45,7 @@
   margin-left: 15px;
 }
 
+/* Brand Name Styles */
 #brand-name {
   padding-top: 5px;
   padding-left: 10px;
@@ -24,11 +53,13 @@
   vertical-align: middle;
 }
 
+/* brandname Anchor tag style */
 #brand-name a {
   text-decoration: none;
   color: #f3f7eb;
 }
 
+/* Specifed Search bar form styles */
 .menu-spacer {
   flex: 1 1 auto;
 }
@@ -48,10 +79,7 @@ form {
   margin-right: 15px;
 }
 
-.mat-toolbar-row {
-  padding-left: 10px;
-}
-
+/* mat form Field style */
 .mat-form-field {
   font-size: 18px;
   margin-top: 20px;
@@ -59,16 +87,25 @@ form {
   font-weight: 550;
 }
 
+/* input field style */
 .mat-form-field input {
   padding-left: 5px;
   display: inline;
   color: #f3f7eb;
 }
 
+
+/* Specified Clear button Outline none */
+.mat-button.mat-icon-button {
+  outline: none;
+}
+
+/* clear button radius 0 */
 .mat-button {
   border-radius: 0;
 }
 
+/* media query for small devices */
 @media (max-width: 375px) {
   .mat-form-field {
     font-size: .8em;
@@ -86,7 +123,10 @@ form {
     width: 32px;
     height: 32px;
   }
+}
 
+/* media query for 376 px - 479px devices */
+@media (min-width: 376px) and (max-width: 479px) {
   .mat-form-field {
     width: 180px;
   }
@@ -94,7 +134,7 @@ form {
   #brand-name {
     font-size: 1.2rem;
   }
-  
+
   #brand-logo {
     width: 32px;
     height: 32px;

@@ -8,8 +8,8 @@ import { IShowView } from '../../interfaces/ishow-view';
 import { ISearchShowService } from 'src/app/interfaces/isearch-show-service';
 
 interface IShowData {
-  id: number;
-  name: string;
+  id: number,
+  name: string,
   image: {
     medium: string;
   };
@@ -26,6 +26,13 @@ interface IShowData {
 export class SearchShowsService implements ISearchShowService {
   constructor(private http: HttpClient) {}
 
+
+  /**
+   * getShows()-Fetch Shows from API based on searched term
+   * http://api.tvmaze.com/search/shows?q=girls
+   * @param showName
+   * @returns
+   */
   getShows(showName: string) {
     return this.http
       .get<ISearchData[]>(
@@ -38,6 +45,7 @@ export class SearchShowsService implements ISearchShowService {
       );
   }
 
+  // transform fetched data from API to UI data(ISearchView)
   transformToISearchView(data: ISearchData): ISearchView {
     return {
       id: data.show?.id,
@@ -46,7 +54,12 @@ export class SearchShowsService implements ISearchShowService {
     };
   }
 
-  // Used to display shows in home page based on Genres and Rating API:http://api.tvmaze.com/shows
+  /**
+   * Gets all shows
+   * Used to display shows in main page based on Genres and Rating
+   *  API:http://api.tvmaze.com/shows
+   * @returns IShowView[]
+   */
   getAllShows() {
     return this.http
       .get<IShowData[]>(`${environment.mainPage}`)

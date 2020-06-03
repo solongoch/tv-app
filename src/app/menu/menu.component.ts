@@ -7,7 +7,6 @@ import { Location } from '@angular/common';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-
 export class MenuComponent implements OnInit {
   show_id: number;
   showName: string;
@@ -31,18 +30,24 @@ export class MenuComponent implements OnInit {
   goBack() {
     this._location.back();
   }
+
+  // ShowInfo Button OnClick navigates to ShowInfoComponent
   callShowInfo() {
     this._router.navigate(['/show-info', this.show_id], {
       queryParams: { showName: this.showName },
       queryParamsHandling: 'preserve'
     }); //QueryParam for setting show name
   }
+
+  // Episode Button OnClick navigates to EpisodeInfoComponent
   callEpisodeInfo() {
     this._router.navigate(['/episode-info', this.show_id], {
       queryParams: { showName: this.showName },
       queryParamsHandling: 'preserve'
     });
   }
+
+  // Cast Button OnClick navigates to CastInfoComponent
   callCastInfo() {
     this._router.navigate(['/cast-info', this.show_id], {
       queryParams: { showName: this.showName },

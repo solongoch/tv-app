@@ -9,12 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './search-shows.component.html',
   styleUrls: ['./search-shows.component.css']
 })
-
 export class SearchShowsComponent implements OnInit {
   _shows: ISearchView[]; //getting data from API for the searchedTerm
   searchTerm: string; //for storing searched string from router params.
-  subscription$$: Subscription;
-  isLoading: boolean;
+  subscription$$: Subscription; //for observable subscription
+  isLoading: boolean; //for progress bar
 
   constructor(
     private currServ: SearchShowsService,
@@ -22,12 +21,19 @@ export class SearchShowsComponent implements OnInit {
     private _router: Router
   ) {}
 
+  // getting SearchTerm from Queryparam
   ngOnInit(): void {
     this.actRoute.params.subscribe(routeParams =>
       this.getSearchedShows(routeParams['searchTerm'])
     );
   }
 
+  /**
+   * getSearchedShows()
+   * Calls search Show api for the corressponding searchterm
+   * to get all shows based on searchterm
+   * @param searchValue
+   */
   getSearchedShows(searchValue: string) {
     this.searchTerm = searchValue;
     if (this.searchTerm) {
@@ -44,12 +50,19 @@ export class SearchShowsComponent implements OnInit {
     }
   }
 
+  /**
+   * getShowInfo() Navigate to ShowInfo Component when user clicks the image
+   * @param showId
+   * @param showName
+   *
+   */
   getShowInfo(showId: number, showName: string) {
     this._router.navigate(['/show-info', showId], {
       queryParams: { showName: showName }
     });
   }
 
+  // unsubscribe the observable subscription
   ngOnDestroy() {
     if (this.subscription$$) {
       this.subscription$$.unsubscribe();

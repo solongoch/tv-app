@@ -1,19 +1,26 @@
+/* container style */
 .container {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* card-picture style */
 .card-picture {
   padding: 10px 10px;
 }
+
+/* for each Image card */
 .mat-card {
   background-color: white;
   padding: 16px 16px 0px 16px;
 }
 
+/* image radius */
 .mat-card-image {
   border-radius: 4px;
 }
 
+/* Styles on hover of image */
 .mat-card-image:hover {
   opacity: 1;
   transform: scale(1.1);
@@ -23,11 +30,13 @@
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 }
 
+/* link on hover */
 a:hover {
   cursor: pointer;
   box-shadow: 0 0 3px 0 #ddd;
 }
 
+/* tooltip styles for no image  */
 ::ng-deep.tooltip-black {
   background: black;
   margin: 0;
@@ -36,6 +45,7 @@ a:hover {
   color: white;
 }
 
+/* No Shows Information styles when there is not correct match  */
 #noShows p {
   color: white !important;
   padding-top: 25px;
@@ -47,7 +57,8 @@ a:hover {
   line-height: 42px;
 }
 
-@media (max-width: 375px) {
+/* media style for noshow information for small devices */
+@media (max-width: 320px) {
   #noShows p {
     font-size: 16px;
     line-height: 32px;
@@ -59,6 +70,7 @@ a:hover {
   }
 }
 
+/* media style for noshow information for 375px-479px */
 @media (min-width: 375px) and (max-width: 479px) {
   #noShows p {
     padding-right: 15px;
