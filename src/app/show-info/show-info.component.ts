@@ -18,8 +18,6 @@ export class ShowInfoComponent implements OnInit {
     //added by Priya for getting query params showid dynamically
     this.show_id = this.actRoute.snapshot.params.id;
 
-
-
   }
 
 

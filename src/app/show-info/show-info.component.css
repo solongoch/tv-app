@@ -1,12 +1,13 @@
 
 
-.container {
+.info-container {
   width: 100%;
   flex: 1 1 auto;
   margin-left: 25px;
      display: flex;
   flex-wrap: wrap;
 }
+
 .mat-card-title {
   color: rgba(0,0,0,.87);
   font-size:25px;
@@ -20,11 +21,11 @@
 }
 
 .showlist {
-  height: 350px;
+  height: 300px;
 }
 
 .showinfo {
-  font-size: .9em;
+  font-size: 1em;
   background-color: #D3D3D3;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -33,13 +34,13 @@
 .description {
   padding-bottom: 10px;
   padding-left: 0px;
-  font-size: 1.2em;
   text-align: justify;
   text-justify: inter-word;
 }
 
 span {
   margin-left: 5px;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
