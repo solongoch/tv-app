@@ -1,9 +1,9 @@
 export interface ISearchData {
   show: {
-    id:number,
-    name: string,
+    id: number;
+    name: string;
     image: {
       medium: string;
-    }
-  }
+    };
+  };
 }

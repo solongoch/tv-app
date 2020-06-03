@@ -1,22 +1,22 @@
-
-
 .container {
-  width: 100%;
+  max-width: calc(100% - 90px);
   flex: 1 1 auto;
-  margin-left: 25px;
-     display: flex;
+  margin: 0 45px;
+  padding: 0;
+  display: flex;
   flex-wrap: wrap;
 }
+
 .mat-card-title {
-  color: rgba(0,0,0,.87);
-  font-size:25px;
-  margin-bottom:15px;
-  padding-bottom:10px;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
 }
 
-.mat-card-subtitle{
+.mat-card-subtitle {
   padding-top: 5px;
-  font-size:20px;
+  font-size: 20px;
 }
 
 .showlist {
@@ -24,8 +24,8 @@
 }
 
 .showinfo {
-  font-size: .9em;
-  background-color: #D3D3D3;
+  font-size: 0.9em;
+  background-color: #d3d3d3;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -50,7 +50,6 @@ span {
 
 /********** Large devices only **********/
 @media (min-width: 992px) {
-
   .col-lg-1 {
     width: 6.33%;
   }
@@ -91,7 +90,6 @@ span {
 
 /********** Medium devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-
   .col-md-1 {
     width: 6.33%;
   }
@@ -130,10 +128,8 @@ span {
   }
 }
 
-
 /********** Small devices only **********/
 @media (min-width: 481px) and (max-width: 767px) {
-
   .col-sm-1 {
     width: 6.33%;
   }
@@ -172,9 +168,8 @@ span {
   }
 }
 
-  /********** x-Small devices only **********/
+/********** x-Small devices only **********/
 @media (max-width: 480px) {
-
   .col-xs-1 {
     width: 6.33%;
   }
@@ -211,5 +206,23 @@ span {
   .col-xs-12 {
     width: 98%;
   }
+  .container {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
+  #card-info {
+    padding: 0;
+  }
+  .mat-card-subtitle {
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .description > .mat-card {
+    padding-top: 0;
+  }
+  p {
+    font-size: .7em;
+    line-height: 1.4em;
+  }
 }
-

@@ -2,8 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ShowInfoComponent } from './show-info.component';
 import { TvshowService } from 'src/app/services/show-info-service/tvshow.service';
 import { TvshowServiceFake } from 'src/app/services/show-info-service/tvshow.service.fake';
-import { RouterModule } from '@angular/router'
-
+import { RouterModule } from '@angular/router';
 
 describe('ShowInfoComponent', () => {
   let component: ShowInfoComponent;
@@ -11,15 +10,10 @@ describe('ShowInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowInfoComponent ],
-      imports: [
-        RouterModule.forRoot([])
-      ],
-      providers:[
-       {provide: TvshowService, useClass: TvshowServiceFake}
-      ]
-    })
-    .compileComponents();
+      declarations: [ShowInfoComponent],
+      imports: [RouterModule.forRoot([])],
+      providers: [{ provide: TvshowService, useClass: TvshowServiceFake }]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

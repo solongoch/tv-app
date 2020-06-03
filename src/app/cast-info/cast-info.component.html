@@ -1,21 +1,19 @@
 <app-menu></app-menu>
+<!-- the list of cast information -->
 <div *ngIf="!isLoading; else loadingSpinner" class="cast-info-container">
-  <div
-    *ngIf="listOfCast && listOfCast.length > 0; else noCastInfo"
-    class="cast-cards">
+  <div *ngIf="listOfCast && listOfCast.length > 0; else noCastInfo">
     <div fxFlex fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap">
-        <!-- loop over the cardList and show the cards -->
         <div
           *ngFor="let cast of listOfCast"
           fxFlex="20"
           fxFlex.md="25"
-          fxFlex.sm="25"
+          fxFlex.sm="50"
           fxFlex.xs="50"
           fxLayout="column"
           style="padding: 5px;"
         >
-          <!-- cards here -->
+          <!-- show cast information in mat-card format -->
           <mat-card>
             <img mat-card-image [src]="cast.castImg" alt="Photo of a cast" />
             <mat-card-title>{{ cast.castName }}</mat-card-title>
@@ -25,13 +23,17 @@
       </div>
     </div>
   </div>
-
+  <!-- second ngIf's else block, display some text if there aren't any cast information -->
   <ng-template #noCastInfo>
     <mat-card >
-      <mat-card-subtitle id="nocasts">There's no cast info to show</mat-card-subtitle>
+      <mat-card-subtitle>There's no cast info to show</mat-card-subtitle>
     </mat-card>
   </ng-template>
 </div>
-<ng-template #loadingSpinner>
-  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
-</ng-template>
+
+<!-- show progress bar if the page is in "loading" state -->
+<div class="progress-bar-container">
+  <ng-template #loadingSpinner>
+    <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+  </ng-template>
+</div>

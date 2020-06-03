@@ -29,8 +29,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MainPageComponent } from './main-page/main-page.component';
 import { StaticPageComponent } from './static-page/static-page.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatTooltipModule} from '@angular/material/tooltip';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     PageNotFoundComponent,
     MainPageComponent,
     StaticPageComponent
-
   ],
   imports: [
     BrowserModule,
@@ -72,6 +70,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     EpisodeServiceService,
     SearchShowsService
   ],
-   bootstrap: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

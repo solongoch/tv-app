@@ -1,21 +1,9 @@
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-mat-toolbar {
-  margin-top: 10px!important;
-}
-
 .main-header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.menu-spacer {
-  flex: 1 1 auto;
 }
 
 #brand-logo {
@@ -39,6 +27,10 @@ mat-toolbar {
 #brand-name a {
   text-decoration: none;
   color: #f3f7eb;
+}
+
+.menu-spacer {
+  flex: 1 1 auto;
 }
 
 .mat-toolbar.mat-primary {
@@ -77,26 +69,32 @@ form {
   border-radius: 0;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .mat-form-field {
-    width: 140px;
+    font-size: .8em;
   }
+
+  .mat-card {
+    padding: 5px 10px;
+  }
+
   #brand-name {
     font-size: 1.2rem;
   }
+
   #brand-logo {
     width: 32px;
     height: 32px;
   }
-}
 
-@media (min-width: 321px) and (max-width: 479px) {
   .mat-form-field {
     width: 180px;
   }
+
   #brand-name {
     font-size: 1.2rem;
   }
+  
   #brand-logo {
     width: 32px;
     height: 32px;

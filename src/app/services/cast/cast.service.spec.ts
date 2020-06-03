@@ -3,16 +3,12 @@ import { CastService } from './cast.service';
 import { RouterModule } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-
 describe('CastService', () => {
   let service: CastService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[
-        HttpClientTestingModule,
-        RouterModule.forRoot([])
-      ]
+      imports: [HttpClientTestingModule, RouterModule.forRoot([])]
     });
     service = TestBed.inject(CastService);
   });

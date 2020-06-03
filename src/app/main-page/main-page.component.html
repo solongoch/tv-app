@@ -1,13 +1,20 @@
-<!-- <app-header-component></app-header-component> -->
 <div class="container mainPage">
   <br />
   <div class="search-cards" *ngIf="!isLoading; else loadingSpinner">
-   <div class="section-title">High Rated</div>
+    <div class="section-title">High Rated</div>
     <div class="content">
-      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div ngxSlickItem *ngFor="let shows of _showRating" class="slide">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div
+          ngxSlickItem
+          *ngFor="let shows of _showRating"
+          class="slide carousel-item"
+        >
           <a (click)="callShowInfo(shows.showId, shows.showName)">
-            <img [src]="shows.image" alt="" width="100%">
+            <img [src]="shows.image" alt="" width="100%" />
           </a>
         </div>
       </ngx-slick-carousel>
@@ -17,26 +24,18 @@
   <div>
     <div class="section-title">Comedy</div>
     <div class="content">
-      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div ngxSlickItem *ngFor="let shows of _showComedy" class="slide">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div
+          ngxSlickItem
+          *ngFor="let shows of _showComedy"
+          class="slide carousel-item"
+        >
           <a (click)="callShowInfo(shows.showId, shows.showName)">
-            <div class="showImage"><img [src]="shows.image" alt="" width="100%"></div>
-          </a>
-        </div>
-      </ngx-slick-carousel>
-
-    </div>
-
-  </div>
-  <br/>
-
-  <div>
-    <div class="section-title">Science Fiction</div>
-    <div class="content">
-      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div ngxSlickItem *ngFor="let shows of _showScienceFiction" class="slide">
-          <a (click)="callShowInfo(shows.showId, shows.showName)">
-            <img [src]="shows.image" alt="" width="100%">
+            <img [src]="shows.image" alt="" width="100%" />
           </a>
         </div>
       </ngx-slick-carousel>
@@ -44,12 +43,41 @@
   </div>
   <br />
   <div>
-   <div class="section-title">Drama</div>
+    <div class="section-title">Science Fiction</div>
     <div class="content">
-      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div ngxSlickItem *ngFor="let shows of _showDrama" class="slide">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div
+          ngxSlickItem
+          *ngFor="let shows of _showScienceFiction"
+          class="slide carousel-item"
+        >
           <a (click)="callShowInfo(shows.showId, shows.showName)">
-             <img [src]="shows.image" alt="" width="100%">
+            <img [src]="shows.image" alt="" width="100%" />
+          </a>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+  <br />
+  <div>
+    <div class="section-title">Drama</div>
+    <div class="content">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div
+          ngxSlickItem
+          *ngFor="let shows of _showDrama"
+          class="slide carousel-item"
+        >
+          <a (click)="callShowInfo(shows.showId, shows.showName)">
+            <img [src]="shows.image" alt="" width="100%" />
           </a>
         </div>
       </ngx-slick-carousel>
@@ -57,5 +85,8 @@
   </div>
 </div>
 <ng-template #loadingSpinner>
-  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+  <mat-progress-bar
+    mode="indeterminate"
+    aria-label="The page is loading"
+  ></mat-progress-bar>
 </ng-template>

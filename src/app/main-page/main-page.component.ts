@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchShowsService } from '../services/searchshows-service/search-shows.service';
 import { IShowView } from '../interfaces/ishow-view';
 import { Subscription } from 'rxjs';
@@ -9,28 +9,28 @@ import { Router } from '@angular/router';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit {
 
+export class MainPageComponent implements OnInit {
   _showRating: IShowView[];
   _showComedy: IShowView[];
-  _showScienceFiction: IShowView[];;
+  _showScienceFiction: IShowView[];
   _showDrama: IShowView[];
   subscription$$: Subscription;
   isLoading: boolean;
 
-  constructor(private currServ: SearchShowsService, private _router: Router) { }
+  constructor(private currServ: SearchShowsService, private _router: Router) {}
 
   slideConfig = {
-    "slidesToShow": 6,
-    "slidesToScroll": 1,
-    "infinite": false,
-    'arrows': true,
-    'lazyLoad': 'ondemand',
-    "useCSS": true,
-    "autoplay": true,
-    "initialSlide": 0,
-    "opacity": 0.85,
-    "responsive": [
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: true,
+    lazyLoad: 'ondemand',
+    useCSS: true,
+    autoplay: true,
+    initialSlide: 0,
+    opacity: 0.85,
+    responsive: [
       {
         breakpoint: 1024,
         settings: {
@@ -79,22 +79,28 @@ export class MainPageComponent implements OnInit {
   }
 
   getShows() {
-    this.subscription$$ = this.currServ.getAllShows().subscribe((data: IShowView[]) => this.getMainPageShows(data),
-      (error) => {
+    this.subscription$$ = this.currServ.getAllShows().subscribe(
+      (data: IShowView[]) => this.getMainPageShows(data),
+      error => {
         this._router.navigate(['/error']);
-      });
+      }
+    );
   }
 
   getMainPageShows(show: IShowView[]) {
     this._showRating = this.currServ.getShowsByRating(show, 8.5);
     this._showComedy = this.currServ.getShowsByGenre(show, 'Comedy');
-    this._showScienceFiction = this.currServ.getShowsByGenre(show, "Science-Fiction");
+    this._showScienceFiction = this.currServ.getShowsByGenre(
+      show,
+      'Science-Fiction'
+    );
     this._showDrama = this.currServ.getShowsByGenre(show, 'Drama');
   }
 
-
   callShowInfo(showId: number, showName: string) {
-    this._router.navigate(['/show-info', showId], { queryParams: { 'showName': showName } });//QueryParam for setting show name
+    this._router.navigate(['/show-info', showId], {
+      queryParams: { showName: showName }
+    }); //QueryParam for setting show name
   }
 
   //Unscribe observables from memory
@@ -103,5 +109,4 @@ export class MainPageComponent implements OnInit {
       this.subscription$$.unsubscribe();
     }
   }
-
 }

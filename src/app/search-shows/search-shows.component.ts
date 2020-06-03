@@ -9,45 +9,50 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './search-shows.component.html',
   styleUrls: ['./search-shows.component.css']
 })
+
 export class SearchShowsComponent implements OnInit {
-  _shows: ISearchView[];//getting data from API for the searchedTerm
-  searchTerm: string;//for storing searched string from router params.
+  _shows: ISearchView[]; //getting data from API for the searchedTerm
+  searchTerm: string; //for storing searched string from router params.
   subscription$$: Subscription;
   isLoading: boolean;
 
-  constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) {  }
+  constructor(
+    private currServ: SearchShowsService,
+    private actRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.actRoute.params.subscribe(routeParams => this.getSearchedShows(routeParams['searchTerm']));
+    this.actRoute.params.subscribe(routeParams =>
+      this.getSearchedShows(routeParams['searchTerm'])
+    );
   }
 
   getSearchedShows(searchValue: string) {
     this.searchTerm = searchValue;
     if (this.searchTerm) {
       this.isLoading = true;
-      this.subscription$$ = this.currServ.getShows(this.searchTerm).subscribe((data : ISearchView[]) =>  {
-        this._shows = data;
-        this.isLoading = false;
-      },
-      (error) =>
-      {
-        this._router.navigate(['/error']);
-      }
-
+      this.subscription$$ = this.currServ.getShows(this.searchTerm).subscribe(
+        (data: ISearchView[]) => {
+          this._shows = data;
+          this.isLoading = false;
+        },
+        error => {
+          this._router.navigate(['/error']);
+        }
       );
     }
   }
 
-  getShowInfo(showId: number,showName :string) {
-    this._router.navigate(['/show-info', showId],{ queryParams: {'showName' :showName}});
+  getShowInfo(showId: number, showName: string) {
+    this._router.navigate(['/show-info', showId], {
+      queryParams: { showName: showName }
+    });
   }
 
-
-  ngOnDestroy(){
+  ngOnDestroy() {
     if (this.subscription$$) {
       this.subscription$$.unsubscribe();
     }
   }
-
-
 }

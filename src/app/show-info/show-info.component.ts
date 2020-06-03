@@ -12,25 +12,21 @@ export class ShowInfoComponent implements OnInit {
   show: IShowinfo;
   show_id: number;
 
-  isLoading: boolean;//display pregress bar if there is any network problemadded by Priya
+  isLoading: boolean; //display pregress bar if there is any network problemadded by Priya
 
-  constructor(private tvshowService: TvshowService,private actRoute: ActivatedRoute) {
+  constructor(
+    private tvshowService: TvshowService,
+    private actRoute: ActivatedRoute
+  ) {
     //added by Priya for getting query params showid dynamically
     this.show_id = this.actRoute.snapshot.params.id;
-
-
-
   }
-
 
   ngOnInit(): void {
-
     this.isLoading = true;
-    this.tvshowService.getShowInfo(this.show_id)
-      .subscribe(data => {
-        this.show = data;
-        this.isLoading = false;
-      })
+    this.tvshowService.getShowInfo(this.show_id).subscribe(data => {
+      this.show = data;
+      this.isLoading = false;
+    });
   }
-
 }

@@ -3,9 +3,9 @@ export interface IEpisodeData {
   number: number;
   airstamp: string;
   image: {
-    medium: string;
-  }
-  airtime:string;
-  summary:string;
+    original: string;
+  };
+  airtime: string;
+  summary: string;
   runtime: number;
 }

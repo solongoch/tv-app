@@ -19,10 +19,10 @@ export class CastInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isLoading = true;
+    this.isLoading = true; // show progress bar
     this.castService.getCast(this.show_id).subscribe(listOfCast => {
       this.listOfCast = listOfCast;
-      this.isLoading = false;
+      this.isLoading = false; // if it's getting data from API request, it won't show progress bar
     });
   }
 }

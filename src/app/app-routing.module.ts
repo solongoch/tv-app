@@ -10,20 +10,19 @@ import { StaticPageComponent } from './static-page/static-page.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  //empty path should route to MainPageComponent
+  { path: '', component: AppComponent },
 
   //empty path should route to MainPageComponent
-  { path: "", component: AppComponent },
-
-  //empty path should route to MainPageComponent
-  { path: "mainpage", component: MainPageComponent },
+  { path: 'mainpage', component: MainPageComponent },
 
   //empty path should route to StaticPageComponent
-  { path: "index", component: StaticPageComponent },
+  { path: 'index', component: StaticPageComponent },
 
   //Given path should route to SearchShowsComponent called in app
   { path: 'searchshows/:searchTerm', component: SearchShowsComponent },
 
-//Given path should route to ShowInfoComponent
+  //Given path should route to ShowInfoComponent
   { path: 'show-info/:id', component: ShowInfoComponent },
   //Given path should route to ShowEpisodesListComponent
   { path: 'episode-info/:id', component: ShowEpisodesListComponent },
@@ -31,11 +30,11 @@ const routes: Routes = [
   { path: 'cast-info/:id', component: CastInfoComponent },
   { path: 'error', component: PageNotFoundComponent },
   //Given path should route to PageNotFoundComponent Wildcard route should be at atlast
-  { path: "**", redirectTo:'/error', pathMatch:'full'},
+  { path: '**', redirectTo: '/error', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

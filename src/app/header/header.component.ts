@@ -10,13 +10,13 @@ import { debounceTime } from 'rxjs/operators';
 })
 
 export class HeaderComponent implements OnInit {
+  searchField = new FormControl('', Validators.minLength(2));
 
-  searchField = new FormControl('',Validators.minLength(2));
-
-  constructor(private _router : Router) { }
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {
-    this.searchField.valueChanges.pipe(debounceTime(1000))
+    this.searchField.valueChanges
+      .pipe(debounceTime(1000))
       .subscribe((searchTerm: string) => this.getShows(searchTerm.trim()));
   }
 
@@ -27,10 +27,9 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-//Clear search bar using cross icon
-clearSearchField() {
-  this.searchField.setValue('');
-  this._router.navigate(['/mainpage']);
-}
-
+  //Clear search bar using cross icon
+  clearSearchField() {
+    this.searchField.setValue('');
+    this._router.navigate(['/mainpage']);
+  }
 }

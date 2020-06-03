@@ -1,9 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { StaticPageComponent } from './static-page.component';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 
 describe('StaticPageComponent', () => {
   let component: StaticPageComponent;
@@ -11,13 +9,9 @@ describe('StaticPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StaticPageComponent ],
-      imports: [
-        RouterModule.forRoot([]),
-        HttpClientTestingModule
-      ]
-    })
-    .compileComponents();
+      declarations: [StaticPageComponent],
+      imports: [RouterModule.forRoot([]), HttpClientTestingModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

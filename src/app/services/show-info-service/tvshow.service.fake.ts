@@ -12,10 +12,9 @@ export class TvshowServiceFake implements Itvshowservice {
     runtime: 22,
     network: 'HBO',
     language: 'English'
-  }
+  };
 
-  public getShowInfo(id: number) :
-  Observable<IShowinfo> {
-    return of (this.fakeTv);
+  public getShowInfo(id: number): Observable<IShowinfo> {
+    return of(this.fakeTv);
   }
 }

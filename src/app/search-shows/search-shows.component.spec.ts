@@ -11,14 +11,11 @@ describe('SearchShowsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SearchShowsComponent ],
-      imports: [
-        RouterModule.forRoot([])
-      ],
+      imports: [ RouterModule.forRoot([]) ],
       providers: [
         { provide: SearchShowsService, useClass: SearchShowsServiceFake }
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

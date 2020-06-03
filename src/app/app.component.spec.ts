@@ -5,12 +5,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent]
     }).compileComponents();
   }));
 
@@ -31,6 +27,8 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
 
-    expect(compiled.querySelector('.copyright').textContent).toContain('Copyright');
+    expect(compiled.querySelector('.copyright').textContent).toContain(
+      'Copyright'
+    );
   });
 });

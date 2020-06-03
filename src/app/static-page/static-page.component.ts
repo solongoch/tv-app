@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './static-page.component.html',
   styleUrls: ['./static-page.component.css']
 })
+
 export class StaticPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
