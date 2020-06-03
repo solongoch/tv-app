@@ -1,5 +1,6 @@
 /* flexlayout styles for header  */
 .main-header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +60,18 @@ img {
 }
 
 /* Specifed Search bar form styles */
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: black;
+}
+
+.mat-button.mat-icon-button {
+  outline: none;
+}
+
 form {
   height: 100px;
   vertical-align: middle;
@@ -93,27 +106,35 @@ form {
 }
 
 /* media query for small devices */
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .mat-form-field {
-    width: 140px;
+    font-size: .8em;
   }
+
+  .mat-card {
+    padding: 5px 10px;
+  }
+
   #brand-name {
     font-size: 1.2rem;
   }
+
   #brand-logo {
     width: 32px;
     height: 32px;
   }
 }
 
-/* media query for 321 px - 479px devices */
-@media (min-width: 321px) and (max-width: 479px) {
+/* media query for 376 px - 479px devices */
+@media (min-width: 376px) and (max-width: 479px) {
   .mat-form-field {
     width: 180px;
   }
+
   #brand-name {
     font-size: 1.2rem;
   }
+
   #brand-logo {
     width: 32px;
     height: 32px;

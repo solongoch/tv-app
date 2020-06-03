@@ -21,7 +21,7 @@ interface ICastDataType {
   providedIn: 'root'
 })
 
-export class CastService implements ICastService{
+export class CastService implements ICastService {
   constructor(private httpClient: HttpClient) {}
 
   getCast(showId: number) {
@@ -29,14 +29,20 @@ export class CastService implements ICastService{
       .get<ICastDataType[]>(
         `${environment.rootUrl}${environment.showendpoint}${showId}/cast`
       )
-      .pipe(map((people: ICastDataType[]) => people.map( person => this.transfortmToICast(person))));
+      .pipe(
+        map((people: ICastDataType[]) =>
+          people.map(person => this.transfortmToICast(person))
+        )
+      );
   }
 
   transfortmToICast(data: ICastDataType): ICastInfo {
     return {
-      castImg: data.person.image ? data.person.image.medium : "../../assets/images/no-img.png",
+      castImg: data.person.image
+        ? data.person.image.medium
+        : '../../assets/images/no-img.png',
       castName: data.person.name,
-      characterName: data.character.name,
+      characterName: data.character.name
     };
   }
 }

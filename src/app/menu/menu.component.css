@@ -1,46 +1,53 @@
-
 /* Show Name Styles */
 .show-title {
   color: #ffffff;
-  margin-top: 10px;
-  padding-top: 10px;;
-  margin-left:50px;
+  margin: 10px 45px;
   font-weight: 600;
   font-size: 2em;
-  margin-right: -5px;
 }
 
-/* show name span tag style */
-.show-name {
-  padding-bottom: 10px;
+.menu-items {
+  width: 100%;
+  margin: 10px 45px;
+  height: 30px;
 }
 
-/* Menu toolbar style */
-.mat-toolbar{
-  margin-top: 10px;
-  height:54px!important;
-  border-radius: 2px!important;
+.menu-items > .nav-a {
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
 }
 
-/* Each button Styles */
- .mat-button {
-   color: white !important;
-   text-decoration: none;
-   /* margin-left: 5px!important; */
- }
- /* Show info button style */
- #show_info{
-  margin-left:15px;
- }
-
- /* mouse hover and active buttons styles */
- .mat-button:hover,  .mat-button:active {
-   outline: white !important;
-   outline-style: ridge!important;
- }
+.menu-items > .nav-a:hover,
+.menu-items > .nav-a:active,
+.active {
+  color: #000;
+  background-color: #fff;
+}
 
 /* mat-buttons a blue highlight frame appears */
 .mat-toolbar.mat-primary {
   background-color: black;
   font-size: 1em;
+}
+@media (max-width: 375px) {
+  .show-title {
+    margin: 10px 20px 0;
+    padding: 0;
+    font-size: 1.5em;
+  }
+  .menu-items {
+    height: 25px;
+  }
+  .menu-items > a {
+    font-size: 0.7em;
+    line-height: 1em;
+  }
+  .show-name {
+    font-size: 0.7em;
+    padding-bottom: 0;
+  }
+  .menu-items {
+    margin: 0 20px;
+  }
 }

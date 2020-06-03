@@ -1,14 +1,23 @@
-
 .cast-info-container {
-  padding: 0 20px;
+  padding: 0 40px;
 }
-#nocasts {
-  color: rgba(0,0,0,.87);
-  font-size:25px;
-  margin-bottom:5px;
-}  
-.cast-container {
-  width: 89%;
-  flex: 1 1 auto;
-  margin-left: 25px;
+
+.mat-progress-bar {
+  width: calc(100% - 90px);
+  margin: 0 45px;
+}
+
+@media (max-width: 375px) {
+  .cast-info-container {
+    padding: 0 15px;
+  }
+  .mat-progress-bar {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
+  .mat-card-title,
+  .mat-card-subtitle {
+    font-size: 0.7em;
+    line-height: 1em;
+  }
 }

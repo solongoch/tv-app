@@ -11,21 +11,20 @@ interface IShowData {
   id: number,
   name: string,
   image: {
-    medium: string
-  },
-  genres: string[],
+    medium: string;
+  };
+  genres: string[];
   rating: {
-    average: number
-  }
+    average: number;
+  };
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SearchShowsService implements ISearchShowService {
-
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
 
   /**
@@ -35,8 +34,15 @@ export class SearchShowsService implements ISearchShowService {
    * @returns
    */
   getShows(showName: string) {
-    return this.http.get<ISearchData[]>(`${environment.rootUrl}${environment.searchendpoint}${showName}`).pipe(
-      map((data: ISearchData[]) => data.map(item => this.transformToISearchView(item))));
+    return this.http
+      .get<ISearchData[]>(
+        `${environment.rootUrl}${environment.searchendpoint}${showName}`
+      )
+      .pipe(
+        map((data: ISearchData[]) =>
+          data.map(item => this.transformToISearchView(item))
+        )
+      );
   }
 
   // transform fetched data from API to UI data(ISearchView)
@@ -45,7 +51,7 @@ export class SearchShowsService implements ISearchShowService {
       id: data.show?.id,
       name: data.show?.name,
       image: data.show.image?.medium
-    }
+    };
   }
 
   /**
@@ -55,7 +61,8 @@ export class SearchShowsService implements ISearchShowService {
    * @returns IShowView[]
    */
   getAllShows() {
-    return this.http.get<IShowData[]>(`${environment.mainPage}`)
+    return this.http
+      .get<IShowData[]>(`${environment.mainPage}`)
       .pipe(map(data => data.map(show => this.transformToIShowView(show))));
   }
 
@@ -66,8 +73,8 @@ export class SearchShowsService implements ISearchShowService {
       showName: data.name,
       image: data.image ? data.image.medium : '',
       rating: data.rating ? data.rating.average : null,
-      genres: data.genres,
-    }
+      genres: data.genres
+    };
   }
 
   //Filtering the IShowView[] based on given Genre
@@ -79,5 +86,4 @@ export class SearchShowsService implements ISearchShowService {
   getShowsByRating(showList: IShowView[], minRating: number) {
     return showList.filter(show => show.rating > minRating);
   }
-
 }

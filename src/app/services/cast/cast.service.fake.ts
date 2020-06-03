@@ -7,9 +7,9 @@ export class CastServiceFake implements ICastService {
     castImg: '',
     castName: 'James Michael Tyler',
     characterName: 'Gunther'
-  }
+  };
 
-  public getCast(showId: number): Observable<ICastInfo[]>{
+  public getCast(showId: number): Observable<ICastInfo[]> {
     return of(this.fakeCast[0]);
   }
 }

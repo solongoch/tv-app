@@ -6,11 +6,14 @@
   width: 99%;
 }
 
-/* style of anchor tag for each image in click*/
+.carousel-item {
+  margin: 5px;
+}
 
+/* style of anchor tag for each image in click*/
 a {
   text-decoration: none;
-  outline-style: ridge!important;
+  outline-style: ridge !important;
   outline: #ccc;
 }
 

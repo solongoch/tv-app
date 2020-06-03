@@ -1,8 +1,6 @@
 <app-menu></app-menu>
-<div>
-  <ng-template [ngIf]="!isLoading" [ngIfElse]="loadingSpinner"></ng-template>
-  <div class='episode-container'>
-    <br>
+<div *ngIf="!isLoading; else loadingSpinner">
+  <div class="episode-container">
     <mat-tab-group (selectedTabChange)="getSelectedSeasonId($event)">
       <mat-tab class="season-tabs" *ngFor="let season of _seasons; let tabIndex = index">
         <ng-template mat-tab-label> S{{season.seasonNumber}}</ng-template>
@@ -39,13 +37,7 @@
         </div>
       </div>
     </ng-template>
-
-    <ng-template #loadingSpinner>
-      <mat-progress-bar class="progress-style" mode="determinate" value="40" aria-label="The page is loading">
-      </mat-progress-bar>
-    </ng-template>
   </div>
-
 </div>
 <ng-template #noEpisode>
   <div id="noepisodes">
@@ -54,3 +46,10 @@
     </div>
   </div>
 </ng-template>
+
+<!-- show progress bar if the page is in "loading" state -->
+<div class="progress-bar-container">
+    <ng-template #loadingSpinner>
+      <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+    </ng-template>
+  </div>

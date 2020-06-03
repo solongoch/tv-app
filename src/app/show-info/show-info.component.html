@@ -1,50 +1,43 @@
 <app-menu></app-menu>
-  <div *ngIf="!isLoading; else loadingSpinner"></div>
-  <div *ngIf='show' class="info-container">
+<div *ngIf="!isLoading; else loadingSpinner"></div>
+<div *ngIf="show" class="info-container">
+  <mat-card id="card-info">
+    <mat-card-header>
+      <mat-card-subtitle>
+        {{ show.genre }}
+      </mat-card-subtitle>
+    </mat-card-header>
 
-    <mat-card id="card-info">
-      <mat-card-header>
-        <!-- <mat-card-title id="show-title">
-          {{show.genre}}
-        </mat-card-title> -->
-        <mat-card-subtitle>
-          {{show.genre}}
-        </mat-card-subtitle>
-      </mat-card-header>
-
-
-      <div class = "showlist">
-
-        <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-12 row">
-          <img [src]='show.image' class= "img-responsive" style="width: 100%" />
-          <img src="../../assets/images/no-img.png" *ngIf="!show.image" />
-        </div>
-
-        <div class = "description col-lg-7 col-md-7 col-sm-7 col-xs-12 row">
-          <mat-card>
-            <mat-card-content style="height: 100px; overflow-y: auto" >
-              <p>{{show.description}}</p>
-              <!-- <p>{{show.description | slice:0:500}}{{ show.description?.length > 250 ? '...' : ''}}</p> -->
-              <p *ngIf="!show.description">We don't have a summary for {{show.name}} at this time. </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-
-        <div class = "col-lg-7 col-md-7 col-sm-7 row col-xs-12 showinfo">
-          <div><span>Network:</span> {{show.network}}</div>
-          <div><span>Country:</span> {{show.country}}</div>
-          <div><span>Runtime:</span> {{show.runtime}}</div>
-          <div><span>Language:</span> {{show.language}}</div>
-        </div>
-
+    <div class="showlist">
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 row">
+        <img [src]="show.image" class="img-responsive" style="width: 100%" />
+        <img src="../../assets/images/no-img.png" *ngIf="!show.image" />
       </div>
 
-    </mat-card>
+      <div class="description col-lg-7 col-md-7 col-sm-7 col-xs-12 row">
+        <mat-card>
+          <mat-card-content style="height: 100px; overflow-y: auto">
+            <p>{{ show.description }}</p>
+            <p *ngIf="!show.description">
+              We don't have a summary for {{ show.name }} at this time.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
 
-  </div>
-
+      <div class="col-lg-7 col-md-7 col-sm-7 row col-xs-12 showinfo">
+        <div><span>Network:</span> {{ show.network }}</div>
+        <div><span>Country:</span> {{ show.country }}</div>
+        <div><span>Runtime:</span> {{ show.runtime }}</div>
+        <div><span>Language:</span> {{ show.language }}</div>
+      </div>
+    </div>
+  </mat-card>
+</div>
 
 <ng-template #loadingSpinner>
-  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+  <mat-progress-bar
+    mode="indeterminate"
+    aria-label="The page is loading"
+  ></mat-progress-bar>
 </ng-template>
-

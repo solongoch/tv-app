@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MainPageComponent } from './main-page.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,10 +10,13 @@ describe('MainPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports :[HttpClientTestingModule, RouterTestingModule, SlickCarouselModule],
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule,
+        SlickCarouselModule
+      ],
       declarations: [ MainPageComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

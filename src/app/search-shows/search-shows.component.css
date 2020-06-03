@@ -1,25 +1,21 @@
 /* container style */
-
 .container {
   display: flex;
   flex-wrap: wrap;
 }
 
 /* card-picture style */
-
 .card-picture {
   padding: 10px 10px;
 }
 
 /* for each Image card */
-
 .mat-card {
   background-color: white;
   padding: 16px 16px 0px 16px;
 }
 
 /* image radius */
-
 .mat-card-image {
   border-radius: 4px;
 }
@@ -49,14 +45,14 @@ a:hover {
   color: white;
 }
 
-/*No Shows Information styles when there is not correct match  */
+/* No Shows Information styles when there is not correct match  */
 #noShows p {
   color: white !important;
   padding-top: 25px;
   padding-left: 5px;
   font-size: 1.2rem;
   text-align: center;
-  left: calc(50% - 472px/2);
+  left: calc(50% - 472px / 2);
   position: absolute;
   line-height: 42px;
 }

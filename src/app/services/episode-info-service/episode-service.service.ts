@@ -16,7 +16,7 @@ interface ISeasonsData {
   providedIn: 'root'
 })
 export class EpisodeServiceService implements IEpisodeInfoService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   /**
    *
@@ -25,7 +25,15 @@ export class EpisodeServiceService implements IEpisodeInfoService {
    *Input season id.
    */
   getShowEpisodes(seasonId: number) {
-    return this.httpClient.get<IEpisodeData[]>(`${environment.rootUrl}${environment.episodeEndpoint}${seasonId}/episodes`).pipe(map((data: IEpisodeData[]) => data.map(item => this.transformToIEpisodeView(item))));
+    return this.httpClient
+      .get<IEpisodeData[]>(
+        `${environment.rootUrl}${environment.episodeEndpoint}${seasonId}/episodes`
+      )
+      .pipe(
+        map((data: IEpisodeData[]) =>
+          data.map(item => this.transformToIEpisodeView(item))
+        )
+      );
   }
 
   /**
@@ -39,10 +47,10 @@ export class EpisodeServiceService implements IEpisodeInfoService {
       episodeNumber: data.number,
       airdate: new Date(data.airstamp),
       airtime: data.airtime,
-      image: data.image?.medium,
+      image: data.image?.original,
       summary: data.summary ? data.summary.replace(/(<([^>]+)>)/ig, "") : ` We don't have a episode summary `,
       runtime: data.runtime
-    }
+    };
   }
 
   /**
@@ -52,7 +60,15 @@ export class EpisodeServiceService implements IEpisodeInfoService {
    * @returns ISeasonsView
    */
   getShowSeasons(showId: number) {
-    return this.httpClient.get<ISeasonsData[]>(`${environment.rootUrl}${environment.showendpoint}${showId}${environment.seasonendpoint}`).pipe(map((data: ISeasonsData[]) => data.map(item => this.transformToISeasonView(item))));
+    return this.httpClient
+      .get<ISeasonsData[]>(
+        `${environment.rootUrl}${environment.showendpoint}${showId}${environment.seasonendpoint}`
+      )
+      .pipe(
+        map((data: ISeasonsData[]) =>
+          data.map(item => this.transformToISeasonView(item))
+        )
+      );
   }
 
   /**
@@ -64,6 +80,6 @@ export class EpisodeServiceService implements IEpisodeInfoService {
     return {
       seasonId: data.id,
       seasonNumber: data.number
-    }
+    };
   }
 }

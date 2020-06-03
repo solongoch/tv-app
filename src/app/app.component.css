@@ -1,14 +1,12 @@
-.fill-remaining-space {
-  flex: 1 1 auto;
-}
-/* Main Container set to relative */
-#page-container{
-  position: relative;
+#page-container {
+  position: relative; /* Main Container set to relative */
   min-height: 100vh;
+  width: 100%;
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
+  padding-bottom: 2.5rem; /* Footer height */
+  width: 100%;
 }
 
 /* Footer styles and position */
@@ -16,17 +14,21 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  overflow: hidden;
   height: 2rem; /* Footer height */
+  margin-bottom: 10px;
 }
 
-/* Footer Toolbar color */
-.mat-toolbar.mat-primary{
-  background-color:#000;
+.mat-toolbar.mat-primary {
+  background-color: #000;
 }
 
-/* Footer Toolbat height */
-.mat-toolbar{
-  height:44px!important;
-  border-radius: 2px!important;
+.mat-toolbar {
+  height: 44px !important;
+  border-radius: 2px !important;
+}
+
+@media (max-width: 375px){
+  .copyright {
+    font-size: .7em;
+  }
 }

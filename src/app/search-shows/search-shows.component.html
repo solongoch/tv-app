@@ -2,16 +2,38 @@
   <div class="search-cards" *ngIf="!isLoading; else loadingSpinner">
     <div fxFlex fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap">
-        <div *ngIf="_shows && _shows.length > 0; then thenBlock else noShows"></div>
+        <div
+          *ngIf="_shows && _shows.length > 0; then thenBlock; else noShows"
+        ></div>
         <ng-template #thenBlock>
-          <div *ngFor="let show of _shows" class="card-picture" fxFlex="20" fxFlex.md="20" fxFlex.sm="25" fxFlex.xs="50"
-            fxLayout="column">
-            <a (click)="getShowInfo(show.id,show.name)">
+          <div
+            *ngFor="let show of _shows"
+            class="card-picture"
+            fxFlex="20"
+            fxFlex.md="20"
+            fxFlex.sm="25"
+            fxFlex.xs="50"
+            fxLayout="column"
+          >
+            <a (click)="getShowInfo(show.id, show.name)">
               <mat-card class="mat-elevation-z8">
-                <img mat-card-image [src]="show.image" *ngIf="show.image" class="mat-elevation-z24" [alt]="show.name" />
-                <img mat-card-image [matTooltip]="show.name" src="../../assets/images/no-img.png" *ngIf="!show.image"
-                  class="mat-elevation-z16" matTooltipPosition="above" matTooltipClass="tooltip-black"
-                  [alt]="show.name" />
+                <img
+                  mat-card-image
+                  [src]="show.image"
+                  *ngIf="show.image"
+                  class="mat-elevation-z24"
+                  [alt]="show.name"
+                />
+                <img
+                  mat-card-image
+                  [matTooltip]="show.name"
+                  src="../../assets/images/no-img.png"
+                  *ngIf="!show.image"
+                  class="mat-elevation-z16"
+                  matTooltipPosition="above"
+                  matTooltipClass="tooltip-black"
+                  [alt]="show.name"
+                />
               </mat-card>
             </a>
           </div>
@@ -19,17 +41,22 @@
       </div>
     </div>
   </div>
+
   <ng-template #noShows>
     <div id="noShows">
       <br />
-      <p>Your search for "{{searchTerm}}" did not have any matches.
-        <br>
-        Try different keywords </p>
+      <p>
+        Your search for "{{ searchTerm }}" did not have any matches.
+        <br />
+        Try different keywords
+      </p>
     </div>
   </ng-template>
 </div>
 
-
 <ng-template #loadingSpinner>
-  <mat-progress-bar mode="indeterminate" aria-label="The page is loading"></mat-progress-bar>
+  <mat-progress-bar
+    mode="indeterminate"
+    aria-label="The page is loading"
+  ></mat-progress-bar>
 </ng-template>

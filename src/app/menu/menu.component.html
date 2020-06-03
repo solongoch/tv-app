@@ -1,16 +1,9 @@
 <section>
-  <br>
-  <div class="show-title"><span class="show-name">{{showName}}</span></div>
-  <div>
-    <mat-toolbar color='primary'>
-      <a class="nav-a" (click)="callShowInfo()">
-        <button mat-button color="primary" id="show_info">Show Info</button></a>
-      <a class="nav-a" (click)="callEpisodeInfo()">
-        <button mat-button color="primary">Episodes</button></a>
-      <a class="nav-a" (click)="callCastInfo()">
-        <button mat-button color="primary">Cast</button></a>
-      <a class="nav-a" (click)="goBack()">
-          <button mat-button color="primary">Back</button></a>
-     </mat-toolbar>
+  <div class="show-title"><span class="show-name">{{ showName }}</span></div>
+  <div class="menu-items">
+    <a class="nav-a" (click)="callShowInfo()">Show Info</a>
+    <a class="nav-a" (click)="callEpisodeInfo()">Episodes</a>
+    <a class="nav-a" (click)="callCastInfo()">Cast</a>
+    <a class="nav-a" (click)="goBack()">Back</a>
   </div>
 </section>

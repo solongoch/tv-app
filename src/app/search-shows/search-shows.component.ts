@@ -9,18 +9,23 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './search-shows.component.html',
   styleUrls: ['./search-shows.component.css']
 })
-
 export class SearchShowsComponent implements OnInit {
-  _shows: ISearchView[];//getting data from API for the searchedTerm
-  searchTerm: string;//for storing searched string from router params.
+  _shows: ISearchView[]; //getting data from API for the searchedTerm
+  searchTerm: string; //for storing searched string from router params.
   subscription$$: Subscription; //for observable subscription
-  isLoading: boolean;//for progress bar
+  isLoading: boolean; //for progress bar
 
-  constructor(private currServ: SearchShowsService, private actRoute: ActivatedRoute, private _router: Router) { }
+  constructor(
+    private currServ: SearchShowsService,
+    private actRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
   // getting SearchTerm from Queryparam
   ngOnInit(): void {
-    this.actRoute.params.subscribe(routeParams => this.getSearchedShows(routeParams['searchTerm']));
+    this.actRoute.params.subscribe(routeParams =>
+      this.getSearchedShows(routeParams['searchTerm'])
+    );
   }
 
   /**
@@ -29,20 +34,21 @@ export class SearchShowsComponent implements OnInit {
    * to get all shows based on searchterm
    * @param searchValue
    */
-  getSearchedShows(searchValue: string){
+  getSearchedShows(searchValue: string) {
     this.searchTerm = searchValue;
     if (this.searchTerm) {
       this.isLoading = true;
-      this.subscription$$ = this.currServ.getShows(this.searchTerm).subscribe((data: ISearchView[]) => {
-        this._shows = data;
-        this.isLoading = false;
-      },
-        (error) => {
+      this.subscription$$ = this.currServ.getShows(this.searchTerm).subscribe(
+        (data: ISearchView[]) => {
+          this._shows = data;
+          this.isLoading = false;
+        },
+        error => {
           this._router.navigate(['/error']);
-        });
+        }
+      );
     }
   }
-
 
   /**
    * getShowInfo() Navigate to ShowInfo Component when user clicks the image
@@ -51,7 +57,9 @@ export class SearchShowsComponent implements OnInit {
    *
    */
   getShowInfo(showId: number, showName: string) {
-    this._router.navigate(['/show-info', showId], { queryParams: { 'showName': showName } });
+    this._router.navigate(['/show-info', showId], {
+      queryParams: { showName: showName }
+    });
   }
 
   // unsubscribe the observable subscription
