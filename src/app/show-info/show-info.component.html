@@ -5,14 +5,14 @@
       <mat-card-subtitle>{{ show.genre }}</mat-card-subtitle>
 
     <div class="showlist">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 row">
-        <img [src]="show.image" class="img-responsive" style="width: 100%" />
+      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7 row">
+        <img [src]="show.image" class="img-fluid" style="width: 100%; height:auto;" />
         <img src="../../assets/images/no-img.png" *ngIf="!show.image" />
       </div>
 
-      <div class="description col-lg-7 col-md-7 col-sm-7 col-xs-12 row">
+      <div class="description col-lg-8 col-md-8 col-sm-7 col-xs-11 row">
         <mat-card>
-          <mat-card-content style="height: 150px; overflow-y: auto">
+          <mat-card-content>
             <p class="showsummary">{{ show.description }}</p>
             <p *ngIf="!show.description">
               We don't have a summary for {{ show.name }} at this time.
@@ -21,11 +21,11 @@
         </mat-card>
       </div>
 
-      <div class="col-lg-7 col-md-7 col-sm-7 row col-xs-12 showinfo">
-        <div><span>Network:</span> {{ show.network }}</div>
-        <div><span>Country:</span> {{ show.country }}</div>
-        <div><span>Runtime:</span> {{ show.runtime }}</div>
-        <div><span>Language:</span> {{ show.language }}</div>
+      <div class="col-lg-8 col-md-8 col-sm-7 row col-xs-10 showinfo">
+        <div><span>Network:</span> {{ show.network }}
+        <span>Country:</span> {{ show.country }}
+        <span>Runtime:</span> {{ show.runtime }}
+        <span>Language:</span> {{ show.language }}</div>
       </div>
     </div>
   </mat-card>

@@ -6,6 +6,9 @@
   color: #FFF;
 }
 
+#noCast{
+  font-size: 18px;
+}
 .cast-info-container {
   padding: 0 40px;
 }
