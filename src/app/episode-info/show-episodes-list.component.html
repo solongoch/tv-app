@@ -7,7 +7,7 @@
         *ngFor="let season of _seasons; let tabIndex = index"
       >
         <ng-template mat-tab-label>S{{ season.seasonNumber }}</ng-template>
-        <!-- <ng-template matTabContent> -->
+        <ng-template matTabContent>
         <div fxFlex fxLayout="column" fxLayoutGap="10px">
           <div fxLayout="row wrap">
             <div
@@ -57,6 +57,7 @@
             </div>
           </div>
         </div>
+        </ng-template>
       </mat-tab>
     </mat-tab-group>
     <ng-template #noEpisode>
