@@ -1,4 +1,18 @@
+.mat-card {
+  background-color: #0b0b0b;
+  color: white;
+}
+.mat-card > .mat-card-title,
+.mat-card > .mat-card-subtitle{
+  color: #FFF;
+}
 
+.showsummary {
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 .info-container {
   width: 100%;
@@ -25,8 +39,8 @@
 }
 
 .showinfo {
-  font-size: 1em;
   background-color: #D3D3D3;
+  color: black;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -133,7 +147,7 @@ span {
 
 
 /********** Small devices only **********/
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
 
   .col-sm-1 {
     width: 6.33%;
@@ -174,7 +188,7 @@ span {
 }
 
   /********** x-Small devices only **********/
-@media (min-width: 376px) and  (max-width: 480px) {
+@media (min-width: 376px) and  (max-width: 575px) {
 
   .col-xs-1 {
     width: 6.33%;
