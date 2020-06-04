@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IShowinfo } from '../interfaces/ishowinfo';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TvshowService } from 'src/app/services/show-info-service/tvshow.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class ShowInfoComponent implements OnInit {
 
   constructor(
     private tvshowService: TvshowService,
-    private actRoute: ActivatedRoute
+    private actRoute: ActivatedRoute,
+    private _router: Router
   ) {
     //added by Priya for getting query params showid dynamically
     this.show_id = this.actRoute.snapshot.params.id;
@@ -27,6 +28,10 @@ export class ShowInfoComponent implements OnInit {
     this.tvshowService.getShowInfo(this.show_id).subscribe(data => {
       this.show = data;
       this.isLoading = false;
-    });
+     },
+      error => {
+        this._router.navigate(['/error']);
+      }
+    );
   }
 }
