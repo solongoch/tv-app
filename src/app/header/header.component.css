@@ -110,33 +110,34 @@ form {
   .mat-form-field {
     font-size: .8em;
   }
-
   .mat-card {
     padding: 5px 10px;
   }
-
   #brand-name {
     font-size: 1.2rem;
   }
-
   #brand-logo {
     width: 32px;
     height: 32px;
   }
 }
 
-/* media query for 376 px - 479px devices */
-@media (min-width: 376px) and (max-width: 479px) {
+/* media query for 375 px - 479px devices */
+@media (min-width: 375px) and (max-width: 479px) {
   .mat-form-field {
-    width: 180px;
+    width: 190px;
   }
-
   #brand-name {
     font-size: 1.2rem;
   }
-
   #brand-logo {
     width: 32px;
     height: 32px;
+  }
+}
+/* for small devices 320px */
+@media (min-width: 320px) and (max-width:374px) {
+  .mat-form-field {
+    width: 140px;
   }
 }
