@@ -27,12 +27,13 @@
                   <mat-card-title id="cardTitle">
                     <span class="card-title"
                       >{{ episode.episodeNumber }}.
-                      {{ episode.episodeName }}</span
-                    >
+                      {{ episode.episodeName | slice: 0:45}}</span>
                   </mat-card-title>
                   <mat-card-subtitle id="airDate"
-                    >AirDate: {{ episode.airdate | date: "mediumDate" }} at
-                    {{ episode.airtime }}
+                    >AirDate: {{ episode.airdate | date: "mediumDate" }}
+                    <span *ngIf="episode.airtime"> at
+                      {{ episode.airtime }}</span>
+
                   </mat-card-subtitle>
                   <mat-card-subtitle id="airDate">
                     Runtime: {{ episode.runtime }} minutes
@@ -50,7 +51,7 @@
                   class="noImg"
                 />
                 <mat-card-content id="summary">{{
-                  episode.summary | slice: 0:250
+                  episode.summary
                 }}</mat-card-content>
               </mat-card>
             </div>

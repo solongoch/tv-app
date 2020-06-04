@@ -48,7 +48,7 @@ export class EpisodeServiceService implements IEpisodeInfoService {
       airdate: new Date(data.airstamp),
       airtime: data.airtime,
       image: data.image?.original,
-      summary: data.summary ? data.summary.replace(/(<([^>]+)>)/ig, "") : ` We don't have a episode summary `,
+      summary: data.summary ? data.summary.replace(/(<([^>]+)>)/ig, "") : ` We don't have a episode summary for "${data.name}"`,
       runtime: data.runtime
     };
   }
