@@ -1,12 +1,8 @@
 <app-menu></app-menu>
 <div *ngIf="!isLoading; else loadingSpinner"></div>
 <div *ngIf="show" class="info-container">
-  <mat-card id="card-info">
-    <mat-card-header>
-      <mat-card-subtitle>
-        {{ show.genre }}
-      </mat-card-subtitle>
-    </mat-card-header>
+  <mat-card>
+      <mat-card-subtitle>{{ show.genre }}</mat-card-subtitle>
 
     <div class="showlist">
       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 row">
@@ -16,8 +12,8 @@
 
       <div class="description col-lg-7 col-md-7 col-sm-7 col-xs-12 row">
         <mat-card>
-          <mat-card-content style="height: 100px; overflow-y: auto">
-            <p>{{ show.description }}</p>
+          <mat-card-content style="height: 150px; overflow-y: auto">
+            <p class="showsummary">{{ show.description }}</p>
             <p *ngIf="!show.description">
               We don't have a summary for {{ show.name }} at this time.
             </p>
