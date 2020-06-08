@@ -40,7 +40,7 @@ export class CastService implements ICastService {
     return {
       castImg: data.person.image
         ? data.person.image.medium
-        : '../../assets/images/no-img.png',
+        : 'assets/images/no-img.png',
       castName: data.person.name,
       characterName: data.character.name
     };
